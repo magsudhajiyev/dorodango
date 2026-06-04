@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "252067065633",
+    "project_id": "dorodango-app",
+    "storage_bucket": "dorodango-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252067065633:android:55a5eec737b032dd2cd860",
+        "android_client_info": {
+          "package_name": "com.dorodango.dorodango"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmwfX5fVjt3uKBl-iOlXaOmWJUMsMrVHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

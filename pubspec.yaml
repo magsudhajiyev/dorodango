@@ -1,0 +1,55 @@
+name: dorodango
+description: "AI-coached guide for hikaru dorodango"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.10.9
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Firebase
+  firebase_core: ^3.12.1
+  firebase_auth: ^5.5.1
+  cloud_firestore: ^5.6.5
+  firebase_storage: ^12.4.4
+  cloud_functions: ^5.3.0
+
+  # Navigation
+  go_router: ^14.8.0
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Voice
+  speech_to_text: ^7.0.0
+  flutter_tts: ^4.2.0
+
+  # Camera / Photos
+  image_picker: ^1.1.2
+
+  # Utilities
+  uuid: ^4.5.1
+  intl: ^0.20.2
+  cached_network_image: ^3.4.1
+  permission_handler: ^11.3.1
+  shared_preferences: ^2.3.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/fonts/
+    - assets/images/
