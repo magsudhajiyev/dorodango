@@ -364,4 +364,42 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get photoUnclear => 'Фото нечёткое';
+
+  @override
+  String get detectSoil => 'Определить почву по моему местоположению';
+
+  @override
+  String get soilDetecting => 'Читаем местную почву…';
+
+  @override
+  String get soilTypeLabel => 'Тип местной почвы';
+
+  @override
+  String get soilClay => 'Глина';
+
+  @override
+  String get soilSand => 'Песок';
+
+  @override
+  String get soilSilt => 'Ил';
+
+  @override
+  String get soilSuitabilityGood =>
+      'Богата глиной — хорошо держит форму и даст красивый блеск.';
+
+  @override
+  String get soilSuitabilityOkay =>
+      'Умеренно глинистая — мелко просейте и плотно утрамбуйте.';
+
+  @override
+  String get soilSuitabilitySandy =>
+      'Песчаная — может крошиться. По возможности добавьте глинистую землю.';
+
+  @override
+  String get soilLocationDenied =>
+      'Местоположение недоступно. Разрешите доступ к геолокации, чтобы определить почву.';
+
+  @override
+  String get soilLookupFailed =>
+      'Не удалось получить данные о почве для этого места.';
 }

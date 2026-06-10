@@ -12,6 +12,9 @@ import '../../build_log/providers/build_log_provider.dart';
 import '../providers/build_session_provider.dart';
 import '../providers/stage_timer_provider.dart';
 import '../../reflections/providers/reflection_provider.dart';
+import '../../soil/providers/soil_provider.dart';
+import '../../soil/services/location_service.dart';
+import '../../soil/widgets/soil_card.dart';
 
 class BuildStartScreen extends ConsumerStatefulWidget {
   const BuildStartScreen({super.key});
@@ -68,6 +71,11 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
                 ),
                 textCapitalization: TextCapitalization.sentences,
               ),
+
+              const SizedBox(height: AppSpacing.sm),
+
+              // Soil type from location
+              _SoilDetectSection(onDetect: _detectSoil),
 
               const SizedBox(height: AppSpacing.lg),
 
@@ -126,6 +134,23 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
     );
   }
 
+  Future<void> _detectSoil() async {
+    await ref.read(soilProvider.notifier).detect();
+    final data = ref.read(soilProvider)?.valueOrNull;
+    if (data == null || !mounted) return;
+
+    // Prefill the soil source field if the user hasn't typed anything.
+    if (_soilController.text.trim().isEmpty) {
+      final l10n = AppLocalizations.of(context);
+      final parts = [
+        if (data.wrbClass != null) data.wrbClass!,
+        if (data.clayPct != null)
+          '${l10n.soilClay} ${data.clayPct!.round()}%',
+      ];
+      _soilController.text = parts.join(' · ');
+    }
+  }
+
   Future<void> _startBuild() async {
     final soilSource = _soilController.text.trim();
     final notifier = ref.read(buildSessionProvider.notifier);
@@ -160,6 +185,65 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
         pathParameters: {'buildId': build.id},
       );
     }
+  }
+}
+
+class _SoilDetectSection extends ConsumerWidget {
+  final Future<void> Function() onDetect;
+
+  const _SoilDetectSection({required this.onDetect});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final soilState = ref.watch(soilProvider);
+
+    if (soilState == null) {
+      return _detectButton(l10n.detectSoil);
+    }
+
+    return soilState.when(
+      loading: () => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            width: 16,
+            height: 16,
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              color: AppColors.inkSoft,
+            ),
+          ),
+          const SizedBox(width: AppSpacing.xs),
+          Text(
+            l10n.soilDetecting,
+            style: AppTypography.caption,
+          ),
+        ],
+      ),
+      error: (error, _) => Column(
+        children: [
+          Text(
+            error is LocationPermissionException
+                ? l10n.soilLocationDenied
+                : l10n.soilLookupFailed,
+            style: AppTypography.caption.copyWith(color: AppColors.error),
+            textAlign: TextAlign.center,
+          ),
+          _detectButton(l10n.retry),
+        ],
+      ),
+      data: (data) => SoilCard(data: data),
+    );
+  }
+
+  Widget _detectButton(String label) {
+    return TextButton.icon(
+      onPressed: onDetect,
+      icon: const Icon(Icons.my_location_rounded, size: 18),
+      label: Text(label),
+      style: TextButton.styleFrom(foregroundColor: AppColors.inkSoft),
+    );
   }
 }
 

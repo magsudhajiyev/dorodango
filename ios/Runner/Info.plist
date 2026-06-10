@@ -53,5 +53,7 @@
 	<string>Dorodango takes photos to document your build progress.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Dorodango saves build photos to document your progress.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Dorodango uses your location to look up the soil type in your area.</string>
 </dict>
 </plist>

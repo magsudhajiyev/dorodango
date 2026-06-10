@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} min di lettura",
   "analyzingPhoto": "Analisi della foto...",
   "diagnosisError": "Impossibile analizzare la foto. Tocca per riprovare.",
-  "photoUnclear": "Foto poco chiara"
+  "photoUnclear": "Foto poco chiara",
+
+  "detectSoil": "Rileva il terreno dalla mia posizione",
+  "soilDetecting": "Lettura del terreno locale…",
+  "soilTypeLabel": "Tipo di terreno locale",
+  "soilClay": "Argilla",
+  "soilSand": "Sabbia",
+  "soilSilt": "Limo",
+  "soilSuitabilityGood": "Ricco di argilla — si compatterà bene e prenderà una bella lucentezza.",
+  "soilSuitabilityOkay": "Argilla moderata — setaccialo fine e compattalo con forza.",
+  "soilSuitabilitySandy": "Sabbioso — potrebbe sgretolarsi. Se puoi, aggiungi terra ricca di argilla.",
+  "soilLocationDenied": "Posizione non disponibile. Consenti l'accesso alla posizione per rilevare il terreno.",
+  "soilLookupFailed": "Impossibile leggere i dati del terreno per questa posizione."
 }

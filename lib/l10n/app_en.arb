@@ -126,5 +126,17 @@
 
   "analyzingPhoto": "Analyzing your photo...",
   "diagnosisError": "Could not analyze photo. Tap to retry.",
-  "photoUnclear": "Photo unclear"
+  "photoUnclear": "Photo unclear",
+
+  "detectSoil": "Detect soil from my location",
+  "soilDetecting": "Reading your local soil…",
+  "soilTypeLabel": "Local soil type",
+  "soilClay": "Clay",
+  "soilSand": "Sand",
+  "soilSilt": "Silt",
+  "soilSuitabilityGood": "Rich in clay — it should hold together and take a fine shine.",
+  "soilSuitabilityOkay": "Moderate clay — sieve it fine and compress firmly.",
+  "soilSuitabilitySandy": "Sandy — it may crumble. Mix in clay-rich soil if you can.",
+  "soilLocationDenied": "Location unavailable. Allow location access to detect your soil.",
+  "soilLookupFailed": "Couldn't read soil data for this location."
 }

@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} min de lectura",
   "analyzingPhoto": "Analizando tu foto...",
   "diagnosisError": "No se pudo analizar la foto. Toca para reintentar.",
-  "photoUnclear": "Foto poco clara"
+  "photoUnclear": "Foto poco clara",
+
+  "detectSoil": "Detectar la tierra de mi ubicación",
+  "soilDetecting": "Leyendo la tierra local…",
+  "soilTypeLabel": "Tipo de tierra local",
+  "soilClay": "Arcilla",
+  "soilSand": "Arena",
+  "soilSilt": "Limo",
+  "soilSuitabilityGood": "Rica en arcilla: se mantendrá unida y tomará un buen brillo.",
+  "soilSuitabilityOkay": "Arcilla moderada: tamízala fina y compáctala con firmeza.",
+  "soilSuitabilitySandy": "Arenosa: puede desmoronarse. Mezcla tierra rica en arcilla si puedes.",
+  "soilLocationDenied": "Ubicación no disponible. Permite el acceso a la ubicación para detectar tu tierra.",
+  "soilLookupFailed": "No se pudieron leer los datos del suelo de esta ubicación."
 }

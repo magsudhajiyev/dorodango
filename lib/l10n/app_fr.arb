@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} min de lecture",
   "analyzingPhoto": "Analyse de votre photo...",
   "diagnosisError": "Impossible d'analyser la photo. Appuyez pour réessayer.",
-  "photoUnclear": "Photo floue"
+  "photoUnclear": "Photo floue",
+
+  "detectSoil": "Détecter la terre à ma position",
+  "soilDetecting": "Lecture de la terre locale…",
+  "soilTypeLabel": "Type de terre locale",
+  "soilClay": "Argile",
+  "soilSand": "Sable",
+  "soilSilt": "Limon",
+  "soilSuitabilityGood": "Riche en argile — elle se tiendra bien et prendra un beau brillant.",
+  "soilSuitabilityOkay": "Argile modérée — tamisez-la finement et compressez fermement.",
+  "soilSuitabilitySandy": "Sablonneuse — elle peut s'effriter. Mélangez de la terre argileuse si possible.",
+  "soilLocationDenied": "Position indisponible. Autorisez l'accès à la position pour détecter votre terre.",
+  "soilLookupFailed": "Impossible de lire les données du sol pour cette position."
 }

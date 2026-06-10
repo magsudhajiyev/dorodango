@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} Min. Lesezeit",
   "analyzingPhoto": "Foto wird analysiert...",
   "diagnosisError": "Foto konnte nicht analysiert werden. Tippen zum Wiederholen.",
-  "photoUnclear": "Foto unklar"
+  "photoUnclear": "Foto unklar",
+
+  "detectSoil": "Boden an meinem Standort erkennen",
+  "soilDetecting": "Lokaler Boden wird gelesen…",
+  "soilTypeLabel": "Lokaler Bodentyp",
+  "soilClay": "Ton",
+  "soilSand": "Sand",
+  "soilSilt": "Schluff",
+  "soilSuitabilityGood": "Tonreich — hält gut zusammen und nimmt einen schönen Glanz an.",
+  "soilSuitabilityOkay": "Mäßig tonhaltig — fein sieben und fest verdichten.",
+  "soilSuitabilitySandy": "Sandig — kann zerbröckeln. Mischen Sie nach Möglichkeit tonreiche Erde bei.",
+  "soilLocationDenied": "Standort nicht verfügbar. Erlauben Sie den Standortzugriff, um Ihren Boden zu erkennen.",
+  "soilLookupFailed": "Bodendaten für diesen Standort konnten nicht gelesen werden."
 }

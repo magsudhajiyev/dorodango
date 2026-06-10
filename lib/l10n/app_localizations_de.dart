@@ -369,4 +369,42 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get photoUnclear => 'Foto unklar';
+
+  @override
+  String get detectSoil => 'Boden an meinem Standort erkennen';
+
+  @override
+  String get soilDetecting => 'Lokaler Boden wird gelesen…';
+
+  @override
+  String get soilTypeLabel => 'Lokaler Bodentyp';
+
+  @override
+  String get soilClay => 'Ton';
+
+  @override
+  String get soilSand => 'Sand';
+
+  @override
+  String get soilSilt => 'Schluff';
+
+  @override
+  String get soilSuitabilityGood =>
+      'Tonreich — hält gut zusammen und nimmt einen schönen Glanz an.';
+
+  @override
+  String get soilSuitabilityOkay =>
+      'Mäßig tonhaltig — fein sieben und fest verdichten.';
+
+  @override
+  String get soilSuitabilitySandy =>
+      'Sandig — kann zerbröckeln. Mischen Sie nach Möglichkeit tonreiche Erde bei.';
+
+  @override
+  String get soilLocationDenied =>
+      'Standort nicht verfügbar. Erlauben Sie den Standortzugriff, um Ihren Boden zu erkennen.';
+
+  @override
+  String get soilLookupFailed =>
+      'Bodendaten für diesen Standort konnten nicht gelesen werden.';
 }

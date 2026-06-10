@@ -328,4 +328,37 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get photoUnclear => '写真が不鮮明';
+
+  @override
+  String get detectSoil => '現在地の土を調べる';
+
+  @override
+  String get soilDetecting => '周辺の土を読み取っています…';
+
+  @override
+  String get soilTypeLabel => '現在地の土質';
+
+  @override
+  String get soilClay => '粘土';
+
+  @override
+  String get soilSand => '砂';
+
+  @override
+  String get soilSilt => 'シルト';
+
+  @override
+  String get soilSuitabilityGood => '粘土が豊富 — まとまりやすく、美しい光沢が出ます。';
+
+  @override
+  String get soilSuitabilityOkay => '粘土は中程度 — 細かくふるい、しっかり圧縮しましょう。';
+
+  @override
+  String get soilSuitabilitySandy => '砂質 — 崩れやすいかもしれません。できれば粘土質の土を混ぜてください。';
+
+  @override
+  String get soilLocationDenied => '位置情報を利用できません。土を調べるには位置情報へのアクセスを許可してください。';
+
+  @override
+  String get soilLookupFailed => 'この場所の土壌データを読み取れませんでした。';
 }

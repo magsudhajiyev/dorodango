@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} dk okuma",
   "analyzingPhoto": "Fotoğrafınız analiz ediliyor...",
   "diagnosisError": "Fotoğraf analiz edilemedi. Tekrar denemek için dokunun.",
-  "photoUnclear": "Fotoğraf net değil"
+  "photoUnclear": "Fotoğraf net değil",
+
+  "detectSoil": "Konumumdan toprağı algıla",
+  "soilDetecting": "Yerel toprak okunuyor…",
+  "soilTypeLabel": "Yerel toprak türü",
+  "soilClay": "Kil",
+  "soilSand": "Kum",
+  "soilSilt": "Silt",
+  "soilSuitabilityGood": "Kil bakımından zengin — iyi tutunur ve güzel bir parlaklık alır.",
+  "soilSuitabilityOkay": "Orta düzeyde killi — ince eleyin ve sıkıca bastırın.",
+  "soilSuitabilitySandy": "Kumlu — dağılabilir. Mümkünse kil açısından zengin toprak karıştırın.",
+  "soilLocationDenied": "Konum kullanılamıyor. Toprağı algılamak için konum erişimine izin verin.",
+  "soilLookupFailed": "Bu konum için toprak verileri okunamadı."
 }

@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} dəq oxuma",
   "analyzingPhoto": "Şəkiliniz analiz edilir...",
   "diagnosisError": "Şəkil analiz edilə bilmədi. Yenidən cəhd etmək üçün toxunun.",
-  "photoUnclear": "Şəkil aydın deyil"
+  "photoUnclear": "Şəkil aydın deyil",
+
+  "detectSoil": "Məkanıma görə torpağı müəyyən et",
+  "soilDetecting": "Yerli torpağınız oxunur…",
+  "soilTypeLabel": "Yerli torpaq növü",
+  "soilClay": "Gil",
+  "soilSand": "Qum",
+  "soilSilt": "Lil",
+  "soilSuitabilityGood": "Gillə zəngindir — yaxşı formalaşacaq və gözəl parıltı alacaq.",
+  "soilSuitabilityOkay": "Orta gillidir — narın ələyin və möhkəm sıxın.",
+  "soilSuitabilitySandy": "Qumludur — dağıla bilər. Mümkünsə gilli torpaq qarışdırın.",
+  "soilLocationDenied": "Məkan əlçatan deyil. Torpağı müəyyən etmək üçün məkan girişinə icazə verin.",
+  "soilLookupFailed": "Bu məkan üçün torpaq məlumatı oxuna bilmədi."
 }

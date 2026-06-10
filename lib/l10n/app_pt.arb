@@ -117,5 +117,17 @@
   "estimatedReadTime": "~{minutes} min de leitura",
   "analyzingPhoto": "Analisando sua foto...",
   "diagnosisError": "Não foi possível analisar a foto. Toque para tentar novamente.",
-  "photoUnclear": "Foto pouco clara"
+  "photoUnclear": "Foto pouco clara",
+
+  "detectSoil": "Detectar a terra da minha localização",
+  "soilDetecting": "Lendo a terra local…",
+  "soilTypeLabel": "Tipo de terra local",
+  "soilClay": "Argila",
+  "soilSand": "Areia",
+  "soilSilt": "Silte",
+  "soilSuitabilityGood": "Rica em argila — vai se manter firme e ganhar um belo brilho.",
+  "soilSuitabilityOkay": "Argila moderada — peneire fino e compacte com firmeza.",
+  "soilSuitabilitySandy": "Arenosa — pode esfarelar. Misture terra rica em argila se puder.",
+  "soilLocationDenied": "Localização indisponível. Permita o acesso à localização para detectar sua terra.",
+  "soilLookupFailed": "Não foi possível ler os dados do solo desta localização."
 }

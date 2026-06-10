@@ -367,4 +367,41 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get photoUnclear => 'Fotoğraf net değil';
+
+  @override
+  String get detectSoil => 'Konumumdan toprağı algıla';
+
+  @override
+  String get soilDetecting => 'Yerel toprak okunuyor…';
+
+  @override
+  String get soilTypeLabel => 'Yerel toprak türü';
+
+  @override
+  String get soilClay => 'Kil';
+
+  @override
+  String get soilSand => 'Kum';
+
+  @override
+  String get soilSilt => 'Silt';
+
+  @override
+  String get soilSuitabilityGood =>
+      'Kil bakımından zengin — iyi tutunur ve güzel bir parlaklık alır.';
+
+  @override
+  String get soilSuitabilityOkay =>
+      'Orta düzeyde killi — ince eleyin ve sıkıca bastırın.';
+
+  @override
+  String get soilSuitabilitySandy =>
+      'Kumlu — dağılabilir. Mümkünse kil açısından zengin toprak karıştırın.';
+
+  @override
+  String get soilLocationDenied =>
+      'Konum kullanılamıyor. Toprağı algılamak için konum erişimine izin verin.';
+
+  @override
+  String get soilLookupFailed => 'Bu konum için toprak verileri okunamadı.';
 }

@@ -707,6 +707,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Photo unclear'**
   String get photoUnclear;
+
+  /// No description provided for @detectSoil.
+  ///
+  /// In en, this message translates to:
+  /// **'Detect soil from my location'**
+  String get detectSoil;
+
+  /// No description provided for @soilDetecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading your local soil…'**
+  String get soilDetecting;
+
+  /// No description provided for @soilTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Local soil type'**
+  String get soilTypeLabel;
+
+  /// No description provided for @soilClay.
+  ///
+  /// In en, this message translates to:
+  /// **'Clay'**
+  String get soilClay;
+
+  /// No description provided for @soilSand.
+  ///
+  /// In en, this message translates to:
+  /// **'Sand'**
+  String get soilSand;
+
+  /// No description provided for @soilSilt.
+  ///
+  /// In en, this message translates to:
+  /// **'Silt'**
+  String get soilSilt;
+
+  /// No description provided for @soilSuitabilityGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Rich in clay — it should hold together and take a fine shine.'**
+  String get soilSuitabilityGood;
+
+  /// No description provided for @soilSuitabilityOkay.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate clay — sieve it fine and compress firmly.'**
+  String get soilSuitabilityOkay;
+
+  /// No description provided for @soilSuitabilitySandy.
+  ///
+  /// In en, this message translates to:
+  /// **'Sandy — it may crumble. Mix in clay-rich soil if you can.'**
+  String get soilSuitabilitySandy;
+
+  /// No description provided for @soilLocationDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Location unavailable. Allow location access to detect your soil.'**
+  String get soilLocationDenied;
+
+  /// No description provided for @soilLookupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t read soil data for this location.'**
+  String get soilLookupFailed;
 }
 
 class _AppLocalizationsDelegate

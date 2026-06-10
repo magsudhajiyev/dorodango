@@ -369,4 +369,41 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get photoUnclear => 'Şəkil aydın deyil';
+
+  @override
+  String get detectSoil => 'Məkanıma görə torpağı müəyyən et';
+
+  @override
+  String get soilDetecting => 'Yerli torpağınız oxunur…';
+
+  @override
+  String get soilTypeLabel => 'Yerli torpaq növü';
+
+  @override
+  String get soilClay => 'Gil';
+
+  @override
+  String get soilSand => 'Qum';
+
+  @override
+  String get soilSilt => 'Lil';
+
+  @override
+  String get soilSuitabilityGood =>
+      'Gillə zəngindir — yaxşı formalaşacaq və gözəl parıltı alacaq.';
+
+  @override
+  String get soilSuitabilityOkay =>
+      'Orta gillidir — narın ələyin və möhkəm sıxın.';
+
+  @override
+  String get soilSuitabilitySandy =>
+      'Qumludur — dağıla bilər. Mümkünsə gilli torpaq qarışdırın.';
+
+  @override
+  String get soilLocationDenied =>
+      'Məkan əlçatan deyil. Torpağı müəyyən etmək üçün məkan girişinə icazə verin.';
+
+  @override
+  String get soilLookupFailed => 'Bu məkan üçün torpaq məlumatı oxuna bilmədi.';
 }

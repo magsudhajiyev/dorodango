@@ -367,4 +367,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get photoUnclear => 'Photo unclear';
+
+  @override
+  String get detectSoil => 'Detect soil from my location';
+
+  @override
+  String get soilDetecting => 'Reading your local soil…';
+
+  @override
+  String get soilTypeLabel => 'Local soil type';
+
+  @override
+  String get soilClay => 'Clay';
+
+  @override
+  String get soilSand => 'Sand';
+
+  @override
+  String get soilSilt => 'Silt';
+
+  @override
+  String get soilSuitabilityGood =>
+      'Rich in clay — it should hold together and take a fine shine.';
+
+  @override
+  String get soilSuitabilityOkay =>
+      'Moderate clay — sieve it fine and compress firmly.';
+
+  @override
+  String get soilSuitabilitySandy =>
+      'Sandy — it may crumble. Mix in clay-rich soil if you can.';
+
+  @override
+  String get soilLocationDenied =>
+      'Location unavailable. Allow location access to detect your soil.';
+
+  @override
+  String get soilLookupFailed => 'Couldn\'t read soil data for this location.';
 }

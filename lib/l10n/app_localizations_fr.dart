@@ -370,4 +370,42 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get photoUnclear => 'Photo floue';
+
+  @override
+  String get detectSoil => 'Détecter la terre à ma position';
+
+  @override
+  String get soilDetecting => 'Lecture de la terre locale…';
+
+  @override
+  String get soilTypeLabel => 'Type de terre locale';
+
+  @override
+  String get soilClay => 'Argile';
+
+  @override
+  String get soilSand => 'Sable';
+
+  @override
+  String get soilSilt => 'Limon';
+
+  @override
+  String get soilSuitabilityGood =>
+      'Riche en argile — elle se tiendra bien et prendra un beau brillant.';
+
+  @override
+  String get soilSuitabilityOkay =>
+      'Argile modérée — tamisez-la finement et compressez fermement.';
+
+  @override
+  String get soilSuitabilitySandy =>
+      'Sablonneuse — elle peut s\'effriter. Mélangez de la terre argileuse si possible.';
+
+  @override
+  String get soilLocationDenied =>
+      'Position indisponible. Autorisez l\'accès à la position pour détecter votre terre.';
+
+  @override
+  String get soilLookupFailed =>
+      'Impossible de lire les données du sol pour cette position.';
 }
