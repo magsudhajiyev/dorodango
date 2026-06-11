@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dorodango/l10n/app_localizations.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
@@ -8,6 +9,7 @@ import '../../../core/theme/app_typography.dart';
 import '../../../routing/route_names.dart';
 import '../../../core/constants/stage_content.dart';
 import '../../../data/models/build_model.dart';
+import '../../../data/models/soil_data.dart';
 import '../../build_log/providers/build_log_provider.dart';
 import '../providers/build_session_provider.dart';
 import '../providers/stage_timer_provider.dart';
@@ -43,8 +45,8 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-          // Scrolls only when the content (e.g. soil card + AI prediction)
-          // outgrows the screen; otherwise the Spacers center it as before.
+          // Scrolls only when the content outgrows the screen; otherwise
+          // the Spacers center it as before.
           child: LayoutBuilder(
             builder: (context, constraints) => SingleChildScrollView(
               child: ConstrainedBox(
@@ -52,94 +54,114 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
                 child: IntrinsicHeight(
                   child: Column(
                     children: [
-              const Spacer(flex: 2),
+                      const Spacer(flex: 2),
 
-              // Title
-              Text(l10n.appTitle, style: AppTypography.display),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                l10n.appSubtitle,
-                style: AppTypography.body.copyWith(color: AppColors.inkSoft),
-              ),
+                      // Title
+                      Text(l10n.appTitle, style: AppTypography.display)
+                          .animate()
+                          .fadeIn(duration: 450.ms)
+                          .moveY(begin: 10, end: 0, curve: Curves.easeOut),
+                      const SizedBox(height: AppSpacing.xs),
+                      Text(
+                        l10n.appSubtitle,
+                        style: AppTypography.body
+                            .copyWith(color: AppColors.inkSoft),
+                      ).animate(delay: 100.ms).fadeIn(duration: 450.ms),
 
-              const Spacer(flex: 2),
+                      const Spacer(flex: 2),
 
-              // Continue Build card
-              if (inProgressBuild != null)
-                _ContinueBuildCard(buildModel: inProgressBuild),
+                      // Continue Build card
+                      if (inProgressBuild != null) ...[
+                        _ContinueBuildCard(buildModel: inProgressBuild)
+                            .animate(delay: 150.ms)
+                            .fadeIn(duration: 350.ms),
+                        const SizedBox(height: AppSpacing.lg),
+                      ],
 
-              if (inProgressBuild != null)
-                const SizedBox(height: AppSpacing.lg),
-
-              // Soil source
-              TextField(
-                controller: _soilController,
-                decoration: InputDecoration(
-                  hintText: l10n.soilSourceHint,
-                ),
-                textCapitalization: TextCapitalization.sentences,
-              ),
-
-              const SizedBox(height: AppSpacing.sm),
-
-              // Soil type from location
-              _SoilDetectSection(onDetect: _detectSoil),
-
-              const SizedBox(height: AppSpacing.lg),
-
-              // Start button
-              SizedBox(
-                width: double.infinity,
-                height: 56,
-                child: ElevatedButton(
-                  onPressed: session.isLoading ? null : _startBuild,
-                  child: session.isLoading
-                      ? const SizedBox(
-                          width: 24,
-                          height: 24,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: Colors.white,
+                      // Soil source, with detection and map tucked inside.
+                      TextField(
+                        controller: _soilController,
+                        decoration: InputDecoration(
+                          hintText: l10n.soilSourceHint,
+                          suffixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                tooltip: l10n.detectSoil,
+                                icon: const Icon(Icons.my_location_rounded,
+                                    size: 20, color: AppColors.inkSoft),
+                                onPressed: _detectSoil,
+                              ),
+                              IconButton(
+                                tooltip: l10n.soilMap,
+                                icon: const Icon(Icons.public_rounded,
+                                    size: 20, color: AppColors.inkSoft),
+                                onPressed: () =>
+                                    context.pushNamed(RouteNames.soilMap),
+                              ),
+                            ],
                           ),
-                        )
-                      : Text(l10n.startNewBuild),
-                ),
-              ),
+                        ),
+                        textCapitalization: TextCapitalization.sentences,
+                      ),
 
-              const SizedBox(height: AppSpacing.md),
+                      // Compact soil result (chip), details in a sheet.
+                      const _SoilStatusLine(),
 
-              // Build log
-              TextButton(
-                onPressed: () => context.goNamed(RouteNames.buildLog),
-                child: Text(
-                  l10n.viewBuildLog,
-                  style:
-                      AppTypography.label.copyWith(color: AppColors.inkSoft),
-                ),
-              ),
+                      const SizedBox(height: AppSpacing.lg),
 
-              // Reflections library
-              TextButton(
-                onPressed: () => context.goNamed(RouteNames.reflections),
-                child: Text(
-                  'Reflections',
-                  style:
-                      AppTypography.label.copyWith(color: AppColors.inkSoft),
-                ),
-              ),
+                      // Start button
+                      SizedBox(
+                        width: double.infinity,
+                        height: 56,
+                        child: ElevatedButton(
+                          onPressed: session.isLoading ? null : _startBuild,
+                          child: session.isLoading
+                              ? const SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              : Text(l10n.startNewBuild),
+                        ),
+                      ),
 
-              // Dorodango hunt
-              TextButton.icon(
-                onPressed: () => context.pushNamed(RouteNames.hunt),
-                icon: const Icon(Icons.explore_rounded,
-                    size: 18, color: AppColors.clay),
-                label: Text(
-                  l10n.hunt,
-                  style: AppTypography.label.copyWith(color: AppColors.clay),
-                ),
-              ),
+                      const Spacer(flex: 2),
 
-                      const Spacer(),
+                      // Footer navigation
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          _QuickLink(
+                            icon: Icons.history_rounded,
+                            label: l10n.buildLog,
+                            onTap: () =>
+                                context.goNamed(RouteNames.buildLog),
+                          ),
+                          _QuickLink(
+                            icon: Icons.explore_rounded,
+                            label: l10n.hunt,
+                            color: AppColors.clay,
+                            onTap: () => context.pushNamed(RouteNames.hunt),
+                          ),
+                          _QuickLink(
+                            icon: Icons.auto_stories_rounded,
+                            label: l10n.reflections,
+                            onTap: () =>
+                                context.goNamed(RouteNames.reflections),
+                          ),
+                          _QuickLink(
+                            icon: Icons.settings_rounded,
+                            label: l10n.settings,
+                            onTap: () =>
+                                context.goNamed(RouteNames.settings),
+                          ),
+                        ],
+                      ).animate(delay: 200.ms).fadeIn(duration: 400.ms),
+                      const SizedBox(height: AppSpacing.sm),
                     ],
                   ),
                 ),
@@ -148,12 +170,6 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.small(
-        onPressed: () => context.goNamed(RouteNames.settings),
-        backgroundColor: AppColors.surface,
-        child: const Icon(Icons.settings_rounded, color: AppColors.inkSoft),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 
@@ -211,83 +227,173 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
   }
 }
 
-class _SoilDetectSection extends ConsumerWidget {
-  final Future<void> Function() onDetect;
-
-  const _SoilDetectSection({required this.onDetect});
+/// Compact status under the soil field: a spinner while detecting, a small
+/// tappable chip with the result, or a tap-to-retry error caption.
+class _SoilStatusLine extends ConsumerWidget {
+  const _SoilStatusLine();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final soilState = ref.watch(soilProvider);
 
-    if (soilState == null) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(child: _detectButton(l10n.detectSoil)),
-          Flexible(child: _mapButton(context, l10n)),
-        ],
-      );
-    }
+    if (soilState == null) return const SizedBox.shrink();
 
-    return soilState.when(
-      loading: () => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            width: 16,
-            height: 16,
-            child: CircularProgressIndicator(
-              strokeWidth: 2,
-              color: AppColors.inkSoft,
+    return Padding(
+      padding: const EdgeInsets.only(top: AppSpacing.sm),
+      child: soilState.when(
+        loading: () => Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              width: 14,
+              height: 14,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                color: AppColors.inkSoft,
+              ),
             ),
-          ),
-          const SizedBox(width: AppSpacing.xs),
-          Text(
-            l10n.soilDetecting,
-            style: AppTypography.caption,
-          ),
-        ],
-      ),
-      error: (error, _) => Column(
-        children: [
-          Text(
+            const SizedBox(width: AppSpacing.xs),
+            Text(l10n.soilDetecting, style: AppTypography.caption),
+          ],
+        ),
+        error: (error, _) => InkWell(
+          onTap: () => ref.read(soilProvider.notifier).detect(),
+          child: Text(
             error is LocationPermissionException
                 ? l10n.soilLocationDenied
                 : l10n.soilLookupFailed,
             style: AppTypography.caption.copyWith(color: AppColors.error),
             textAlign: TextAlign.center,
           ),
-          _detectButton(l10n.retry),
-        ],
-      ),
-      data: (data) => Column(
-        children: [
-          SoilCard(data: data),
-          const SizedBox(height: AppSpacing.xs),
-          SoilPredictionCard(soil: data),
-          _mapButton(context, l10n),
-        ],
+        ),
+        data: (data) => Center(child: _SoilChip(data: data)),
       ),
     );
   }
+}
 
-  Widget _detectButton(String label) {
-    return TextButton.icon(
-      onPressed: onDetect,
-      icon: const Icon(Icons.my_location_rounded, size: 18),
-      label: Text(label),
-      style: TextButton.styleFrom(foregroundColor: AppColors.inkSoft),
-    );
+class _SoilChip extends StatelessWidget {
+  final SoilData data;
+
+  const _SoilChip({required this.data});
+
+  Color get _suitabilityColor => switch (data.suitability) {
+        SoilSuitability.good => AppColors.success,
+        SoilSuitability.okay => AppColors.warning,
+        SoilSuitability.sandy => AppColors.error,
+        null => AppColors.inkFaint,
+      };
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final parts = [
+      if (data.wrbClass != null) data.wrbClass!,
+      if (data.clayPct != null) '${l10n.soilClay} ${data.clayPct!.round()}%',
+    ];
+
+    return InkWell(
+      borderRadius: BorderRadius.circular(999),
+      onTap: () => _showDetails(context),
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.sm,
+          vertical: AppSpacing.xs,
+        ),
+        decoration: BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.circular(999),
+          border:
+              Border.all(color: AppColors.inkSoft.withValues(alpha: 0.2)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _suitabilityColor,
+              ),
+            ),
+            const SizedBox(width: AppSpacing.xs),
+            Flexible(
+              child: Text(
+                parts.join(' · '),
+                style: AppTypography.caption.copyWith(color: AppColors.ink),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            const Icon(Icons.chevron_right_rounded,
+                size: 16, color: AppColors.inkFaint),
+          ],
+        ),
+      ),
+    ).animate().fadeIn(duration: 300.ms).scaleXY(begin: 0.95, end: 1);
   }
 
-  Widget _mapButton(BuildContext context, AppLocalizations l10n) {
-    return TextButton.icon(
-      onPressed: () => context.pushNamed(RouteNames.soilMap),
-      icon: const Icon(Icons.public_rounded, size: 18),
-      label: Text(l10n.soilMap),
-      style: TextButton.styleFrom(foregroundColor: AppColors.inkSoft),
+  void _showDetails(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: AppColors.bg,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (_) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SoilCard(data: data),
+              const SizedBox(height: AppSpacing.xs),
+              SoilPredictionCard(soil: data),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _QuickLink extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  final Color color;
+
+  const _QuickLink({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+    this.color = AppColors.inkSoft,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.xs,
+          vertical: AppSpacing.xs,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 22, color: color),
+            const SizedBox(height: AppSpacing.xxs),
+            Text(
+              label,
+              style: AppTypography.caption.copyWith(color: color),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

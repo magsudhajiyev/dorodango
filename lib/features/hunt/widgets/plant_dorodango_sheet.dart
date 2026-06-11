@@ -36,7 +36,7 @@ class PlantDorodangoSheet extends ConsumerStatefulWidget {
       _PlantDorodangoSheetState();
 }
 
-enum _Phase { form, planting, planted, locationDenied, error }
+enum _Phase { form, planted, locationDenied, error }
 
 class _PlantDorodangoSheetState extends ConsumerState<PlantDorodangoSheet> {
   final _hintController = TextEditingController();
@@ -49,12 +49,15 @@ class _PlantDorodangoSheetState extends ConsumerState<PlantDorodangoSheet> {
   }
 
   Future<void> _plant() async {
-    setState(() => _phase = _Phase.planting);
     final uid = ref.read(authStateProvider).valueOrNull?.uid;
     if (uid == null) {
       setState(() => _phase = _Phase.error);
       return;
     }
+    // Optimistic: start the celebration immediately; the location fetch and
+    // write almost always finish well within the animation. On failure the
+    // sheet swaps to the error state.
+    setState(() => _phase = _Phase.planted);
     try {
       final position =
           await ref.read(locationServiceProvider).getCurrentPosition();
@@ -72,7 +75,6 @@ class _PlantDorodangoSheetState extends ConsumerState<PlantDorodangoSheet> {
             latitude: position.latitude,
             longitude: position.longitude,
           );
-      if (mounted) setState(() => _phase = _Phase.planted);
     } on LocationPermissionException {
       if (mounted) setState(() => _phase = _Phase.locationDenied);
     } catch (_) {
@@ -96,7 +98,6 @@ class _PlantDorodangoSheetState extends ConsumerState<PlantDorodangoSheet> {
         curve: Curves.easeOut,
         child: switch (_phase) {
           _Phase.form => _buildForm(l10n),
-          _Phase.planting => _buildPlanting(l10n),
           _Phase.planted => _PlantedCelebration(l10n: l10n),
           _Phase.locationDenied => _buildMessage(
               l10n.soilLocationDenied,
@@ -148,22 +149,6 @@ class _PlantDorodangoSheetState extends ConsumerState<PlantDorodangoSheet> {
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildPlanting(AppLocalizations l10n) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppSpacing.xl),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const DorodangoBall(size: 72)
-              .animate(onPlay: (c) => c.repeat())
-              .rotate(duration: 1500.ms),
-          const SizedBox(height: AppSpacing.md),
-          Text(l10n.planting, style: AppTypography.caption),
-        ],
-      ),
     );
   }
 

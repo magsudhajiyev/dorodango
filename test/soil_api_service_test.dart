@@ -91,6 +91,33 @@ void main() {
       expect(data.suitability, isNull);
     });
 
+    test('caches results and deduplicates concurrent lookups', () async {
+      var requestCount = 0;
+      final service = SoilApiService(
+        client: MockClient((request) async {
+          requestCount++;
+          if (request.url.path.contains('classification')) {
+            return _json(_classificationBody('Cambisols'));
+          }
+          return _json(_propertiesBody(clay: 232, sand: 451, silt: 317));
+        }),
+      );
+
+      // Two concurrent lookups for the same spot share one fetch.
+      final results = await Future.wait([
+        service.fetchSoilData(latitude: 52.0, longitude: 5.0),
+        service.fetchSoilData(latitude: 52.0, longitude: 5.0),
+      ]);
+      expect(results[0].wrbClass, 'Cambisols');
+      expect(requestCount, 2); // one classification + one properties call
+
+      // A later lookup nearby (same ~110 m cell) hits the cache.
+      final again =
+          await service.fetchSoilData(latitude: 52.0001, longitude: 5.0001);
+      expect(again.wrbClass, 'Cambisols');
+      expect(requestCount, 2);
+    });
+
     test('throws SoilLookupException when both lookups fail', () async {
       final service = _service();
 

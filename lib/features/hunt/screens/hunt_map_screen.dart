@@ -51,9 +51,11 @@ class _HuntMapScreenState extends ConsumerState<HuntMapScreen> {
     final messenger = ScaffoldMessenger.of(context);
     setState(() => _claiming = true);
     try {
-      // Re-check the hunter's live position right before claiming.
-      final position =
-          await ref.read(locationServiceProvider).getCurrentPosition();
+      // Claiming needs the hunter's actual current spot — request a fresh
+      // high-accuracy fix (still time-capped by the location service).
+      final position = await ref
+          .read(locationServiceProvider)
+          .getCurrentPosition(fresh: true);
       const distance = Distance();
       final meters = distance.as(
         LengthUnit.Meter,

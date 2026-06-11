@@ -9,10 +9,18 @@ class SoilLookupException implements Exception {}
 
 /// Client for the free ISRIC SoilGrids v2.0 API (no API key required).
 /// https://rest.isric.org/soilgrids/v2.0/docs
+///
+/// Responses are cached in memory (~110 m grid) and concurrent lookups for
+/// the same spot are deduplicated, so repeat taps resolve instantly. Each
+/// upstream request is capped by [_requestTimeout]; if one endpoint is slow
+/// the other's data is still returned.
 class SoilApiService {
   static const String _host = 'rest.isric.org';
+  static const Duration _requestTimeout = Duration(seconds: 10);
 
   final http.Client _client;
+  final Map<String, SoilData> _cache = {};
+  final Map<String, Future<SoilData>> _inFlight = {};
 
   SoilApiService({http.Client? client}) : _client = client ?? http.Client();
 
@@ -20,6 +28,25 @@ class SoilApiService {
     required double latitude,
     required double longitude,
   }) async {
+    final key =
+        '${latitude.toStringAsFixed(3)},${longitude.toStringAsFixed(3)}';
+    final cached = _cache[key];
+    if (cached != null) return cached;
+    final pending = _inFlight[key];
+    if (pending != null) return pending;
+
+    final future = _fetchSoilData(latitude, longitude);
+    _inFlight[key] = future;
+    try {
+      final data = await future;
+      _cache[key] = data;
+      return data;
+    } finally {
+      _inFlight.remove(key);
+    }
+  }
+
+  Future<SoilData> _fetchSoilData(double latitude, double longitude) async {
     final results = await Future.wait([
       _fetchClassification(latitude, longitude),
       _fetchComposition(latitude, longitude),
@@ -48,7 +75,7 @@ class SoilApiService {
         'lon': '$lon',
         'number_classes': '1',
       });
-      final response = await _client.get(uri);
+      final response = await _client.get(uri).timeout(_requestTimeout);
       if (response.statusCode != 200) return null;
       final json = jsonDecode(response.body) as Map<String, dynamic>;
       final name = json['wrb_class_name'] as String?;
@@ -67,7 +94,7 @@ class SoilApiService {
         'depth': '0-5cm',
         'value': 'mean',
       });
-      final response = await _client.get(uri);
+      final response = await _client.get(uri).timeout(_requestTimeout);
       if (response.statusCode != 200) return null;
 
       final json = jsonDecode(response.body) as Map<String, dynamic>;
