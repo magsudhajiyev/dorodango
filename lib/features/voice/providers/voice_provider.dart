@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dorodango/l10n/app_localizations.dart';
@@ -61,6 +62,9 @@ class VoiceController {
   /// phrase, stays silent, or taps the orb.
   bool _conversationMode = false;
   bool _gotResultThisTurn = false;
+  bool _handlingInput = false;
+  int _listenRetries = 0;
+  Timer? _silenceExitTimer;
 
   /// Callback to update the conversation-mode provider from outside.
   void Function(bool active)? onConversationModeChanged;
@@ -112,6 +116,7 @@ class VoiceController {
   Future<void> startConversation() async {
     _setConversationMode(true);
     stt.onStatus = _handleSttStatus;
+    stt.onError = _handleSttError;
     await startListening();
   }
 
@@ -123,11 +128,13 @@ class VoiceController {
 
   Future<void> startListening() async {
     _gotResultThisTurn = false;
+    _silenceExitTimer?.cancel();
     buildSession.setVoiceState(VoiceState.listening);
 
     await stt.startListening(
       onResult: (text, isFinal) {
         if (isFinal) {
+          _silenceExitTimer?.cancel();
           _gotResultThisTurn = text.trim().isNotEmpty;
           _handleInput(text);
         }
@@ -144,18 +151,58 @@ class VoiceController {
   void _setConversationMode(bool active) {
     if (_conversationMode == active) return;
     _conversationMode = active;
+    if (!active) _silenceExitTimer?.cancel();
     onConversationModeChanged?.call(active);
   }
 
-  void _handleSttStatus(String status) {
-    // The platform stopped listening (silence window elapsed) without a
-    // final result: the user has nothing more to say — end the loop quietly.
-    if (status == 'done' &&
-        _conversationMode &&
-        !_gotResultThisTurn &&
-        getBuildState().voiceState == VoiceState.listening) {
-      _setConversationMode(false);
+  void _endConversationQuietly() {
+    _setConversationMode(false);
+    if (getBuildState().voiceState == VoiceState.listening) {
       buildSession.setVoiceState(VoiceState.idle);
+    }
+  }
+
+  void _handleSttStatus(String status) {
+    if (!_conversationMode) return;
+    // The platform stopped listening. On Android the 'done' status often
+    // arrives BEFORE the final result is delivered, so don't end the loop
+    // immediately — give the result a grace period. If nothing arrives,
+    // the turn was silence and the user is done talking.
+    if (status == 'done' || status == 'notListening') {
+      _silenceExitTimer?.cancel();
+      _silenceExitTimer = Timer(const Duration(milliseconds: 1500), () {
+        if (_conversationMode &&
+            !_gotResultThisTurn &&
+            !_handlingInput &&
+            !stt.isListening &&
+            getBuildState().voiceState == VoiceState.listening) {
+          _endConversationQuietly();
+        }
+      });
+    }
+  }
+
+  void _handleSttError(String errorMsg) {
+    if (!_conversationMode) return;
+    if (getBuildState().voiceState != VoiceState.listening) return;
+
+    if (errorMsg.contains('no_match') || errorMsg.contains('speech_timeout')) {
+      // Heard nothing this turn — treat as silence.
+      _endConversationQuietly();
+      return;
+    }
+    // Recognizers (especially Android) often refuse to restart right after
+    // TTS releases the audio session — retry once before giving up.
+    if (_listenRetries < 2) {
+      _listenRetries++;
+      Future<void>.delayed(const Duration(milliseconds: 600), () {
+        if (_conversationMode &&
+            getBuildState().voiceState == VoiceState.listening) {
+          startListening();
+        }
+      });
+    } else {
+      _endConversationQuietly();
     }
   }
 
@@ -168,12 +215,14 @@ class VoiceController {
   }
 
   /// Reopens the mic for the next turn while the conversation loop is on.
+  /// The delay gives the platform audio session time to switch from TTS
+  /// playback back to recording.
   Future<void> _resumeConversation() async {
     if (!_conversationMode) return;
     if (getBuildState().voiceState != VoiceState.idle) return;
     if (stt.isListening) return;
-    await Future<void>.delayed(const Duration(milliseconds: 250));
-    if (_conversationMode) await startListening();
+    await Future<void>.delayed(const Duration(milliseconds: 450));
+    if (_conversationMode && !stt.isListening) await startListening();
   }
 
   Future<void> speakCurrentStage() async {
@@ -187,30 +236,39 @@ class VoiceController {
   /// Main input handler — known commands are handled locally (fast and
   /// free); everything else goes to the AI coach when credits remain.
   Future<void> _handleInput(String rawText) async {
-    await stt.stopListening();
+    // Some platforms deliver the final result more than once per turn.
+    if (_handlingInput) return;
+    _handlingInput = true;
 
-    final text = rawText.trim();
-    if (text.isEmpty) {
-      // Silence — leave the conversation quietly.
-      _setConversationMode(false);
-      buildSession.setVoiceState(VoiceState.idle);
-      return;
-    }
+    try {
+      await stt.stopListening();
 
-    if (_conversationMode && _isStopPhrase(text)) {
-      _setConversationMode(false);
-      await _speak(_l10n?.voiceGoodbye ??
-          'Happy polishing. Tap the orb when you need me again.');
-      return;
-    }
+      final text = rawText.trim();
+      if (text.isEmpty) {
+        // Silence — leave the conversation quietly.
+        _endConversationQuietly();
+        buildSession.setVoiceState(VoiceState.idle);
+        return;
+      }
+      _listenRetries = 0;
 
-    final command = parser.parse(text);
-    if (command != VoiceCommand.unknown) {
-      await _handleCommand(text);
-    } else if (getCredits() > 0) {
-      await _handleAiMessage(text);
-    } else {
-      await _handleCommand(text);
+      if (_conversationMode && _isStopPhrase(text)) {
+        _setConversationMode(false);
+        await _speak(_l10n?.voiceGoodbye ??
+            'Happy polishing. Tap the orb when you need me again.');
+        return;
+      }
+
+      final command = parser.parse(text);
+      if (command != VoiceCommand.unknown) {
+        await _handleCommand(text);
+      } else if (getCredits() > 0) {
+        await _handleAiMessage(text);
+      } else {
+        await _handleCommand(text);
+      }
+    } finally {
+      _handlingInput = false;
     }
 
     await _resumeConversation();

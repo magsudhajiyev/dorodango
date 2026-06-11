@@ -10,6 +10,9 @@ class SttService {
   /// Used by conversation mode to detect a turn that ended in silence.
   void Function(String status)? onStatus;
 
+  /// Reports recognition errors ('error_busy', 'error_no_match', ...).
+  void Function(String errorMsg)? onError;
+
   static const _localeMap = {
     'en': 'en_US',
     'fr': 'fr_FR',
@@ -26,6 +29,7 @@ class SttService {
   Future<bool> initialize() async {
     _isInitialized = await _speech.initialize(
       onStatus: (status) => onStatus?.call(status),
+      onError: (error) => onError?.call(error.errorMsg),
     );
     return _isInitialized;
   }
