@@ -20,6 +20,9 @@ class SoilNotifier extends StateNotifier<AsyncValue<SoilData>?> {
       final position = await _locationService.getCurrentPosition();
       await _lookup(position.latitude, position.longitude);
     } catch (e, st) {
+      // The provider may have been disposed while the request was in flight
+      // (e.g. the user left the screen) — don't touch state after that.
+      if (!mounted) return;
       state = AsyncValue.error(e, st);
     }
   }
@@ -30,6 +33,7 @@ class SoilNotifier extends StateNotifier<AsyncValue<SoilData>?> {
     try {
       await _lookup(latitude, longitude);
     } catch (e, st) {
+      if (!mounted) return;
       state = AsyncValue.error(e, st);
     }
   }
@@ -39,6 +43,7 @@ class SoilNotifier extends StateNotifier<AsyncValue<SoilData>?> {
       latitude: latitude,
       longitude: longitude,
     );
+    if (!mounted) return;
     state = AsyncValue.data(data);
   }
 

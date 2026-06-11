@@ -109,7 +109,7 @@ class _HuntMapScreenState extends ConsumerState<HuntMapScreen> {
             retryLabel: l10n.retry,
           ),
         HuntStatus.error => _CenteredMessage(
-            message: l10n.soilLookupFailed,
+            message: l10n.plantFailed,
             onRetry: () => ref.read(huntProvider.notifier).refresh(),
             retryLabel: l10n.retry,
           ),
