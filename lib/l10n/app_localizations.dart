@@ -815,6 +815,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Out of credits.'**
   String get outOfCredits;
+
+  /// No description provided for @hunt.
+  ///
+  /// In en, this message translates to:
+  /// **'Dorodango Hunt'**
+  String get hunt;
+
+  /// No description provided for @plantDorodango.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant this dorodango'**
+  String get plantDorodango;
+
+  /// No description provided for @plantExplainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide your finished dorodango somewhere public. Hunters nearby will be notified — and one of them might find it.'**
+  String get plantExplainer;
+
+  /// No description provided for @plantHintHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave a hint for hunters (optional)'**
+  String get plantHintHint;
+
+  /// No description provided for @plantItHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant it here'**
+  String get plantItHere;
+
+  /// No description provided for @planting.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting…'**
+  String get planting;
+
+  /// No description provided for @planted.
+  ///
+  /// In en, this message translates to:
+  /// **'Planted! Nearby hunters will hear about it.'**
+  String get planted;
+
+  /// No description provided for @plantFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'That didn\'t work. Try again.'**
+  String get plantFailed;
+
+  /// No description provided for @noPlantsNearby.
+  ///
+  /// In en, this message translates to:
+  /// **'No dorodango planted nearby yet. Be the first!'**
+  String get noPlantsNearby;
+
+  /// No description provided for @foundIt.
+  ///
+  /// In en, this message translates to:
+  /// **'I found it!'**
+  String get foundIt;
+
+  /// No description provided for @metersAway.
+  ///
+  /// In en, this message translates to:
+  /// **'{distance} m away'**
+  String metersAway(int distance);
+
+  /// No description provided for @getCloser.
+  ///
+  /// In en, this message translates to:
+  /// **'Get closer to claim it'**
+  String get getCloser;
+
+  /// No description provided for @foundCongrats.
+  ///
+  /// In en, this message translates to:
+  /// **'You found a dorodango!'**
+  String get foundCongrats;
+
+  /// No description provided for @hintLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint'**
+  String get hintLabel;
+
+  /// No description provided for @huntLocationNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow location access to join the hunt.'**
+  String get huntLocationNeeded;
 }
 
 class _AppLocalizationsDelegate

@@ -137,5 +137,21 @@
   "predictingResult": "Consultando o coach de IA…",
   "predictionTitle": "Previsão de IA",
   "predictionFailed": "A previsão falhou. Tente novamente.",
-  "outOfCredits": "Sem créditos."
+  "outOfCredits": "Sem créditos.",
+
+  "hunt": "Caça ao Dorodango",
+  "plantDorodango": "Plantar este dorodango",
+  "plantExplainer": "Esconda seu dorodango pronto em um lugar público. Caçadores próximos serão avisados — talvez alguém o encontre.",
+  "plantHintHint": "Deixe uma dica para os caçadores (opcional)",
+  "plantItHere": "Plantar aqui",
+  "planting": "Plantando…",
+  "planted": "Plantado! Os caçadores próximos vão ficar sabendo.",
+  "plantFailed": "Não deu certo. Tente novamente.",
+  "noPlantsNearby": "Ainda não há dorodangos plantados por perto. Seja o primeiro!",
+  "foundIt": "Encontrei!",
+  "metersAway": "A {distance} m",
+  "getCloser": "Aproxime-se para resgatá-lo",
+  "foundCongrats": "Você encontrou um dorodango!",
+  "hintLabel": "Dica",
+  "huntLocationNeeded": "Permita o acesso à localização para participar da caça."
 }

@@ -424,4 +424,55 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get outOfCredits => 'Кредиты закончились.';
+
+  @override
+  String get hunt => 'Охота на дороданго';
+
+  @override
+  String get plantDorodango => 'Посадить этот дороданго';
+
+  @override
+  String get plantExplainer =>
+      'Спрячьте готовый дороданго в общественном месте. Охотники поблизости получат уведомление — возможно, кто-то его найдёт.';
+
+  @override
+  String get plantHintHint =>
+      'Оставьте подсказку для охотников (необязательно)';
+
+  @override
+  String get plantItHere => 'Посадить здесь';
+
+  @override
+  String get planting => 'Сажаем…';
+
+  @override
+  String get planted => 'Посажено! Охотники поблизости узнают об этом.';
+
+  @override
+  String get plantFailed => 'Не получилось. Попробуйте ещё раз.';
+
+  @override
+  String get noPlantsNearby =>
+      'Поблизости пока нет посаженных дороданго. Будьте первым!';
+
+  @override
+  String get foundIt => 'Я нашёл его!';
+
+  @override
+  String metersAway(int distance) {
+    return 'В $distance м';
+  }
+
+  @override
+  String get getCloser => 'Подойдите ближе, чтобы забрать';
+
+  @override
+  String get foundCongrats => 'Вы нашли дороданго!';
+
+  @override
+  String get hintLabel => 'Подсказка';
+
+  @override
+  String get huntLocationNeeded =>
+      'Разрешите доступ к геолокации, чтобы присоединиться к охоте.';
 }

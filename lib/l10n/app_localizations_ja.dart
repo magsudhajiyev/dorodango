@@ -382,4 +382,52 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get outOfCredits => 'クレジットがありません。';
+
+  @override
+  String get hunt => 'どろだんごハント';
+
+  @override
+  String get plantDorodango => 'このどろだんごを植える';
+
+  @override
+  String get plantExplainer =>
+      '完成したどろだんごを公共の場所に隠しましょう。近くのハンターに通知が届き、誰かが見つけてくれるかもしれません。';
+
+  @override
+  String get plantHintHint => 'ハンターへのヒントを残す（任意）';
+
+  @override
+  String get plantItHere => 'ここに植える';
+
+  @override
+  String get planting => '植えています…';
+
+  @override
+  String get planted => '植えました！近くのハンターに知らせます。';
+
+  @override
+  String get plantFailed => 'うまくいきませんでした。もう一度お試しください。';
+
+  @override
+  String get noPlantsNearby => '近くにはまだどろだんごが植えられていません。最初の一人になりましょう！';
+
+  @override
+  String get foundIt => '見つけた！';
+
+  @override
+  String metersAway(int distance) {
+    return '$distance m先';
+  }
+
+  @override
+  String get getCloser => 'もっと近づいて獲得しましょう';
+
+  @override
+  String get foundCongrats => 'どろだんごを見つけました！';
+
+  @override
+  String get hintLabel => 'ヒント';
+
+  @override
+  String get huntLocationNeeded => 'ハントに参加するには位置情報へのアクセスを許可してください。';
 }

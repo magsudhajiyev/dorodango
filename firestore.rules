@@ -2,6 +2,21 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Planted dorodangos are public to signed-in hunters.
+    match /plants/{plantId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.status == 'planted';
+      // Only transition allowed: planted -> found, claimed by the finder.
+      allow update: if request.auth != null
+        && resource.data.status == 'planted'
+        && request.resource.data.status == 'found'
+        && request.resource.data.foundBy == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly(['status', 'foundBy', 'foundAt']);
+    }
+
     match /users/{uid} {
       allow read: if request.auth != null && request.auth.uid == uid;
       allow write: if request.auth != null && request.auth.uid == uid

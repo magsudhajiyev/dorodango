@@ -7,6 +7,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
 import '../../../routing/route_names.dart';
 import '../providers/build_session_provider.dart';
+import '../../hunt/widgets/plant_dorodango_sheet.dart';
 import '../../reflections/widgets/completion_reflection.dart';
 
 class BuildCompleteScreen extends ConsumerWidget {
@@ -64,6 +65,19 @@ class BuildCompleteScreen extends ConsumerWidget {
               const CompletionReflection(),
 
               const Spacer(),
+
+              // Plant it for the hunt
+              SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: OutlinedButton.icon(
+                  onPressed: () =>
+                      PlantDorodangoSheet.show(context, buildId: buildId),
+                  icon: const Icon(Icons.park_rounded, size: 20),
+                  label: Text(l10n.plantDorodango),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
 
               // Start another
               SizedBox(

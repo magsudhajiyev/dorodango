@@ -425,4 +425,54 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get outOfCredits => 'Krediler tükendi.';
+
+  @override
+  String get hunt => 'Dorodango Avı';
+
+  @override
+  String get plantDorodango => 'Bu dorodangoyu ek';
+
+  @override
+  String get plantExplainer =>
+      'Bitmiş dorodangonuzu halka açık bir yere saklayın. Yakındaki avcılara haber gidecek — belki biri onu bulur.';
+
+  @override
+  String get plantHintHint => 'Avcılar için bir ipucu bırakın (isteğe bağlı)';
+
+  @override
+  String get plantItHere => 'Buraya ek';
+
+  @override
+  String get planting => 'Ekiliyor…';
+
+  @override
+  String get planted => 'Ekildi! Yakındaki avcılar haberdar olacak.';
+
+  @override
+  String get plantFailed => 'Olmadı. Tekrar deneyin.';
+
+  @override
+  String get noPlantsNearby =>
+      'Yakınlarda henüz ekili dorodango yok. İlk siz olun!';
+
+  @override
+  String get foundIt => 'Buldum!';
+
+  @override
+  String metersAway(int distance) {
+    return '$distance m uzakta';
+  }
+
+  @override
+  String get getCloser => 'Almak için yaklaşın';
+
+  @override
+  String get foundCongrats => 'Bir dorodango buldunuz!';
+
+  @override
+  String get hintLabel => 'İpucu';
+
+  @override
+  String get huntLocationNeeded =>
+      'Ava katılmak için konum erişimine izin verin.';
 }

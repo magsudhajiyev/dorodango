@@ -427,4 +427,54 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get outOfCredits => 'Sin créditos.';
+
+  @override
+  String get hunt => 'Caza de Dorodango';
+
+  @override
+  String get plantDorodango => 'Plantar este dorodango';
+
+  @override
+  String get plantExplainer =>
+      'Esconde tu dorodango terminado en un lugar público. Los cazadores cercanos recibirán un aviso — quizá alguien lo encuentre.';
+
+  @override
+  String get plantHintHint => 'Deja una pista para los cazadores (opcional)';
+
+  @override
+  String get plantItHere => 'Plantarlo aquí';
+
+  @override
+  String get planting => 'Plantando…';
+
+  @override
+  String get planted => '¡Plantado! Los cazadores cercanos se enterarán.';
+
+  @override
+  String get plantFailed => 'No funcionó. Inténtalo de nuevo.';
+
+  @override
+  String get noPlantsNearby =>
+      'Aún no hay dorodangos plantados cerca. ¡Sé el primero!';
+
+  @override
+  String get foundIt => '¡Lo encontré!';
+
+  @override
+  String metersAway(int distance) {
+    return 'A $distance m';
+  }
+
+  @override
+  String get getCloser => 'Acércate más para reclamarlo';
+
+  @override
+  String get foundCongrats => '¡Encontraste un dorodango!';
+
+  @override
+  String get hintLabel => 'Pista';
+
+  @override
+  String get huntLocationNeeded =>
+      'Permite el acceso a la ubicación para unirte a la caza.';
 }

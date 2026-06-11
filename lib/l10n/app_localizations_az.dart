@@ -427,4 +427,54 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get outOfCredits => 'Kreditlər bitib.';
+
+  @override
+  String get hunt => 'Dorodango Ovu';
+
+  @override
+  String get plantDorodango => 'Bu dorodangonu ək';
+
+  @override
+  String get plantExplainer =>
+      'Hazır dorodangonuzu ictimai bir yerdə gizlədin. Yaxınlıqdakı ovçulara xəbər gedəcək — bəlkə kimsə onu tapdı.';
+
+  @override
+  String get plantHintHint => 'Ovçular üçün ipucu qoyun (istəyə bağlı)';
+
+  @override
+  String get plantItHere => 'Burada ək';
+
+  @override
+  String get planting => 'Əkilir…';
+
+  @override
+  String get planted => 'Əkildi! Yaxınlıqdakı ovçular xəbər tutacaq.';
+
+  @override
+  String get plantFailed => 'Alınmadı. Yenidən cəhd edin.';
+
+  @override
+  String get noPlantsNearby =>
+      'Yaxınlıqda hələ dorodango əkilməyib. İlk siz olun!';
+
+  @override
+  String get foundIt => 'Tapdım!';
+
+  @override
+  String metersAway(int distance) {
+    return '$distance m məsafədə';
+  }
+
+  @override
+  String get getCloser => 'Götürmək üçün yaxınlaşın';
+
+  @override
+  String get foundCongrats => 'Dorodango tapdınız!';
+
+  @override
+  String get hintLabel => 'İpucu';
+
+  @override
+  String get huntLocationNeeded =>
+      'Ova qoşulmaq üçün məkan girişinə icazə verin.';
 }

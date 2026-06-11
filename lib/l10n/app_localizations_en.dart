@@ -425,4 +425,52 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get outOfCredits => 'Out of credits.';
+
+  @override
+  String get hunt => 'Dorodango Hunt';
+
+  @override
+  String get plantDorodango => 'Plant this dorodango';
+
+  @override
+  String get plantExplainer =>
+      'Hide your finished dorodango somewhere public. Hunters nearby will be notified — and one of them might find it.';
+
+  @override
+  String get plantHintHint => 'Leave a hint for hunters (optional)';
+
+  @override
+  String get plantItHere => 'Plant it here';
+
+  @override
+  String get planting => 'Planting…';
+
+  @override
+  String get planted => 'Planted! Nearby hunters will hear about it.';
+
+  @override
+  String get plantFailed => 'That didn\'t work. Try again.';
+
+  @override
+  String get noPlantsNearby => 'No dorodango planted nearby yet. Be the first!';
+
+  @override
+  String get foundIt => 'I found it!';
+
+  @override
+  String metersAway(int distance) {
+    return '$distance m away';
+  }
+
+  @override
+  String get getCloser => 'Get closer to claim it';
+
+  @override
+  String get foundCongrats => 'You found a dorodango!';
+
+  @override
+  String get hintLabel => 'Hint';
+
+  @override
+  String get huntLocationNeeded => 'Allow location access to join the hunt.';
 }

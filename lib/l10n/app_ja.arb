@@ -137,5 +137,21 @@
   "predictingResult": "AIコーチに相談中…",
   "predictionTitle": "AI予測",
   "predictionFailed": "予測に失敗しました。もう一度お試しください。",
-  "outOfCredits": "クレジットがありません。"
+  "outOfCredits": "クレジットがありません。",
+
+  "hunt": "どろだんごハント",
+  "plantDorodango": "このどろだんごを植える",
+  "plantExplainer": "完成したどろだんごを公共の場所に隠しましょう。近くのハンターに通知が届き、誰かが見つけてくれるかもしれません。",
+  "plantHintHint": "ハンターへのヒントを残す（任意）",
+  "plantItHere": "ここに植える",
+  "planting": "植えています…",
+  "planted": "植えました！近くのハンターに知らせます。",
+  "plantFailed": "うまくいきませんでした。もう一度お試しください。",
+  "noPlantsNearby": "近くにはまだどろだんごが植えられていません。最初の一人になりましょう！",
+  "foundIt": "見つけた！",
+  "metersAway": "{distance} m先",
+  "getCloser": "もっと近づいて獲得しましょう",
+  "foundCongrats": "どろだんごを見つけました！",
+  "hintLabel": "ヒント",
+  "huntLocationNeeded": "ハントに参加するには位置情報へのアクセスを許可してください。"
 }

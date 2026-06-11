@@ -137,5 +137,21 @@
   "predictingResult": "AI məşqçi ilə məsləhətləşirik…",
   "predictionTitle": "AI proqnozu",
   "predictionFailed": "Proqnoz alınmadı. Yenidən cəhd edin.",
-  "outOfCredits": "Kreditlər bitib."
+  "outOfCredits": "Kreditlər bitib.",
+
+  "hunt": "Dorodango Ovu",
+  "plantDorodango": "Bu dorodangonu ək",
+  "plantExplainer": "Hazır dorodangonuzu ictimai bir yerdə gizlədin. Yaxınlıqdakı ovçulara xəbər gedəcək — bəlkə kimsə onu tapdı.",
+  "plantHintHint": "Ovçular üçün ipucu qoyun (istəyə bağlı)",
+  "plantItHere": "Burada ək",
+  "planting": "Əkilir…",
+  "planted": "Əkildi! Yaxınlıqdakı ovçular xəbər tutacaq.",
+  "plantFailed": "Alınmadı. Yenidən cəhd edin.",
+  "noPlantsNearby": "Yaxınlıqda hələ dorodango əkilməyib. İlk siz olun!",
+  "foundIt": "Tapdım!",
+  "metersAway": "{distance} m məsafədə",
+  "getCloser": "Götürmək üçün yaxınlaşın",
+  "foundCongrats": "Dorodango tapdınız!",
+  "hintLabel": "İpucu",
+  "huntLocationNeeded": "Ova qoşulmaq üçün məkan girişinə icazə verin."
 }

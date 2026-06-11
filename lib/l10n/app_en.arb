@@ -146,5 +146,22 @@
   "predictingResult": "Consulting the AI coach…",
   "predictionTitle": "AI prediction",
   "predictionFailed": "Prediction failed. Try again.",
-  "outOfCredits": "Out of credits."
+  "outOfCredits": "Out of credits.",
+
+  "hunt": "Dorodango Hunt",
+  "plantDorodango": "Plant this dorodango",
+  "plantExplainer": "Hide your finished dorodango somewhere public. Hunters nearby will be notified — and one of them might find it.",
+  "plantHintHint": "Leave a hint for hunters (optional)",
+  "plantItHere": "Plant it here",
+  "planting": "Planting…",
+  "planted": "Planted! Nearby hunters will hear about it.",
+  "plantFailed": "That didn't work. Try again.",
+  "noPlantsNearby": "No dorodango planted nearby yet. Be the first!",
+  "foundIt": "I found it!",
+  "metersAway": "{distance} m away",
+  "@metersAway": { "placeholders": { "distance": { "type": "int" } } },
+  "getCloser": "Get closer to claim it",
+  "foundCongrats": "You found a dorodango!",
+  "hintLabel": "Hint",
+  "huntLocationNeeded": "Allow location access to join the hunt."
 }

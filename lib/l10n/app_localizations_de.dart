@@ -430,4 +430,55 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get outOfCredits => 'Keine Credits mehr.';
+
+  @override
+  String get hunt => 'Dorodango-Jagd';
+
+  @override
+  String get plantDorodango => 'Dieses Dorodango einpflanzen';
+
+  @override
+  String get plantExplainer =>
+      'Verstecken Sie Ihr fertiges Dorodango an einem öffentlichen Ort. Jäger in der Nähe werden benachrichtigt — vielleicht findet es jemand.';
+
+  @override
+  String get plantHintHint =>
+      'Hinterlassen Sie einen Hinweis für Jäger (optional)';
+
+  @override
+  String get plantItHere => 'Hier einpflanzen';
+
+  @override
+  String get planting => 'Wird eingepflanzt…';
+
+  @override
+  String get planted => 'Eingepflanzt! Jäger in der Nähe erfahren davon.';
+
+  @override
+  String get plantFailed => 'Das hat nicht geklappt. Versuchen Sie es erneut.';
+
+  @override
+  String get noPlantsNearby =>
+      'In der Nähe ist noch kein Dorodango eingepflanzt. Seien Sie die erste Person!';
+
+  @override
+  String get foundIt => 'Gefunden!';
+
+  @override
+  String metersAway(int distance) {
+    return '$distance m entfernt';
+  }
+
+  @override
+  String get getCloser => 'Gehen Sie näher heran, um es einzusammeln';
+
+  @override
+  String get foundCongrats => 'Sie haben ein Dorodango gefunden!';
+
+  @override
+  String get hintLabel => 'Hinweis';
+
+  @override
+  String get huntLocationNeeded =>
+      'Erlauben Sie den Standortzugriff, um an der Jagd teilzunehmen.';
 }

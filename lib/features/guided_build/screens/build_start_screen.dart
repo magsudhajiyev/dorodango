@@ -128,6 +128,17 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
                 ),
               ),
 
+              // Dorodango hunt
+              TextButton.icon(
+                onPressed: () => context.pushNamed(RouteNames.hunt),
+                icon: const Icon(Icons.explore_rounded,
+                    size: 18, color: AppColors.clay),
+                label: Text(
+                  l10n.hunt,
+                  style: AppTypography.label.copyWith(color: AppColors.clay),
+                ),
+              ),
+
                       const Spacer(),
                     ],
                   ),

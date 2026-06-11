@@ -137,5 +137,21 @@
   "predictingResult": "Yapay zeka koçuna danışılıyor…",
   "predictionTitle": "Yapay zeka tahmini",
   "predictionFailed": "Tahmin başarısız oldu. Tekrar deneyin.",
-  "outOfCredits": "Krediler tükendi."
+  "outOfCredits": "Krediler tükendi.",
+
+  "hunt": "Dorodango Avı",
+  "plantDorodango": "Bu dorodangoyu ek",
+  "plantExplainer": "Bitmiş dorodangonuzu halka açık bir yere saklayın. Yakındaki avcılara haber gidecek — belki biri onu bulur.",
+  "plantHintHint": "Avcılar için bir ipucu bırakın (isteğe bağlı)",
+  "plantItHere": "Buraya ek",
+  "planting": "Ekiliyor…",
+  "planted": "Ekildi! Yakındaki avcılar haberdar olacak.",
+  "plantFailed": "Olmadı. Tekrar deneyin.",
+  "noPlantsNearby": "Yakınlarda henüz ekili dorodango yok. İlk siz olun!",
+  "foundIt": "Buldum!",
+  "metersAway": "{distance} m uzakta",
+  "getCloser": "Almak için yaklaşın",
+  "foundCongrats": "Bir dorodango buldunuz!",
+  "hintLabel": "İpucu",
+  "huntLocationNeeded": "Ava katılmak için konum erişimine izin verin."
 }

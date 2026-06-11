@@ -137,5 +137,21 @@
   "predictingResult": "KI-Coach wird befragt…",
   "predictionTitle": "KI-Vorhersage",
   "predictionFailed": "Vorhersage fehlgeschlagen. Versuchen Sie es erneut.",
-  "outOfCredits": "Keine Credits mehr."
+  "outOfCredits": "Keine Credits mehr.",
+
+  "hunt": "Dorodango-Jagd",
+  "plantDorodango": "Dieses Dorodango einpflanzen",
+  "plantExplainer": "Verstecken Sie Ihr fertiges Dorodango an einem öffentlichen Ort. Jäger in der Nähe werden benachrichtigt — vielleicht findet es jemand.",
+  "plantHintHint": "Hinterlassen Sie einen Hinweis für Jäger (optional)",
+  "plantItHere": "Hier einpflanzen",
+  "planting": "Wird eingepflanzt…",
+  "planted": "Eingepflanzt! Jäger in der Nähe erfahren davon.",
+  "plantFailed": "Das hat nicht geklappt. Versuchen Sie es erneut.",
+  "noPlantsNearby": "In der Nähe ist noch kein Dorodango eingepflanzt. Seien Sie die erste Person!",
+  "foundIt": "Gefunden!",
+  "metersAway": "{distance} m entfernt",
+  "getCloser": "Gehen Sie näher heran, um es einzusammeln",
+  "foundCongrats": "Sie haben ein Dorodango gefunden!",
+  "hintLabel": "Hinweis",
+  "huntLocationNeeded": "Erlauben Sie den Standortzugriff, um an der Jagd teilzunehmen."
 }

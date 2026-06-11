@@ -12,6 +12,9 @@ export {diagnosePhoto} from "./diagnosePhoto";
 // Re-export predictDorodango
 export {predictDorodango} from "./predictDorodango";
 
+// Re-export notifyNearbyHunters
+export {notifyNearbyHunters} from "./notifyNearbyHunters";
+
 // getCredits callable
 export const getCredits = onCall(
   {region: "us-east4"},
