@@ -54,6 +54,14 @@
         { "fieldPath": "status", "order": "ASCENDING" },
         { "fieldPath": "geohash", "order": "ASCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "plants",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "foundBy", "order": "ASCENDING" },
+        { "fieldPath": "foundAt", "order": "DESCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []

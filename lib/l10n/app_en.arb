@@ -163,5 +163,13 @@
   "getCloser": "Get closer to claim it",
   "foundCongrats": "You found a dorodango!",
   "hintLabel": "Hint",
-  "huntLocationNeeded": "Allow location access to join the hunt."
+  "huntLocationNeeded": "Allow location access to join the hunt.",
+
+  "myCollection": "My Collection",
+  "collectionCount": "{count} found",
+  "@collectionCount": { "placeholders": { "count": { "type": "int" } } },
+  "collectionEmpty": "Nothing here yet — go find your first dorodango!",
+  "foundOnDate": "Found on {date}",
+  "@foundOnDate": { "placeholders": { "date": { "type": "String" } } },
+  "goHunting": "Go hunting"
 }

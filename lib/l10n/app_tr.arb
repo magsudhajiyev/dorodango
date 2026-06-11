@@ -153,5 +153,11 @@
   "getCloser": "Almak için yaklaşın",
   "foundCongrats": "Bir dorodango buldunuz!",
   "hintLabel": "İpucu",
-  "huntLocationNeeded": "Ava katılmak için konum erişimine izin verin."
+  "huntLocationNeeded": "Ava katılmak için konum erişimine izin verin.",
+
+  "myCollection": "Koleksiyonum",
+  "collectionCount": "{count} bulundu",
+  "collectionEmpty": "Henüz boş — ilk dorodangonuzu bulun!",
+  "foundOnDate": "{date} tarihinde bulundu",
+  "goHunting": "Ava çık"
 }

@@ -475,4 +475,23 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get huntLocationNeeded =>
       'Ava katılmak için konum erişimine izin verin.';
+
+  @override
+  String get myCollection => 'Koleksiyonum';
+
+  @override
+  String collectionCount(int count) {
+    return '$count bulundu';
+  }
+
+  @override
+  String get collectionEmpty => 'Henüz boş — ilk dorodangonuzu bulun!';
+
+  @override
+  String foundOnDate(String date) {
+    return '$date tarihinde bulundu';
+  }
+
+  @override
+  String get goHunting => 'Ava çık';
 }

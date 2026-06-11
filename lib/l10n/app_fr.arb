@@ -153,5 +153,11 @@
   "getCloser": "Approchez-vous pour le réclamer",
   "foundCongrats": "Vous avez trouvé un dorodango !",
   "hintLabel": "Indice",
-  "huntLocationNeeded": "Autorisez l'accès à la position pour rejoindre la chasse."
+  "huntLocationNeeded": "Autorisez l'accès à la position pour rejoindre la chasse.",
+
+  "myCollection": "Ma collection",
+  "collectionCount": "{count} trouvés",
+  "collectionEmpty": "Rien ici pour l'instant — trouvez votre premier dorodango !",
+  "foundOnDate": "Trouvé le {date}",
+  "goHunting": "Partir à la chasse"
 }

@@ -9,4 +9,5 @@ abstract final class RouteNames {
   static const String reflections = 'reflections';
   static const String soilMap = 'soil-map';
   static const String hunt = 'hunt';
+  static const String collection = 'collection';
 }

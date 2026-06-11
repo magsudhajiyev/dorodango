@@ -6,12 +6,14 @@ import 'package:dorodango/l10n/app_localizations.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
 import '../../../data/models/plant_model.dart';
+import '../../../routing/route_names.dart';
 import '../../soil/providers/soil_provider.dart';
 import '../providers/hunt_provider.dart';
 import '../widgets/dorodango_ball.dart';
@@ -77,6 +79,13 @@ class _HuntMapScreenState extends ConsumerState<HuntMapScreen> {
       messenger.showSnackBar(SnackBar(
         content: Text(l10n.foundCongrats),
         backgroundColor: AppColors.moss,
+        action: SnackBarAction(
+          label: l10n.myCollection,
+          textColor: Colors.white,
+          onPressed: () {
+            if (mounted) context.pushNamed(RouteNames.collection);
+          },
+        ),
       ));
     } catch (_) {
       messenger.showSnackBar(SnackBar(content: Text(l10n.plantFailed)));
@@ -94,6 +103,11 @@ class _HuntMapScreenState extends ConsumerState<HuntMapScreen> {
       appBar: AppBar(
         title: Text(l10n.hunt),
         actions: [
+          IconButton(
+            tooltip: l10n.myCollection,
+            icon: const Icon(Icons.inventory_2_rounded),
+            onPressed: () => context.pushNamed(RouteNames.collection),
+          ),
           IconButton(
             icon: const Icon(Icons.refresh_rounded),
             onPressed: () => ref.read(huntProvider.notifier).refresh(),

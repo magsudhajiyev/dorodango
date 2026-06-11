@@ -153,5 +153,11 @@
   "getCloser": "もっと近づいて獲得しましょう",
   "foundCongrats": "どろだんごを見つけました！",
   "hintLabel": "ヒント",
-  "huntLocationNeeded": "ハントに参加するには位置情報へのアクセスを許可してください。"
+  "huntLocationNeeded": "ハントに参加するには位置情報へのアクセスを許可してください。",
+
+  "myCollection": "マイコレクション",
+  "collectionCount": "{count}個発見",
+  "collectionEmpty": "まだ何もありません — 最初のどろだんごを見つけましょう！",
+  "foundOnDate": "{date}に発見",
+  "goHunting": "ハントに行く"
 }

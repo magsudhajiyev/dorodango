@@ -153,5 +153,11 @@
   "getCloser": "Götürmək üçün yaxınlaşın",
   "foundCongrats": "Dorodango tapdınız!",
   "hintLabel": "İpucu",
-  "huntLocationNeeded": "Ova qoşulmaq üçün məkan girişinə icazə verin."
+  "huntLocationNeeded": "Ova qoşulmaq üçün məkan girişinə icazə verin.",
+
+  "myCollection": "Kolleksiyam",
+  "collectionCount": "{count} tapılıb",
+  "collectionEmpty": "Hələ boşdur — ilk dorodangonuzu tapın!",
+  "foundOnDate": "{date} tarixində tapılıb",
+  "goHunting": "Ova başla"
 }

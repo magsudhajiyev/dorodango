@@ -905,6 +905,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Allow location access to join the hunt.'**
   String get huntLocationNeeded;
+
+  /// No description provided for @myCollection.
+  ///
+  /// In en, this message translates to:
+  /// **'My Collection'**
+  String get myCollection;
+
+  /// No description provided for @collectionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} found'**
+  String collectionCount(int count);
+
+  /// No description provided for @collectionEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet — go find your first dorodango!'**
+  String get collectionEmpty;
+
+  /// No description provided for @foundOnDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Found on {date}'**
+  String foundOnDate(String date);
+
+  /// No description provided for @goHunting.
+  ///
+  /// In en, this message translates to:
+  /// **'Go hunting'**
+  String get goHunting;
 }
 
 class _AppLocalizationsDelegate

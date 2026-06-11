@@ -430,4 +430,23 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get huntLocationNeeded => 'ハントに参加するには位置情報へのアクセスを許可してください。';
+
+  @override
+  String get myCollection => 'マイコレクション';
+
+  @override
+  String collectionCount(int count) {
+    return '$count個発見';
+  }
+
+  @override
+  String get collectionEmpty => 'まだ何もありません — 最初のどろだんごを見つけましょう！';
+
+  @override
+  String foundOnDate(String date) {
+    return '$dateに発見';
+  }
+
+  @override
+  String get goHunting => 'ハントに行く';
 }

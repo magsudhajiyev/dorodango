@@ -477,4 +477,23 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get huntLocationNeeded =>
       'Ova qoşulmaq üçün məkan girişinə icazə verin.';
+
+  @override
+  String get myCollection => 'Kolleksiyam';
+
+  @override
+  String collectionCount(int count) {
+    return '$count tapılıb';
+  }
+
+  @override
+  String get collectionEmpty => 'Hələ boşdur — ilk dorodangonuzu tapın!';
+
+  @override
+  String foundOnDate(String date) {
+    return '$date tarixində tapılıb';
+  }
+
+  @override
+  String get goHunting => 'Ova başla';
 }

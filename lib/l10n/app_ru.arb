@@ -153,5 +153,11 @@
   "getCloser": "Подойдите ближе, чтобы забрать",
   "foundCongrats": "Вы нашли дороданго!",
   "hintLabel": "Подсказка",
-  "huntLocationNeeded": "Разрешите доступ к геолокации, чтобы присоединиться к охоте."
+  "huntLocationNeeded": "Разрешите доступ к геолокации, чтобы присоединиться к охоте.",
+
+  "myCollection": "Моя коллекция",
+  "collectionCount": "Найдено: {count}",
+  "collectionEmpty": "Пока пусто — найдите свой первый дороданго!",
+  "foundOnDate": "Найден {date}",
+  "goHunting": "На охоту"
 }

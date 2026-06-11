@@ -153,5 +153,11 @@
   "getCloser": "Gehen Sie näher heran, um es einzusammeln",
   "foundCongrats": "Sie haben ein Dorodango gefunden!",
   "hintLabel": "Hinweis",
-  "huntLocationNeeded": "Erlauben Sie den Standortzugriff, um an der Jagd teilzunehmen."
+  "huntLocationNeeded": "Erlauben Sie den Standortzugriff, um an der Jagd teilzunehmen.",
+
+  "myCollection": "Meine Sammlung",
+  "collectionCount": "{count} gefunden",
+  "collectionEmpty": "Noch nichts hier — finden Sie Ihr erstes Dorodango!",
+  "foundOnDate": "Gefunden am {date}",
+  "goHunting": "Auf die Jagd"
 }

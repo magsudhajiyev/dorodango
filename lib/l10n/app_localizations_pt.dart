@@ -478,4 +478,24 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get huntLocationNeeded =>
       'Permita o acesso à localização para participar da caça.';
+
+  @override
+  String get myCollection => 'Minha coleção';
+
+  @override
+  String collectionCount(int count) {
+    return '$count encontrados';
+  }
+
+  @override
+  String get collectionEmpty =>
+      'Nada aqui ainda — encontre seu primeiro dorodango!';
+
+  @override
+  String foundOnDate(String date) {
+    return 'Encontrado em $date';
+  }
+
+  @override
+  String get goHunting => 'Ir caçar';
 }

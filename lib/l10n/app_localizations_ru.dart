@@ -475,4 +475,23 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get huntLocationNeeded =>
       'Разрешите доступ к геолокации, чтобы присоединиться к охоте.';
+
+  @override
+  String get myCollection => 'Моя коллекция';
+
+  @override
+  String collectionCount(int count) {
+    return 'Найдено: $count';
+  }
+
+  @override
+  String get collectionEmpty => 'Пока пусто — найдите свой первый дороданго!';
+
+  @override
+  String foundOnDate(String date) {
+    return 'Найден $date';
+  }
+
+  @override
+  String get goHunting => 'На охоту';
 }

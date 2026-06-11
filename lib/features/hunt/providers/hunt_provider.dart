@@ -119,3 +119,11 @@ final huntProvider =
     ref.watch(authStateProvider).valueOrNull?.uid,
   );
 });
+
+/// The dorodangos this user has found, newest first.
+final foundPlantsProvider =
+    FutureProvider.autoDispose<List<PlantModel>>((ref) async {
+  final uid = ref.watch(authStateProvider).valueOrNull?.uid;
+  if (uid == null) return const [];
+  return ref.watch(huntRepositoryProvider).foundBy(uid);
+});

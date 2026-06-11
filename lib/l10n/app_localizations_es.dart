@@ -477,4 +477,24 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get huntLocationNeeded =>
       'Permite el acceso a la ubicación para unirte a la caza.';
+
+  @override
+  String get myCollection => 'Mi colección';
+
+  @override
+  String collectionCount(int count) {
+    return '$count encontrados';
+  }
+
+  @override
+  String get collectionEmpty =>
+      'Aún no hay nada aquí — ¡encuentra tu primer dorodango!';
+
+  @override
+  String foundOnDate(String date) {
+    return 'Encontrado el $date';
+  }
+
+  @override
+  String get goHunting => 'Ir de caza';
 }

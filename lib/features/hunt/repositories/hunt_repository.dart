@@ -87,4 +87,13 @@ class HuntRepository {
       'foundAt': Timestamp.fromDate(DateTime.now()),
     });
   }
+
+  /// The user's trophy shelf: everything they have found, newest first.
+  Future<List<PlantModel>> foundBy(String uid) async {
+    final snapshot = await _plants
+        .where('foundBy', isEqualTo: uid)
+        .orderBy('foundAt', descending: true)
+        .get();
+    return snapshot.docs.map(PlantModel.fromFirestore).toList();
+  }
 }
