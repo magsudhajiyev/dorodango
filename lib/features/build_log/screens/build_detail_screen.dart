@@ -12,6 +12,7 @@ import '../../../data/models/build_model.dart';
 import '../../../data/models/stage_model.dart';
 import '../../../routing/route_names.dart';
 import '../../guided_build/providers/build_session_provider.dart';
+import '../../hunt/widgets/plant_dorodango_sheet.dart';
 import '../providers/build_log_provider.dart';
 
 class BuildDetailScreen extends ConsumerWidget {
@@ -29,6 +30,12 @@ class BuildDetailScreen extends ConsumerWidget {
     // Check if this build is in progress
     final isInProgress = buildsAsync.valueOrNull
             ?.where((b) => b.id == buildId && b.status == BuildStatus.inProgress)
+            .isNotEmpty ??
+        false;
+
+    // Completed builds can be planted for the hunt.
+    final isCompleted = buildsAsync.valueOrNull
+            ?.where((b) => b.id == buildId && b.status == BuildStatus.completed)
             .isNotEmpty ??
         false;
 
@@ -56,7 +63,18 @@ class BuildDetailScreen extends ConsumerWidget {
                 style: AppTypography.label.copyWith(color: Colors.white),
               ),
             )
-          : null,
+          : isCompleted
+              ? FloatingActionButton.extended(
+                  onPressed: () =>
+                      PlantDorodangoSheet.show(context, buildId: buildId),
+                  backgroundColor: AppColors.clay,
+                  icon: const Icon(Icons.park_rounded, color: Colors.white),
+                  label: Text(
+                    l10n.plantDorodango,
+                    style: AppTypography.label.copyWith(color: Colors.white),
+                  ),
+                )
+              : null,
       body: stagesAsync.when(
         loading: () => const Center(
           child: CircularProgressIndicator(color: AppColors.clay),
