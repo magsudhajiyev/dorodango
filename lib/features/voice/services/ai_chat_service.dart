@@ -56,6 +56,31 @@ class AiChatService {
     );
   }
 
+  /// Asks the AI coach to predict the dorodango result for the given soil.
+  Future<({String prediction, int creditsRemaining})> predictDorodango({
+    String? wrbClass,
+    double? clayPct,
+    double? sandPct,
+    double? siltPct,
+  }) async {
+    final callable = _functions.httpsCallable(
+      'predictDorodango',
+      options: HttpsCallableOptions(timeout: const Duration(seconds: 60)),
+    );
+
+    final result = await callable.call<Map<String, dynamic>>({
+      'wrbClass': ?wrbClass,
+      'clayPct': ?clayPct,
+      'sandPct': ?sandPct,
+      'siltPct': ?siltPct,
+    });
+
+    return (
+      prediction: result.data['prediction'] as String,
+      creditsRemaining: result.data['creditsRemaining'] as int,
+    );
+  }
+
   /// Fetches current credit balance.
   Future<int> getCredits() async {
     final callable = _functions.httpsCallable('getCredits');

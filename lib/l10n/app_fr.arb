@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "Argile modérée — tamisez-la finement et compressez fermement.",
   "soilSuitabilitySandy": "Sablonneuse — elle peut s'effriter. Mélangez de la terre argileuse si possible.",
   "soilLocationDenied": "Position indisponible. Autorisez l'accès à la position pour détecter votre terre.",
-  "soilLookupFailed": "Impossible de lire les données du sol pour cette position."
+  "soilLookupFailed": "Impossible de lire les données du sol pour cette position.",
+
+  "soilMap": "Carte des sols",
+  "soilMapHint": "Touchez la carte pour examiner la terre",
+  "predictResult": "Prédire mon dorodango",
+  "predictingResult": "Consultation du coach IA…",
+  "predictionTitle": "Prédiction IA",
+  "predictionFailed": "Échec de la prédiction. Réessayez.",
+  "outOfCredits": "Plus de crédits."
 }

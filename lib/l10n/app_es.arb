@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "Arcilla moderada: tamízala fina y compáctala con firmeza.",
   "soilSuitabilitySandy": "Arenosa: puede desmoronarse. Mezcla tierra rica en arcilla si puedes.",
   "soilLocationDenied": "Ubicación no disponible. Permite el acceso a la ubicación para detectar tu tierra.",
-  "soilLookupFailed": "No se pudieron leer los datos del suelo de esta ubicación."
+  "soilLookupFailed": "No se pudieron leer los datos del suelo de esta ubicación.",
+
+  "soilMap": "Mapa de suelos",
+  "soilMapHint": "Toca el mapa para examinar la tierra",
+  "predictResult": "Predecir mi dorodango",
+  "predictingResult": "Consultando al coach de IA…",
+  "predictionTitle": "Predicción de IA",
+  "predictionFailed": "La predicción falló. Inténtalo de nuevo.",
+  "outOfCredits": "Sin créditos."
 }

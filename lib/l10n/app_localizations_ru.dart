@@ -402,4 +402,26 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get soilLookupFailed =>
       'Не удалось получить данные о почве для этого места.';
+
+  @override
+  String get soilMap => 'Карта почв';
+
+  @override
+  String get soilMapHint => 'Нажмите на карту, чтобы изучить почву';
+
+  @override
+  String get predictResult => 'Спрогнозировать мой дороданго';
+
+  @override
+  String get predictingResult => 'Советуемся с ИИ-коучем…';
+
+  @override
+  String get predictionTitle => 'Прогноз ИИ';
+
+  @override
+  String get predictionFailed =>
+      'Не удалось получить прогноз. Попробуйте ещё раз.';
+
+  @override
+  String get outOfCredits => 'Кредиты закончились.';
 }

@@ -361,4 +361,25 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get soilLookupFailed => 'この場所の土壌データを読み取れませんでした。';
+
+  @override
+  String get soilMap => '土壌マップ';
+
+  @override
+  String get soilMapHint => '地図をタップして土を調べる';
+
+  @override
+  String get predictResult => 'どろだんごを予測する';
+
+  @override
+  String get predictingResult => 'AIコーチに相談中…';
+
+  @override
+  String get predictionTitle => 'AI予測';
+
+  @override
+  String get predictionFailed => '予測に失敗しました。もう一度お試しください。';
+
+  @override
+  String get outOfCredits => 'クレジットがありません。';
 }

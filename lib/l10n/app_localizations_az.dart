@@ -406,4 +406,25 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get soilLookupFailed => 'Bu məkan üçün torpaq məlumatı oxuna bilmədi.';
+
+  @override
+  String get soilMap => 'Torpaq xəritəsi';
+
+  @override
+  String get soilMapHint => 'Torpağı yoxlamaq üçün xəritəyə toxunun';
+
+  @override
+  String get predictResult => 'Dorodangomu proqnozlaşdır';
+
+  @override
+  String get predictingResult => 'AI məşqçi ilə məsləhətləşirik…';
+
+  @override
+  String get predictionTitle => 'AI proqnozu';
+
+  @override
+  String get predictionFailed => 'Proqnoz alınmadı. Yenidən cəhd edin.';
+
+  @override
+  String get outOfCredits => 'Kreditlər bitib.';
 }

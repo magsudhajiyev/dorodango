@@ -7,4 +7,5 @@ abstract final class RouteNames {
   static const String buildDetail = 'build-detail';
   static const String settings = 'settings';
   static const String reflections = 'reflections';
+  static const String soilMap = 'soil-map';
 }

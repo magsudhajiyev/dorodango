@@ -773,6 +773,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Couldn\'t read soil data for this location.'**
   String get soilLookupFailed;
+
+  /// No description provided for @soilMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Soil map'**
+  String get soilMap;
+
+  /// No description provided for @soilMapHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the map to inspect the soil'**
+  String get soilMapHint;
+
+  /// No description provided for @predictResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Predict my dorodango'**
+  String get predictResult;
+
+  /// No description provided for @predictingResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Consulting the AI coach…'**
+  String get predictingResult;
+
+  /// No description provided for @predictionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI prediction'**
+  String get predictionTitle;
+
+  /// No description provided for @predictionFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Prediction failed. Try again.'**
+  String get predictionFailed;
+
+  /// No description provided for @outOfCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'Out of credits.'**
+  String get outOfCredits;
 }
 
 class _AppLocalizationsDelegate

@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "Orta gillidir — narın ələyin və möhkəm sıxın.",
   "soilSuitabilitySandy": "Qumludur — dağıla bilər. Mümkünsə gilli torpaq qarışdırın.",
   "soilLocationDenied": "Məkan əlçatan deyil. Torpağı müəyyən etmək üçün məkan girişinə icazə verin.",
-  "soilLookupFailed": "Bu məkan üçün torpaq məlumatı oxuna bilmədi."
+  "soilLookupFailed": "Bu məkan üçün torpaq məlumatı oxuna bilmədi.",
+
+  "soilMap": "Torpaq xəritəsi",
+  "soilMapHint": "Torpağı yoxlamaq üçün xəritəyə toxunun",
+  "predictResult": "Dorodangomu proqnozlaşdır",
+  "predictingResult": "AI məşqçi ilə məsləhətləşirik…",
+  "predictionTitle": "AI proqnozu",
+  "predictionFailed": "Proqnoz alınmadı. Yenidən cəhd edin.",
+  "outOfCredits": "Kreditlər bitib."
 }

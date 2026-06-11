@@ -18,19 +18,47 @@ class SoilNotifier extends StateNotifier<AsyncValue<SoilData>?> {
     state = const AsyncValue.loading();
     try {
       final position = await _locationService.getCurrentPosition();
-      final data = await _apiService.fetchSoilData(
-        latitude: position.latitude,
-        longitude: position.longitude,
-      );
-      state = AsyncValue.data(data);
+      await _lookup(position.latitude, position.longitude);
     } catch (e, st) {
       state = AsyncValue.error(e, st);
     }
+  }
+
+  /// Looks up soil data for an explicit point (e.g. a map tap).
+  Future<void> lookup(double latitude, double longitude) async {
+    state = const AsyncValue.loading();
+    try {
+      await _lookup(latitude, longitude);
+    } catch (e, st) {
+      state = AsyncValue.error(e, st);
+    }
+  }
+
+  Future<void> _lookup(double latitude, double longitude) async {
+    final data = await _apiService.fetchSoilData(
+      latitude: latitude,
+      longitude: longitude,
+    );
+    state = AsyncValue.data(data);
+  }
+
+  void reset() {
+    state = null;
   }
 }
 
 final soilProvider =
     StateNotifierProvider<SoilNotifier, AsyncValue<SoilData>?>((ref) {
+  return SoilNotifier(
+    ref.watch(locationServiceProvider),
+    ref.watch(soilApiServiceProvider),
+  );
+});
+
+/// Separate instance for the soil map, so tapping around the map doesn't
+/// clobber the soil detected on the home screen.
+final mapSoilProvider = StateNotifierProvider.autoDispose<SoilNotifier,
+    AsyncValue<SoilData>?>((ref) {
   return SoilNotifier(
     ref.watch(locationServiceProvider),
     ref.watch(soilApiServiceProvider),

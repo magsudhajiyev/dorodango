@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "粘土は中程度 — 細かくふるい、しっかり圧縮しましょう。",
   "soilSuitabilitySandy": "砂質 — 崩れやすいかもしれません。できれば粘土質の土を混ぜてください。",
   "soilLocationDenied": "位置情報を利用できません。土を調べるには位置情報へのアクセスを許可してください。",
-  "soilLookupFailed": "この場所の土壌データを読み取れませんでした。"
+  "soilLookupFailed": "この場所の土壌データを読み取れませんでした。",
+
+  "soilMap": "土壌マップ",
+  "soilMapHint": "地図をタップして土を調べる",
+  "predictResult": "どろだんごを予測する",
+  "predictingResult": "AIコーチに相談中…",
+  "predictionTitle": "AI予測",
+  "predictionFailed": "予測に失敗しました。もう一度お試しください。",
+  "outOfCredits": "クレジットがありません。"
 }

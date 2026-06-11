@@ -404,4 +404,25 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get soilLookupFailed => 'Bu konum için toprak verileri okunamadı.';
+
+  @override
+  String get soilMap => 'Toprak haritası';
+
+  @override
+  String get soilMapHint => 'Toprağı incelemek için haritaya dokunun';
+
+  @override
+  String get predictResult => 'Dorodangomu tahmin et';
+
+  @override
+  String get predictingResult => 'Yapay zeka koçuna danışılıyor…';
+
+  @override
+  String get predictionTitle => 'Yapay zeka tahmini';
+
+  @override
+  String get predictionFailed => 'Tahmin başarısız oldu. Tekrar deneyin.';
+
+  @override
+  String get outOfCredits => 'Krediler tükendi.';
 }

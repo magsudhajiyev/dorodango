@@ -9,6 +9,7 @@ import '../features/build_log/screens/build_log_screen.dart';
 import '../features/build_log/screens/build_detail_screen.dart';
 import '../features/reflections/screens/reflections_screen.dart';
 import '../features/settings/screens/settings_screen.dart';
+import '../features/soil/screens/soil_map_screen.dart';
 import 'route_names.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -74,6 +75,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/settings',
         name: RouteNames.settings,
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/soil-map',
+        name: RouteNames.soilMap,
+        builder: (context, state) => const SoilMapScreen(),
       ),
     ],
   );

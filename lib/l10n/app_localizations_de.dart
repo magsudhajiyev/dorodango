@@ -407,4 +407,27 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get soilLookupFailed =>
       'Bodendaten für diesen Standort konnten nicht gelesen werden.';
+
+  @override
+  String get soilMap => 'Bodenkarte';
+
+  @override
+  String get soilMapHint =>
+      'Tippen Sie auf die Karte, um den Boden zu untersuchen';
+
+  @override
+  String get predictResult => 'Mein Dorodango vorhersagen';
+
+  @override
+  String get predictingResult => 'KI-Coach wird befragt…';
+
+  @override
+  String get predictionTitle => 'KI-Vorhersage';
+
+  @override
+  String get predictionFailed =>
+      'Vorhersage fehlgeschlagen. Versuchen Sie es erneut.';
+
+  @override
+  String get outOfCredits => 'Keine Credits mehr.';
 }

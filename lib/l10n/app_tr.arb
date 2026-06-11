@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "Orta düzeyde killi — ince eleyin ve sıkıca bastırın.",
   "soilSuitabilitySandy": "Kumlu — dağılabilir. Mümkünse kil açısından zengin toprak karıştırın.",
   "soilLocationDenied": "Konum kullanılamıyor. Toprağı algılamak için konum erişimine izin verin.",
-  "soilLookupFailed": "Bu konum için toprak verileri okunamadı."
+  "soilLookupFailed": "Bu konum için toprak verileri okunamadı.",
+
+  "soilMap": "Toprak haritası",
+  "soilMapHint": "Toprağı incelemek için haritaya dokunun",
+  "predictResult": "Dorodangomu tahmin et",
+  "predictingResult": "Yapay zeka koçuna danışılıyor…",
+  "predictionTitle": "Yapay zeka tahmini",
+  "predictionFailed": "Tahmin başarısız oldu. Tekrar deneyin.",
+  "outOfCredits": "Krediler tükendi."
 }

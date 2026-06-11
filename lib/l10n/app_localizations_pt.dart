@@ -407,4 +407,25 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get soilLookupFailed =>
       'Não foi possível ler os dados do solo desta localização.';
+
+  @override
+  String get soilMap => 'Mapa de solos';
+
+  @override
+  String get soilMapHint => 'Toque no mapa para examinar a terra';
+
+  @override
+  String get predictResult => 'Prever meu dorodango';
+
+  @override
+  String get predictingResult => 'Consultando o coach de IA…';
+
+  @override
+  String get predictionTitle => 'Previsão de IA';
+
+  @override
+  String get predictionFailed => 'A previsão falhou. Tente novamente.';
+
+  @override
+  String get outOfCredits => 'Sem créditos.';
 }

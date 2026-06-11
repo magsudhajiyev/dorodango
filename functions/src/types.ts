@@ -3,6 +3,19 @@ export interface ChatMessage {
   content: string;
 }
 
+export interface PredictDorodangoRequest {
+  wrbClass?: string;
+  clayPct?: number;
+  sandPct?: number;
+  siltPct?: number;
+}
+
+export interface PredictDorodangoResponse {
+  prediction: string;
+  creditsRemaining: number;
+}
+
+
 export interface SendMessageRequest {
   message: string;
   buildId: string;

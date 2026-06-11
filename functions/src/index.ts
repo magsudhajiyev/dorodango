@@ -9,6 +9,9 @@ export {sendMessage} from "./sendMessage";
 // Re-export diagnosePhoto
 export {diagnosePhoto} from "./diagnosePhoto";
 
+// Re-export predictDorodango
+export {predictDorodango} from "./predictDorodango";
+
 // getCredits callable
 export const getCredits = onCall(
   {region: "us-east4"},

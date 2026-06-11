@@ -408,4 +408,25 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get soilLookupFailed =>
       'Impossible de lire les données du sol pour cette position.';
+
+  @override
+  String get soilMap => 'Carte des sols';
+
+  @override
+  String get soilMapHint => 'Touchez la carte pour examiner la terre';
+
+  @override
+  String get predictResult => 'Prédire mon dorodango';
+
+  @override
+  String get predictingResult => 'Consultation du coach IA…';
+
+  @override
+  String get predictionTitle => 'Prédiction IA';
+
+  @override
+  String get predictionFailed => 'Échec de la prédiction. Réessayez.';
+
+  @override
+  String get outOfCredits => 'Plus de crédits.';
 }

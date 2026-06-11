@@ -15,6 +15,7 @@ import '../../reflections/providers/reflection_provider.dart';
 import '../../soil/providers/soil_provider.dart';
 import '../../soil/services/location_service.dart';
 import '../../soil/widgets/soil_card.dart';
+import '../../soil/widgets/soil_prediction_card.dart';
 
 class BuildStartScreen extends ConsumerStatefulWidget {
   const BuildStartScreen({super.key});
@@ -42,8 +43,15 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-          child: Column(
-            children: [
+          // Scrolls only when the content (e.g. soil card + AI prediction)
+          // outgrows the screen; otherwise the Spacers center it as before.
+          child: LayoutBuilder(
+            builder: (context, constraints) => SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: IntrinsicHeight(
+                  child: Column(
+                    children: [
               const Spacer(flex: 2),
 
               // Title
@@ -120,8 +128,12 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
                 ),
               ),
 
-              const Spacer(),
-            ],
+                      const Spacer(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
       ),
@@ -199,7 +211,13 @@ class _SoilDetectSection extends ConsumerWidget {
     final soilState = ref.watch(soilProvider);
 
     if (soilState == null) {
-      return _detectButton(l10n.detectSoil);
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Flexible(child: _detectButton(l10n.detectSoil)),
+          Flexible(child: _mapButton(context, l10n)),
+        ],
+      );
     }
 
     return soilState.when(
@@ -233,7 +251,14 @@ class _SoilDetectSection extends ConsumerWidget {
           _detectButton(l10n.retry),
         ],
       ),
-      data: (data) => SoilCard(data: data),
+      data: (data) => Column(
+        children: [
+          SoilCard(data: data),
+          const SizedBox(height: AppSpacing.xs),
+          SoilPredictionCard(soil: data),
+          _mapButton(context, l10n),
+        ],
+      ),
     );
   }
 
@@ -242,6 +267,15 @@ class _SoilDetectSection extends ConsumerWidget {
       onPressed: onDetect,
       icon: const Icon(Icons.my_location_rounded, size: 18),
       label: Text(label),
+      style: TextButton.styleFrom(foregroundColor: AppColors.inkSoft),
+    );
+  }
+
+  Widget _mapButton(BuildContext context, AppLocalizations l10n) {
+    return TextButton.icon(
+      onPressed: () => context.pushNamed(RouteNames.soilMap),
+      icon: const Icon(Icons.public_rounded, size: 18),
+      label: Text(l10n.soilMap),
       style: TextButton.styleFrom(foregroundColor: AppColors.inkSoft),
     );
   }

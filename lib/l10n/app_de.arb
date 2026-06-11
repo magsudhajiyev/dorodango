@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "Mäßig tonhaltig — fein sieben und fest verdichten.",
   "soilSuitabilitySandy": "Sandig — kann zerbröckeln. Mischen Sie nach Möglichkeit tonreiche Erde bei.",
   "soilLocationDenied": "Standort nicht verfügbar. Erlauben Sie den Standortzugriff, um Ihren Boden zu erkennen.",
-  "soilLookupFailed": "Bodendaten für diesen Standort konnten nicht gelesen werden."
+  "soilLookupFailed": "Bodendaten für diesen Standort konnten nicht gelesen werden.",
+
+  "soilMap": "Bodenkarte",
+  "soilMapHint": "Tippen Sie auf die Karte, um den Boden zu untersuchen",
+  "predictResult": "Mein Dorodango vorhersagen",
+  "predictingResult": "KI-Coach wird befragt…",
+  "predictionTitle": "KI-Vorhersage",
+  "predictionFailed": "Vorhersage fehlgeschlagen. Versuchen Sie es erneut.",
+  "outOfCredits": "Keine Credits mehr."
 }

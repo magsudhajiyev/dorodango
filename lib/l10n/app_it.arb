@@ -129,5 +129,13 @@
   "soilSuitabilityOkay": "Argilla moderata — setaccialo fine e compattalo con forza.",
   "soilSuitabilitySandy": "Sabbioso — potrebbe sgretolarsi. Se puoi, aggiungi terra ricca di argilla.",
   "soilLocationDenied": "Posizione non disponibile. Consenti l'accesso alla posizione per rilevare il terreno.",
-  "soilLookupFailed": "Impossibile leggere i dati del terreno per questa posizione."
+  "soilLookupFailed": "Impossibile leggere i dati del terreno per questa posizione.",
+
+  "soilMap": "Mappa dei suoli",
+  "soilMapHint": "Tocca la mappa per esaminare il terreno",
+  "predictResult": "Prevedi il mio dorodango",
+  "predictingResult": "Consultazione del coach IA…",
+  "predictionTitle": "Previsione IA",
+  "predictionFailed": "Previsione non riuscita. Riprova.",
+  "outOfCredits": "Crediti esauriti."
 }
