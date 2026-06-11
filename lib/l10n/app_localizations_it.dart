@@ -498,4 +498,11 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get goHunting => 'Vai a caccia';
+
+  @override
+  String get handsFreeHint => 'Mani libere — di\' «stop» per terminare';
+
+  @override
+  String get voiceGoodbye =>
+      'Buona lucidatura! Tocca la sfera quando ti servo di nuovo.';
 }

@@ -65,6 +65,11 @@ class _StageScreenState extends ConsumerState<StageScreen> {
           ref.read(conversationProvider.notifier).state = messages;
         }
       };
+      voice.onConversationModeChanged = (active) {
+        if (mounted) {
+          ref.read(conversationModeProvider.notifier).state = active;
+        }
+      };
 
       // Fetch credits
       ref.read(creditsProvider.notifier).fetch();
@@ -160,10 +165,16 @@ class _StageScreenState extends ConsumerState<StageScreen> {
                     const SizedBox(width: AppSpacing.md),
                     const VoiceOrb(),
                     const SizedBox(width: AppSpacing.sm),
-                    Text(
-                      l10n.tapToSpeak,
-                      style: AppTypography.caption.copyWith(
-                        color: AppColors.inkSoft,
+                    Flexible(
+                      child: Text(
+                        ref.watch(conversationModeProvider)
+                            ? l10n.handsFreeHint
+                            : l10n.tapToSpeak,
+                        style: AppTypography.caption.copyWith(
+                          color: ref.watch(conversationModeProvider)
+                              ? AppColors.clay
+                              : AppColors.inkSoft,
+                        ),
                       ),
                     ),
                   ],

@@ -159,5 +159,8 @@
   "collectionCount": "{count}個発見",
   "collectionEmpty": "まだ何もありません — 最初のどろだんごを見つけましょう！",
   "foundOnDate": "{date}に発見",
-  "goHunting": "ハントに行く"
+  "goHunting": "ハントに行く",
+
+  "handsFreeHint": "ハンズフリー — 終了するには「ストップ」と言ってください",
+  "voiceGoodbye": "良い磨きを！また必要になったらオーブをタップしてください。"
 }

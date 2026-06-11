@@ -494,4 +494,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get goHunting => 'Ava çık';
+
+  @override
+  String get handsFreeHint => 'Eller serbest — bitirmek için “dur” deyin';
+
+  @override
+  String get voiceGoodbye =>
+      'İyi parlatmalar! Bana tekrar ihtiyacın olursa küreye dokun.';
 }

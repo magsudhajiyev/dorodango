@@ -171,5 +171,8 @@
   "collectionEmpty": "Nothing here yet — go find your first dorodango!",
   "foundOnDate": "Found on {date}",
   "@foundOnDate": { "placeholders": { "date": { "type": "String" } } },
-  "goHunting": "Go hunting"
+  "goHunting": "Go hunting",
+
+  "handsFreeHint": "Hands-free — say “stop” to end",
+  "voiceGoodbye": "Happy polishing. Tap the orb when you need me again."
 }

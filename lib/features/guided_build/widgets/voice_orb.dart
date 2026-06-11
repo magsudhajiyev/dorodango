@@ -97,9 +97,13 @@ class _VoiceOrbState extends ConsumerState<VoiceOrb>
         if (voiceState == VoiceState.listening) {
           await voice.stopListening();
         } else if (voiceState == VoiceState.idle) {
-          await voice.startListening();
+          // One tap starts the hands-free conversation loop.
+          await voice.startConversation();
+        } else if (voiceState == VoiceState.speaking) {
+          // Barge-in: cut the assistant off; the loop reopens the mic.
+          await voice.interrupt();
         }
-        // Ignore taps during processing/speaking
+        // Ignore taps during processing
       },
       child: AnimatedBuilder(
         animation: _pulseAnimation,

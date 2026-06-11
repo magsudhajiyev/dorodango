@@ -6,6 +6,10 @@ class SttService {
   bool _isInitialized = false;
   String _localeId = 'en_US';
 
+  /// Reports raw speech_to_text status changes ('listening', 'done', ...).
+  /// Used by conversation mode to detect a turn that ended in silence.
+  void Function(String status)? onStatus;
+
   static const _localeMap = {
     'en': 'en_US',
     'fr': 'fr_FR',
@@ -20,7 +24,9 @@ class SttService {
   };
 
   Future<bool> initialize() async {
-    _isInitialized = await _speech.initialize();
+    _isInitialized = await _speech.initialize(
+      onStatus: (status) => onStatus?.call(status),
+    );
     return _isInitialized;
   }
 
@@ -30,6 +36,8 @@ class SttService {
 
   Future<void> startListening({
     required void Function(String text, bool isFinal) onResult,
+    Duration pauseFor = const Duration(seconds: 4),
+    Duration listenFor = const Duration(seconds: 30),
   }) async {
     if (!_isInitialized) await initialize();
 
@@ -42,6 +50,8 @@ class SttService {
         cancelOnError: true,
         partialResults: true,
         localeId: _localeId,
+        pauseFor: pauseFor,
+        listenFor: listenFor,
       ),
     );
   }

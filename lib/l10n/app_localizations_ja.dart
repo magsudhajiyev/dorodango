@@ -449,4 +449,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get goHunting => 'ハントに行く';
+
+  @override
+  String get handsFreeHint => 'ハンズフリー — 終了するには「ストップ」と言ってください';
+
+  @override
+  String get voiceGoodbye => '良い磨きを！また必要になったらオーブをタップしてください。';
 }

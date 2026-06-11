@@ -159,5 +159,8 @@
   "collectionCount": "{count} bulundu",
   "collectionEmpty": "Henüz boş — ilk dorodangonuzu bulun!",
   "foundOnDate": "{date} tarihinde bulundu",
-  "goHunting": "Ava çık"
+  "goHunting": "Ava çık",
+
+  "handsFreeHint": "Eller serbest — bitirmek için “dur” deyin",
+  "voiceGoodbye": "İyi parlatmalar! Bana tekrar ihtiyacın olursa küreye dokun."
 }

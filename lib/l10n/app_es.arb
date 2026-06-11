@@ -159,5 +159,8 @@
   "collectionCount": "{count} encontrados",
   "collectionEmpty": "Aún no hay nada aquí — ¡encuentra tu primer dorodango!",
   "foundOnDate": "Encontrado el {date}",
-  "goHunting": "Ir de caza"
+  "goHunting": "Ir de caza",
+
+  "handsFreeHint": "Manos libres — di «stop» para terminar",
+  "voiceGoodbye": "¡Feliz pulido! Toca el orbe cuando me necesites de nuevo."
 }

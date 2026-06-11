@@ -497,4 +497,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get goHunting => 'Ir de caza';
+
+  @override
+  String get handsFreeHint => 'Manos libres — di «stop» para terminar';
+
+  @override
+  String get voiceGoodbye =>
+      '¡Feliz pulido! Toca el orbe cuando me necesites de nuevo.';
 }

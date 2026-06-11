@@ -34,6 +34,9 @@ final voiceControllerProvider = Provider((ref) {
 final conversationProvider =
     StateProvider<List<ChatMessage>>((ref) => []);
 
+/// Whether the hands-free conversation loop is active.
+final conversationModeProvider = StateProvider<bool>((ref) => false);
+
 class VoiceController {
   final SttService stt;
   final TtsService tts;
@@ -52,6 +55,34 @@ class VoiceController {
 
   /// Callback to update the conversation provider from outside.
   void Function(List<ChatMessage>)? onConversationChanged;
+
+  /// Hands-free conversation loop: after each spoken answer the mic
+  /// automatically reopens for the next turn, until the user says a stop
+  /// phrase, stays silent, or taps the orb.
+  bool _conversationMode = false;
+  bool _gotResultThisTurn = false;
+
+  /// Callback to update the conversation-mode provider from outside.
+  void Function(bool active)? onConversationModeChanged;
+
+  /// Voice is English-only for now (see [updateLocale]).
+  static const Set<String> _stopPhrases = {
+    'stop',
+    'stop listening',
+    "that's all",
+    'thats all',
+    'that is all',
+    'goodbye',
+    'bye',
+    'exit',
+    'quit',
+    'end conversation',
+    "i'm done",
+    'im done',
+    'done',
+    'no thanks',
+    'nothing else',
+  };
 
   VoiceController({
     required this.stt,
@@ -77,12 +108,27 @@ class VoiceController {
     parser.setLocale('en');
   }
 
+  /// Starts the hands-free conversation loop.
+  Future<void> startConversation() async {
+    _setConversationMode(true);
+    stt.onStatus = _handleSttStatus;
+    await startListening();
+  }
+
+  /// Stops TTS mid-sentence so the user can talk over the assistant.
+  /// The conversation loop reopens the mic on its own afterwards.
+  Future<void> interrupt() async {
+    await tts.stop();
+  }
+
   Future<void> startListening() async {
+    _gotResultThisTurn = false;
     buildSession.setVoiceState(VoiceState.listening);
 
     await stt.startListening(
       onResult: (text, isFinal) {
         if (isFinal) {
+          _gotResultThisTurn = text.trim().isNotEmpty;
           _handleInput(text);
         }
       },
@@ -90,8 +136,44 @@ class VoiceController {
   }
 
   Future<void> stopListening() async {
+    _setConversationMode(false);
     await stt.stopListening();
     buildSession.setVoiceState(VoiceState.idle);
+  }
+
+  void _setConversationMode(bool active) {
+    if (_conversationMode == active) return;
+    _conversationMode = active;
+    onConversationModeChanged?.call(active);
+  }
+
+  void _handleSttStatus(String status) {
+    // The platform stopped listening (silence window elapsed) without a
+    // final result: the user has nothing more to say — end the loop quietly.
+    if (status == 'done' &&
+        _conversationMode &&
+        !_gotResultThisTurn &&
+        getBuildState().voiceState == VoiceState.listening) {
+      _setConversationMode(false);
+      buildSession.setVoiceState(VoiceState.idle);
+    }
+  }
+
+  bool _isStopPhrase(String text) {
+    final normalized = text
+        .toLowerCase()
+        .replaceAll(RegExp(r'[.,!?]'), '')
+        .trim();
+    return _stopPhrases.contains(normalized);
+  }
+
+  /// Reopens the mic for the next turn while the conversation loop is on.
+  Future<void> _resumeConversation() async {
+    if (!_conversationMode) return;
+    if (getBuildState().voiceState != VoiceState.idle) return;
+    if (stt.isListening) return;
+    await Future<void>.delayed(const Duration(milliseconds: 250));
+    if (_conversationMode) await startListening();
   }
 
   Future<void> speakCurrentStage() async {
@@ -102,17 +184,36 @@ class VoiceController {
     }
   }
 
-  /// Main input handler — routes to AI or command parser based on credits.
+  /// Main input handler — known commands are handled locally (fast and
+  /// free); everything else goes to the AI coach when credits remain.
   Future<void> _handleInput(String rawText) async {
     await stt.stopListening();
 
-    final credits = getCredits();
-
-    if (credits > 0) {
-      await _handleAiMessage(rawText);
-    } else {
-      await _handleCommand(rawText);
+    final text = rawText.trim();
+    if (text.isEmpty) {
+      // Silence — leave the conversation quietly.
+      _setConversationMode(false);
+      buildSession.setVoiceState(VoiceState.idle);
+      return;
     }
+
+    if (_conversationMode && _isStopPhrase(text)) {
+      _setConversationMode(false);
+      await _speak(_l10n?.voiceGoodbye ??
+          'Happy polishing. Tap the orb when you need me again.');
+      return;
+    }
+
+    final command = parser.parse(text);
+    if (command != VoiceCommand.unknown) {
+      await _handleCommand(text);
+    } else if (getCredits() > 0) {
+      await _handleAiMessage(text);
+    } else {
+      await _handleCommand(text);
+    }
+
+    await _resumeConversation();
   }
 
   /// AI conversation path — sends to Cloud Function.
@@ -162,6 +263,8 @@ class VoiceController {
       // Speak the response
       await _speak(result.message);
     } on FirebaseFunctionsException catch (e) {
+      // Don't keep the hands-free loop running into repeated failures.
+      _setConversationMode(false);
       if (e.code == 'resource-exhausted') {
         // Out of credits — add system message, fall back
         _addMessage(ChatMessage(
@@ -181,6 +284,7 @@ class VoiceController {
         buildSession.setVoiceState(VoiceState.idle);
       }
     } catch (_) {
+      _setConversationMode(false);
       _addMessage(ChatMessage(
         role: 'assistant',
         content: 'Connection timed out. Check internet.',

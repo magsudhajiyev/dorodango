@@ -501,4 +501,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get goHunting => 'Auf die Jagd';
+
+  @override
+  String get handsFreeHint => 'Freihändig — sagen Sie „Stopp“ zum Beenden';
+
+  @override
+  String get voiceGoodbye =>
+      'Frohes Polieren! Tippen Sie auf die Kugel, wenn Sie mich wieder brauchen.';
 }

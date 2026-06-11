@@ -935,6 +935,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go hunting'**
   String get goHunting;
+
+  /// No description provided for @handsFreeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hands-free — say “stop” to end'**
+  String get handsFreeHint;
+
+  /// No description provided for @voiceGoodbye.
+  ///
+  /// In en, this message translates to:
+  /// **'Happy polishing. Tap the orb when you need me again.'**
+  String get voiceGoodbye;
 }
 
 class _AppLocalizationsDelegate

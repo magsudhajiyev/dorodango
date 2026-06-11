@@ -159,5 +159,8 @@
   "collectionCount": "{count} tapılıb",
   "collectionEmpty": "Hələ boşdur — ilk dorodangonuzu tapın!",
   "foundOnDate": "{date} tarixində tapılıb",
-  "goHunting": "Ova başla"
+  "goHunting": "Ova başla",
+
+  "handsFreeHint": "Əlsiz rejim — bitirmək üçün “stop” deyin",
+  "voiceGoodbye": "Uğurlu cilalama! Yenidən lazım olsam, kürəyə toxunun."
 }

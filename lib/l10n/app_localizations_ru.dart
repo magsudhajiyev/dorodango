@@ -494,4 +494,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get goHunting => 'На охоту';
+
+  @override
+  String get handsFreeHint => 'Без рук — скажите «стоп», чтобы закончить';
+
+  @override
+  String get voiceGoodbye =>
+      'Удачной полировки! Коснитесь шара, когда я снова понадоблюсь.';
 }

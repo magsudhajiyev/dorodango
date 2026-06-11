@@ -496,4 +496,11 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get goHunting => 'Ova başla';
+
+  @override
+  String get handsFreeHint => 'Əlsiz rejim — bitirmək üçün “stop” deyin';
+
+  @override
+  String get voiceGoodbye =>
+      'Uğurlu cilalama! Yenidən lazım olsam, kürəyə toxunun.';
 }
