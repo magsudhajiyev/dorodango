@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:flutter/foundation.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dorodango/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -131,7 +132,7 @@ class VoiceController {
     _silenceExitTimer?.cancel();
     buildSession.setVoiceState(VoiceState.listening);
 
-    await stt.startListening(
+    final started = await stt.startListening(
       onResult: (text, isFinal) {
         if (isFinal) {
           _silenceExitTimer?.cancel();
@@ -140,6 +141,11 @@ class VoiceController {
         }
       },
     );
+    if (!started) {
+      // Don't show a pulsing mic that isn't actually recording. The error
+      // handler may still recover the conversation with a retry.
+      debugPrint('[Voice] listen did not start');
+    }
   }
 
   Future<void> stopListening() async {
@@ -188,20 +194,25 @@ class VoiceController {
 
     if (errorMsg.contains('no_match') || errorMsg.contains('speech_timeout')) {
       // Heard nothing this turn — treat as silence.
+      debugPrint('[Voice] silence error -> ending conversation');
       _endConversationQuietly();
       return;
     }
     // Recognizers (especially Android) often refuse to restart right after
-    // TTS releases the audio session — retry once before giving up.
-    if (_listenRetries < 2) {
+    // TTS releases the audio session — cancel the stale session and retry
+    // before giving up.
+    if (_listenRetries < 3) {
       _listenRetries++;
-      Future<void>.delayed(const Duration(milliseconds: 600), () {
+      debugPrint('[Voice] listen retry $_listenRetries after "$errorMsg"');
+      Future<void>.delayed(const Duration(milliseconds: 700), () async {
         if (_conversationMode &&
             getBuildState().voiceState == VoiceState.listening) {
-          startListening();
+          await stt.cancel();
+          await startListening();
         }
       });
     } else {
+      debugPrint('[Voice] giving up after "$errorMsg"');
       _endConversationQuietly();
     }
   }
@@ -221,6 +232,7 @@ class VoiceController {
     if (!_conversationMode) return;
     if (getBuildState().voiceState != VoiceState.idle) return;
     if (stt.isListening) return;
+    debugPrint('[Voice] resuming conversation turn');
     await Future<void>.delayed(const Duration(milliseconds: 450));
     if (_conversationMode && !stt.isListening) await startListening();
   }

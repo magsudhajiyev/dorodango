@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:speech_to_text/speech_recognition_result.dart';
 
@@ -28,9 +29,17 @@ class SttService {
 
   Future<bool> initialize() async {
     _isInitialized = await _speech.initialize(
-      onStatus: (status) => onStatus?.call(status),
-      onError: (error) => onError?.call(error.errorMsg),
+      onStatus: (status) {
+        debugPrint('[Voice] stt status: $status');
+        onStatus?.call(status);
+      },
+      onError: (error) {
+        debugPrint('[Voice] stt error: ${error.errorMsg} '
+            '(permanent: ${error.permanent})');
+        onError?.call(error.errorMsg);
+      },
     );
+    debugPrint('[Voice] stt initialize -> $_isInitialized');
     return _isInitialized;
   }
 
@@ -38,30 +47,56 @@ class SttService {
     _localeId = _localeMap[languageCode] ?? 'en_US';
   }
 
-  Future<void> startListening({
+  /// Returns false when the recognizer could not be started — callers must
+  /// not pretend to be listening in that case.
+  Future<bool> startListening({
     required void Function(String text, bool isFinal) onResult,
     Duration pauseFor = const Duration(seconds: 4),
     Duration listenFor = const Duration(seconds: 30),
   }) async {
     if (!_isInitialized) await initialize();
+    if (!_isInitialized) {
+      onError?.call('error_not_available');
+      return false;
+    }
 
-    await _speech.listen(
-      onResult: (SpeechRecognitionResult result) {
-        onResult(result.recognizedWords, result.finalResult);
-      },
-      listenOptions: stt.SpeechListenOptions(
-        listenMode: stt.ListenMode.confirmation,
-        cancelOnError: true,
-        partialResults: true,
-        localeId: _localeId,
-        pauseFor: pauseFor,
-        listenFor: listenFor,
-      ),
-    );
+    try {
+      await _speech.listen(
+        onResult: (SpeechRecognitionResult result) {
+          if (result.finalResult) {
+            debugPrint('[Voice] stt final: "${result.recognizedWords}"');
+          }
+          onResult(result.recognizedWords, result.finalResult);
+        },
+        listenOptions: stt.SpeechListenOptions(
+          listenMode: stt.ListenMode.confirmation,
+          cancelOnError: true,
+          partialResults: true,
+          localeId: _localeId,
+          pauseFor: pauseFor,
+          listenFor: listenFor,
+        ),
+      );
+      debugPrint('[Voice] stt listen started');
+      return true;
+    } catch (e) {
+      debugPrint('[Voice] stt listen failed: $e');
+      onError?.call('listen_failed');
+      return false;
+    }
   }
 
   Future<void> stopListening() async {
     await _speech.stop();
+  }
+
+  /// Hard-resets the recognizer session. Some Android recognizers refuse a
+  /// new [startListening] right after TTS unless the old session is
+  /// cancelled first.
+  Future<void> cancel() async {
+    try {
+      await _speech.cancel();
+    } catch (_) {}
   }
 
   bool get isListening => _speech.isListening;
