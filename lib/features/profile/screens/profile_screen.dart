@@ -39,6 +39,10 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.goNamed(RouteNames.home),
+        ),
         title: Text(l10n.profile),
         actions: [
           IconButton(
