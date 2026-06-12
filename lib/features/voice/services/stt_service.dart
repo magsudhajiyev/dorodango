@@ -83,6 +83,7 @@ class SttService {
     required void Function(String text, bool isFinal) onResult,
     Duration pauseFor = const Duration(seconds: 4),
     Duration listenFor = const Duration(seconds: 30),
+    bool dictation = false,
   }) async {
     if (!_isInitialized) await initialize();
     if (!_isInitialized) {
@@ -100,7 +101,11 @@ class SttService {
           onResult(result.recognizedWords, result.finalResult);
         },
         listenOptions: stt.SpeechListenOptions(
-          listenMode: stt.ListenMode.confirmation,
+          // Dictation keeps the session alive through long silences —
+          // used by the wake-word loop so the start-of-listening chime
+          // doesn't fire every few seconds.
+          listenMode:
+              dictation ? stt.ListenMode.dictation : stt.ListenMode.confirmation,
           cancelOnError: true,
           partialResults: true,
           localeId: localeId,

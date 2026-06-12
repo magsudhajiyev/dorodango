@@ -75,6 +75,12 @@ class _StageScreenState extends ConsumerState<StageScreen> {
           ref.read(wakeWordProvider.notifier).state = enabled;
         }
       };
+      // The voice surface is torn down when leaving this screen — sync the
+      // UI providers with that reality on (re)entry.
+      ref.read(conversationModeProvider.notifier).state = false;
+      ref.read(wakeWordProvider.notifier).state = false;
+      ref.read(conversationProvider.notifier).state =
+          voice.conversationHistory;
 
       // Fetch credits
       ref.read(creditsProvider.notifier).fetch();
@@ -83,8 +89,11 @@ class _StageScreenState extends ConsumerState<StageScreen> {
 
   @override
   void dispose() {
-    // Don't keep the wake-word mic running when the user leaves the build.
-    ref.read(voiceControllerProvider).setWakeWordEnabled(false);
+    // Tear the voice surface down so no mic session keeps running and no
+    // callback fires into this disposed widget tree. The async parts run
+    // after teardown completes.
+    final voice = ref.read(voiceControllerProvider);
+    Future.microtask(voice.shutdown);
     super.dispose();
   }
 

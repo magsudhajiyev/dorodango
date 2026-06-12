@@ -160,10 +160,12 @@ class VoiceController {
     }
     _passiveActive = true;
     final started = await stt.startListening(
-      // Long windows: this session just waits for the wake phrase; the
-      // restart loop picks it back up when the platform ends it.
-      pauseFor: const Duration(seconds: 10),
-      listenFor: const Duration(seconds: 55),
+      // Dictation mode + long windows: the session survives silence for
+      // minutes instead of seconds, so Android's start-of-listening chime
+      // fires rarely instead of every few seconds.
+      dictation: true,
+      pauseFor: const Duration(seconds: 60),
+      listenFor: const Duration(minutes: 5),
       onResult: (text, isFinal) {
         if (!_passiveActive) return;
         if (_containsWakePhrase(text)) {
@@ -171,9 +173,7 @@ class VoiceController {
         }
       },
     );
-    if (started) {
-      _passiveErrorStreak = 0;
-    } else {
+    if (!started) {
       _passiveActive = false;
     }
   }
@@ -186,6 +186,7 @@ class VoiceController {
 
   Future<void> _onWakeDetected() async {
     debugPrint('[Voice] wake phrase detected');
+    _passiveErrorStreak = 0;
     _passiveActive = false;
     _passiveRestartTimer?.cancel();
     await stt.cancel();
@@ -194,10 +195,11 @@ class VoiceController {
     await startListening();
   }
 
-  void _schedulePassiveRestart() {
+  void _schedulePassiveRestart(
+      {Duration delay = const Duration(milliseconds: 600)}) {
     if (!_wakeWordEnabled) return;
     _passiveRestartTimer?.cancel();
-    _passiveRestartTimer = Timer(const Duration(milliseconds: 600), () {
+    _passiveRestartTimer = Timer(delay, () {
       if (_wakeWordEnabled &&
           !_conversationMode &&
           !_passiveActive &&
@@ -215,6 +217,23 @@ class VoiceController {
   /// The conversation loop reopens the mic on its own afterwards.
   Future<void> interrupt() async {
     await tts.stop();
+  }
+
+  /// Tears the whole voice surface down (wake word, conversation, mic,
+  /// speech). Called when the user leaves the build screen so no callback
+  /// fires into a disposed widget tree.
+  Future<void> shutdown() async {
+    _wakeWordEnabled = false;
+    _passiveActive = false;
+    _conversationMode = false;
+    _passiveRestartTimer?.cancel();
+    _silenceExitTimer?.cancel();
+    onConversationChanged = null;
+    onConversationModeChanged = null;
+    onWakeWordChanged = null;
+    await stt.cancel();
+    await tts.stop();
+    buildSession.setVoiceState(VoiceState.idle);
   }
 
   Future<void> startListening() async {
@@ -294,13 +313,20 @@ class VoiceController {
   void _handleSttError(String errorMsg) {
     if (_passiveActive) {
       _passiveActive = false;
+      if (errorMsg.contains('no_match') ||
+          errorMsg.contains('speech_timeout')) {
+        // Nothing was said — routine for a wake-word loop. Cool down
+        // before reopening so the chime stays infrequent.
+        _schedulePassiveRestart(delay: const Duration(seconds: 3));
+        return;
+      }
       _passiveErrorStreak++;
       if (_passiveErrorStreak > 4) {
         // The recognizer keeps refusing — stop draining the battery.
         debugPrint('[Voice] disabling wake word after repeated errors');
         setWakeWordEnabled(false);
       } else {
-        _schedulePassiveRestart();
+        _schedulePassiveRestart(delay: const Duration(seconds: 1));
       }
       return;
     }
