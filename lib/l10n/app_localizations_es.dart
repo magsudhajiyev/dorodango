@@ -868,4 +868,15 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get voiceConnectionLost =>
       'Perdí la conexión. Revisa tu internet y toca el orbe.';
+
+  @override
+  String get huntRadius => 'Radio de búsqueda';
+
+  @override
+  String radiusKm(int km) {
+    return '$km km';
+  }
+
+  @override
+  String get logoutConfirm => '¿Cerrar la sesión de tu cuenta?';
 }

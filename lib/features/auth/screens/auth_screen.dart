@@ -127,32 +127,6 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                     ? l10n.authToggleToLogin
                     : l10n.authToggleToRegister),
               ),
-
-              const SizedBox(height: AppSpacing.md),
-              Row(
-                children: [
-                  const Expanded(child: Divider()),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.sm),
-                    child: Text('·', style: AppTypography.caption),
-                  ),
-                  const Expanded(child: Divider()),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.md),
-
-              TextButton.icon(
-                onPressed: form.loading
-                    ? null
-                    : () => ref
-                        .read(authControllerProvider.notifier)
-                        .continueAsGuest(),
-                icon: const Icon(Icons.person_outline_rounded, size: 18),
-                label: Text(l10n.continueAsGuest),
-                style:
-                    TextButton.styleFrom(foregroundColor: AppColors.inkSoft),
-              ),
             ],
           ),
         ),

@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "Ihre KI-Credits sind aufgebraucht. Ich reagiere weiterhin auf Befehle wie weiter, wiederholen und Hilfe.",
   "voiceError": "Etwas ist schiefgelaufen. Tippen Sie auf die Kugel, um es erneut zu versuchen.",
-  "voiceConnectionLost": "Die Verbindung ist abgebrochen. Prüfen Sie Ihr Internet und tippen Sie auf die Kugel."
+  "voiceConnectionLost": "Die Verbindung ist abgebrochen. Prüfen Sie Ihr Internet und tippen Sie auf die Kugel.",
+
+  "huntRadius": "Suchradius",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "Von Ihrem Konto abmelden?"
 }

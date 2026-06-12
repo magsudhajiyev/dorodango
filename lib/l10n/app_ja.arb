@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "AIクレジットがなくなりました。「次へ」「もう一度」「ヘルプ」などのコマンドには引き続き対応できます。",
   "voiceError": "問題が発生しました。オーブをタップしてもう一度お試しください。",
-  "voiceConnectionLost": "接続が切れました。インターネットを確認してオーブをタップしてください。"
+  "voiceConnectionLost": "接続が切れました。インターネットを確認してオーブをタップしてください。",
+
+  "huntRadius": "検索範囲",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "アカウントからログアウトしますか？"
 }

@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "Hai esaurito i crediti IA. Posso ancora rispondere a comandi come avanti, ripeti e aiuto.",
   "voiceError": "Qualcosa è andato storto. Tocca la sfera per riprovare.",
-  "voiceConnectionLost": "Ho perso la connessione. Controlla internet e tocca la sfera."
+  "voiceConnectionLost": "Ho perso la connessione. Controlla internet e tocca la sfera.",
+
+  "huntRadius": "Raggio di ricerca",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "Uscire dal tuo account?"
 }

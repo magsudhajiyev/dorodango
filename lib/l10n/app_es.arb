@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "Te has quedado sin créditos de IA. Aún puedo responder a comandos como siguiente, repetir y ayuda.",
   "voiceError": "Algo salió mal. Toca el orbe para intentarlo de nuevo.",
-  "voiceConnectionLost": "Perdí la conexión. Revisa tu internet y toca el orbe."
+  "voiceConnectionLost": "Perdí la conexión. Revisa tu internet y toca el orbe.",
+
+  "huntRadius": "Radio de búsqueda",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "¿Cerrar la sesión de tu cuenta?"
 }

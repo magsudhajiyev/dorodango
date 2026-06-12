@@ -870,4 +870,15 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get voiceConnectionLost =>
       'J\'ai perdu la connexion. Vérifiez votre internet et touchez l\'orbe.';
+
+  @override
+  String get huntRadius => 'Rayon de recherche';
+
+  @override
+  String radiusKm(int km) {
+    return '$km km';
+  }
+
+  @override
+  String get logoutConfirm => 'Se déconnecter de votre compte ?';
 }

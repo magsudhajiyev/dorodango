@@ -308,5 +308,10 @@
 
   "voiceOutOfCredits": "You're out of AI credits. I can still respond to commands like next, repeat, and help.",
   "voiceError": "Something went wrong. Tap the orb to try again.",
-  "voiceConnectionLost": "I lost the connection. Check your internet and tap the orb."
+  "voiceConnectionLost": "I lost the connection. Check your internet and tap the orb.",
+
+  "huntRadius": "Search radius",
+  "radiusKm": "{km} km",
+  "@radiusKm": { "placeholders": { "km": { "type": "int" } } },
+  "logoutConfirm": "Log out of your account?"
 }

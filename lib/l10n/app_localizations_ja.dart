@@ -803,4 +803,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get voiceConnectionLost => '接続が切れました。インターネットを確認してオーブをタップしてください。';
+
+  @override
+  String get huntRadius => '検索範囲';
+
+  @override
+  String radiusKm(int km) {
+    return '$km km';
+  }
+
+  @override
+  String get logoutConfirm => 'アカウントからログアウトしますか？';
 }

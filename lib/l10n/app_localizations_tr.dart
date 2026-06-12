@@ -861,4 +861,15 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get voiceConnectionLost =>
       'Bağlantı koptu. İnternetinizi kontrol edip küreye dokunun.';
+
+  @override
+  String get huntRadius => 'Arama yarıçapı';
+
+  @override
+  String radiusKm(int km) {
+    return '$km km';
+  }
+
+  @override
+  String get logoutConfirm => 'Hesabınızdan çıkış yapılsın mı?';
 }

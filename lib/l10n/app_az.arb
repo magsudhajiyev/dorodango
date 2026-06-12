@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "AI kreditləriniz bitib. Yenə də növbəti, təkrar və kömək kimi əmrlərə cavab verə bilərəm.",
   "voiceError": "Nəsə səhv getdi. Yenidən cəhd etmək üçün kürəyə toxunun.",
-  "voiceConnectionLost": "Bağlantı kəsildi. İnterneti yoxlayın və kürəyə toxunun."
+  "voiceConnectionLost": "Bağlantı kəsildi. İnterneti yoxlayın və kürəyə toxunun.",
+
+  "huntRadius": "Axtarış radiusu",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "Hesabınızdan çıxılsın?"
 }

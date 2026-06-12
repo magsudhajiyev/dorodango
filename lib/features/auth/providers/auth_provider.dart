@@ -74,9 +74,6 @@ class AuthController extends StateNotifier<AuthFormState> {
   Future<void> registerWithEmail(String email, String password) =>
       _run(() => _repository.registerWithEmail(email.trim(), password));
 
-  Future<void> continueAsGuest() =>
-      _run(() => _repository.signInAnonymously());
-
   Future<void> _run(Future<UserCredential> Function() signIn) async {
     state = const AuthFormState(loading: true);
     try {

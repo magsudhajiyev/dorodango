@@ -164,13 +164,16 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
 
   Future<void> _confirmLogout(BuildContext context) async {
     final l10n = AppLocalizations.of(context);
+    // Email accounts keep their data; only legacy guest accounts lose it.
+    final isAnonymous =
+        ref.read(authStateProvider).valueOrNull?.isAnonymous ?? false;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
         backgroundColor: AppColors.bg,
         title: Text(l10n.logout, style: AppTypography.h2),
         content: Text(
-          l10n.logoutWarning,
+          isAnonymous ? l10n.logoutWarning : l10n.logoutConfirm,
           style: AppTypography.body.copyWith(color: AppColors.inkSoft),
         ),
         actions: [

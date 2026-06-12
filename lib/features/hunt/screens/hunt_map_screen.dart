@@ -16,6 +16,7 @@ import '../../../data/models/plant_model.dart';
 import '../../../routing/route_names.dart';
 import '../../soil/providers/soil_provider.dart';
 import '../providers/hunt_provider.dart';
+import '../providers/hunt_radius_provider.dart';
 import '../widgets/dorodango_ball.dart';
 
 /// How close (in meters) a hunter must be to claim a find.
@@ -36,10 +37,8 @@ class _HuntMapScreenState extends ConsumerState<HuntMapScreen> {
   @override
   void initState() {
     super.initState();
+    // The hunt notifier loads itself on creation (and on radius changes).
     _confetti = ConfettiController(duration: const Duration(seconds: 2));
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(huntProvider.notifier).load();
-    });
   }
 
   @override
@@ -103,6 +102,32 @@ class _HuntMapScreenState extends ConsumerState<HuntMapScreen> {
       appBar: AppBar(
         title: Text(l10n.hunt),
         actions: [
+          PopupMenuButton<int>(
+            tooltip: l10n.huntRadius,
+            icon: const Icon(Icons.radar_rounded),
+            initialValue: ref.watch(huntRadiusProvider),
+            onSelected: (km) =>
+                ref.read(huntRadiusProvider.notifier).setRadius(km),
+            itemBuilder: (context) => [
+              for (final km in huntRadiusOptionsKm)
+                PopupMenuItem(
+                  value: km,
+                  child: Row(
+                    children: [
+                      Icon(
+                        km == ref.read(huntRadiusProvider)
+                            ? Icons.radio_button_checked_rounded
+                            : Icons.radio_button_off_rounded,
+                        size: 18,
+                        color: AppColors.clay,
+                      ),
+                      const SizedBox(width: AppSpacing.xs),
+                      Text(l10n.radiusKm(km)),
+                    ],
+                  ),
+                ),
+            ],
+          ),
           IconButton(
             tooltip: l10n.myCollection,
             icon: const Icon(Icons.inventory_2_rounded),

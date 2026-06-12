@@ -872,4 +872,15 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get voiceConnectionLost =>
       'Die Verbindung ist abgebrochen. Prüfen Sie Ihr Internet und tippen Sie auf die Kugel.';
+
+  @override
+  String get huntRadius => 'Suchradius';
+
+  @override
+  String radiusKm(int km) {
+    return '$km km';
+  }
+
+  @override
+  String get logoutConfirm => 'Von Ihrem Konto abmelden?';
 }

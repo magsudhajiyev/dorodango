@@ -859,4 +859,15 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get voiceConnectionLost =>
       'Связь потеряна. Проверьте интернет и коснитесь шара.';
+
+  @override
+  String get huntRadius => 'Радиус поиска';
+
+  @override
+  String radiusKm(int km) {
+    return '$km км';
+  }
+
+  @override
+  String get logoutConfirm => 'Выйти из аккаунта?';
 }

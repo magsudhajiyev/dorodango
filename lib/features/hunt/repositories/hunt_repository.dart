@@ -5,11 +5,6 @@ import 'package:uuid/uuid.dart';
 import '../../../core/utils/geohash.dart';
 import '../../../data/models/plant_model.dart';
 
-/// Precision-5 geohash cells are ~4.9 km on a side, so the cell plus its
-/// neighbors covers the hunt radius below.
-const int _queryPrecision = 5;
-const double huntRadiusKm = 5;
-
 class HuntRepository {
   final FirebaseFirestore _db;
 
@@ -40,13 +35,18 @@ class HuntRepository {
     return model;
   }
 
-  /// All still-planted dorodangos within [huntRadiusKm] of the given point.
+  /// All still-planted dorodangos within [radiusKm] of the given point.
+  /// The geohash cell precision adapts to the radius: ~4.9 km cells for
+  /// tight searches, ~19.5 km cells for wide ones — the cell plus its
+  /// neighbors always covers the requested radius.
   Future<List<PlantModel>> nearbyPlants({
     required double latitude,
     required double longitude,
+    double radiusKm = 10,
   }) async {
-    final center = geohashEncode(latitude, longitude,
-        precision: _queryPrecision);
+    final precision = radiusKm <= 4 ? 5 : 4;
+    final center =
+        geohashEncode(latitude, longitude, precision: precision);
     final cells = geohashCoverage(center);
 
     final snapshots = await Future.wait(cells.map(
@@ -70,7 +70,7 @@ class HuntRepository {
           origin,
           LatLng(plant.latitude, plant.longitude),
         );
-        if (km <= huntRadiusKm) result.add(plant);
+        if (km <= radiusKm) result.add(plant);
       }
     }
     result.sort((a, b) => a.plantedAt.compareTo(b.plantedAt));

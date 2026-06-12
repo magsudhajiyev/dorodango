@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "Yapay zeka krediniz bitti. Yine de ileri, tekrar ve yardım gibi komutlara yanıt verebilirim.",
   "voiceError": "Bir şeyler ters gitti. Tekrar denemek için küreye dokunun.",
-  "voiceConnectionLost": "Bağlantı koptu. İnternetinizi kontrol edip küreye dokunun."
+  "voiceConnectionLost": "Bağlantı koptu. İnternetinizi kontrol edip küreye dokunun.",
+
+  "huntRadius": "Arama yarıçapı",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "Hesabınızdan çıkış yapılsın mı?"
 }

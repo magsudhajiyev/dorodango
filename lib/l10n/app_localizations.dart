@@ -1583,6 +1583,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I lost the connection. Check your internet and tap the orb.'**
   String get voiceConnectionLost;
+
+  /// No description provided for @huntRadius.
+  ///
+  /// In en, this message translates to:
+  /// **'Search radius'**
+  String get huntRadius;
+
+  /// No description provided for @radiusKm.
+  ///
+  /// In en, this message translates to:
+  /// **'{km} km'**
+  String radiusKm(int km);
+
+  /// No description provided for @logoutConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out of your account?'**
+  String get logoutConfirm;
 }
 
 class _AppLocalizationsDelegate

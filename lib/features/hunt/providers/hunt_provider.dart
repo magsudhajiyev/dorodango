@@ -6,6 +6,7 @@ import '../../soil/providers/soil_provider.dart';
 import '../../soil/services/location_service.dart';
 import '../repositories/hunt_repository.dart';
 import '../services/hunt_notification_service.dart';
+import 'hunt_radius_provider.dart';
 
 final huntRepositoryProvider = Provider((ref) => HuntRepository());
 final huntNotificationServiceProvider =
@@ -45,15 +46,25 @@ class HuntNotifier extends StateNotifier<HuntState> {
   final LocationService _locationService;
   final HuntNotificationService _notificationService;
   final String? _uid;
+  final int _radiusKm;
 
   HuntNotifier(
     this._repository,
     this._locationService,
     this._notificationService,
     this._uid,
-  ) : super(const HuntState());
+    this._radiusKm,
+  ) : super(const HuntState()) {
+    // Auto-load so a radius change (provider rebuild) refreshes the map.
+    Future.microtask(load);
+  }
 
   Future<void> load() async {
+    if (!mounted) return;
+    if (state.status == HuntStatus.locating ||
+        state.status == HuntStatus.loading) {
+      return;
+    }
     state = state.copyWith(status: HuntStatus.locating);
     final double lat;
     final double lng;
@@ -90,8 +101,11 @@ class HuntNotifier extends StateNotifier<HuntState> {
     final lng = state.longitude;
     if (lat == null || lng == null) return;
     try {
-      final plants =
-          await _repository.nearbyPlants(latitude: lat, longitude: lng);
+      final plants = await _repository.nearbyPlants(
+        latitude: lat,
+        longitude: lng,
+        radiusKm: _radiusKm.toDouble(),
+      );
       if (!mounted) return;
       state = state.copyWith(status: HuntStatus.ready, plants: plants);
     } catch (_) {
@@ -117,6 +131,8 @@ final huntProvider =
     ref.watch(locationServiceProvider),
     ref.watch(huntNotificationServiceProvider),
     ref.watch(authStateProvider).valueOrNull?.uid,
+    // Changing the radius rebuilds the notifier, which reloads the map.
+    ref.watch(huntRadiusProvider),
   );
 });
 

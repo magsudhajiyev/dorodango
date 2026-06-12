@@ -294,5 +294,9 @@
 
   "voiceOutOfCredits": "Seus créditos de IA acabaram. Ainda posso responder a comandos como próximo, repetir e ajuda.",
   "voiceError": "Algo deu errado. Toque no orbe para tentar novamente.",
-  "voiceConnectionLost": "Perdi a conexão. Verifique sua internet e toque no orbe."
+  "voiceConnectionLost": "Perdi a conexão. Verifique sua internet e toque no orbe.",
+
+  "huntRadius": "Raio de busca",
+  "radiusKm": "{km} km",
+  "logoutConfirm": "Sair da sua conta?"
 }
