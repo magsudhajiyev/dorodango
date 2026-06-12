@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Посадите готовый дороданго и охотьтесь за чужими поблизости",
   "logout": "Выйти",
   "logoutWarning": "При выходе из гостевого аккаунта вы потеряете свои дороданго, кредиты и коллекцию. Продолжить?",
-  "cancel": "Отмена"
+  "cancel": "Отмена",
+
+  "signInTitle": "Войти",
+  "registerTitle": "Создать аккаунт",
+  "emailHint": "Эл. почта",
+  "passwordHint": "Пароль",
+  "authToggleToRegister": "Впервые здесь? Создайте аккаунт",
+  "authToggleToLogin": "Уже есть аккаунт? Войдите",
+  "continueAsGuest": "Продолжить как гость",
+  "authErrorInvalidCredentials": "Неверная почта или пароль.",
+  "authErrorEmailInUse": "Аккаунт с этой почтой уже существует.",
+  "authErrorWeakPassword": "Пароль должен быть не короче 6 символов.",
+  "authErrorGeneric": "Не удалось войти. Попробуйте ещё раз."
 }

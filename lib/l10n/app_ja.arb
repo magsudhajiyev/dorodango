@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "完成したどろだんごを植えて、近くのものをハント",
   "logout": "ログアウト",
   "logoutWarning": "ゲストアカウントからログアウトすると、どろだんご、クレジット、コレクションが失われます。続行しますか？",
-  "cancel": "キャンセル"
+  "cancel": "キャンセル",
+
+  "signInTitle": "ログイン",
+  "registerTitle": "アカウント作成",
+  "emailHint": "メールアドレス",
+  "passwordHint": "パスワード",
+  "authToggleToRegister": "初めてですか？アカウントを作成",
+  "authToggleToLogin": "アカウントをお持ちですか？ログイン",
+  "continueAsGuest": "ゲストとして続行",
+  "authErrorInvalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
+  "authErrorEmailInUse": "このメールアドレスのアカウントは既に存在します。",
+  "authErrorWeakPassword": "パスワードは6文字以上にしてください。",
+  "authErrorGeneric": "ログインに失敗しました。もう一度お試しください。"
 }

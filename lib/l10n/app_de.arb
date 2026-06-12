@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Pflanzen Sie Ihr fertiges Dorodango ein und jagen Sie welche in der Nähe",
   "logout": "Abmelden",
   "logoutWarning": "Beim Abmelden von einem Gastkonto gehen Ihre Dorodangos, Credits und Ihre Sammlung verloren. Fortfahren?",
-  "cancel": "Abbrechen"
+  "cancel": "Abbrechen",
+
+  "signInTitle": "Anmelden",
+  "registerTitle": "Konto erstellen",
+  "emailHint": "E-Mail",
+  "passwordHint": "Passwort",
+  "authToggleToRegister": "Neu hier? Konto erstellen",
+  "authToggleToLogin": "Schon ein Konto? Anmelden",
+  "continueAsGuest": "Als Gast fortfahren",
+  "authErrorInvalidCredentials": "E-Mail oder Passwort ist falsch.",
+  "authErrorEmailInUse": "Mit dieser E-Mail existiert bereits ein Konto.",
+  "authErrorWeakPassword": "Das Passwort muss mindestens 6 Zeichen haben.",
+  "authErrorGeneric": "Anmeldung fehlgeschlagen. Bitte erneut versuchen."
 }

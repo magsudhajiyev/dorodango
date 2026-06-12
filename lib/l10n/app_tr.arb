@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Bitmiş dorodangonuzu ekin ve yakındakileri avlayın",
   "logout": "Çıkış yap",
   "logoutWarning": "Misafir hesabından çıkarsanız dorodangolarınız, kredileriniz ve koleksiyonunuz kaybolur. Devam edilsin mi?",
-  "cancel": "İptal"
+  "cancel": "İptal",
+
+  "signInTitle": "Giriş yap",
+  "registerTitle": "Hesap oluştur",
+  "emailHint": "E-posta",
+  "passwordHint": "Şifre",
+  "authToggleToRegister": "Yeni misiniz? Hesap oluşturun",
+  "authToggleToLogin": "Zaten hesabınız var mı? Giriş yapın",
+  "continueAsGuest": "Misafir olarak devam et",
+  "authErrorInvalidCredentials": "E-posta veya şifre hatalı.",
+  "authErrorEmailInUse": "Bu e-posta ile bir hesap zaten var.",
+  "authErrorWeakPassword": "Şifre en az 6 karakter olmalıdır.",
+  "authErrorGeneric": "Giriş yapılamadı. Lütfen tekrar deneyin."
 }

@@ -575,4 +575,38 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get cancel => 'Отмена';
+
+  @override
+  String get signInTitle => 'Войти';
+
+  @override
+  String get registerTitle => 'Создать аккаунт';
+
+  @override
+  String get emailHint => 'Эл. почта';
+
+  @override
+  String get passwordHint => 'Пароль';
+
+  @override
+  String get authToggleToRegister => 'Впервые здесь? Создайте аккаунт';
+
+  @override
+  String get authToggleToLogin => 'Уже есть аккаунт? Войдите';
+
+  @override
+  String get continueAsGuest => 'Продолжить как гость';
+
+  @override
+  String get authErrorInvalidCredentials => 'Неверная почта или пароль.';
+
+  @override
+  String get authErrorEmailInUse => 'Аккаунт с этой почтой уже существует.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Пароль должен быть не короче 6 символов.';
+
+  @override
+  String get authErrorGeneric => 'Не удалось войти. Попробуйте ещё раз.';
 }

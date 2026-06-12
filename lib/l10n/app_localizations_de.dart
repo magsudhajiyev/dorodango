@@ -585,4 +585,40 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get cancel => 'Abbrechen';
+
+  @override
+  String get signInTitle => 'Anmelden';
+
+  @override
+  String get registerTitle => 'Konto erstellen';
+
+  @override
+  String get emailHint => 'E-Mail';
+
+  @override
+  String get passwordHint => 'Passwort';
+
+  @override
+  String get authToggleToRegister => 'Neu hier? Konto erstellen';
+
+  @override
+  String get authToggleToLogin => 'Schon ein Konto? Anmelden';
+
+  @override
+  String get continueAsGuest => 'Als Gast fortfahren';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-Mail oder Passwort ist falsch.';
+
+  @override
+  String get authErrorEmailInUse =>
+      'Mit dieser E-Mail existiert bereits ein Konto.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Das Passwort muss mindestens 6 Zeichen haben.';
+
+  @override
+  String get authErrorGeneric =>
+      'Anmeldung fehlgeschlagen. Bitte erneut versuchen.';
 }
