@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dorodango/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/reflection_content.dart';
 import '../../../core/theme/app_colors.dart';
@@ -40,6 +41,7 @@ class _CompletionReflectionState extends ConsumerState<CompletionReflection> {
 
     final reflection = reflectionState.currentReflection;
     if (reflection == null) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context);
 
     return Container(
       width: double.infinity,
@@ -73,21 +75,21 @@ class _CompletionReflectionState extends ConsumerState<CompletionReflection> {
               children: [
                 // Title
                 Text(
-                  reflection.title,
+                  reflection.title(l10n),
                   style: AppTypography.h2,
                 ),
                 const SizedBox(height: AppSpacing.sm),
 
                 // Full body
                 Text(
-                  reflection.body,
+                  reflection.body(l10n),
                   style: AppTypography.body.copyWith(color: AppColors.inkSoft),
                 ),
                 const SizedBox(height: AppSpacing.sm),
 
                 // Source
                 Text(
-                  reflection.source,
+                  reflection.source(l10n),
                   style: AppTypography.monoSm.copyWith(
                     color: AppColors.inkFaint,
                   ),

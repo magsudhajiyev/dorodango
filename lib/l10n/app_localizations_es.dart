@@ -625,4 +625,235 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get wakeAck => '¿Sí?';
+
+  @override
+  String get themeDorodangoOrigins => 'Orígenes del Dorodango';
+
+  @override
+  String get themeWabiSabi => 'Wabi-Sabi';
+
+  @override
+  String get themeMa => 'Ma (間)';
+
+  @override
+  String get themeKintsugi => 'Kintsugi';
+
+  @override
+  String get themeShokunin => 'Shokunin';
+
+  @override
+  String get themeSoil => 'Tierra';
+
+  @override
+  String get themePatience => 'Paciencia';
+
+  @override
+  String get reflectionOrigins1Title => 'Los niños del patio escolar';
+
+  @override
+  String get reflectionOrigins1Body =>
+      'El hikaru dorodango surgió en los patios de las escuelas japonesas, donde los niños descubrieron que el barro ordinario podía transformarse en algo extraordinario con solo paciencia. El profesor Fumio Kayo, de la Universidad de Educación de Kyoto, documentó esta tradición a finales de los años noventa y comprobó que en casi todas las regiones de Japón los niños habían desarrollado la técnica de forma independiente. Nadie se la enseñó: la aprendieron unos de otros, transmitiendo el conocimiento de manera lateral, no vertical. Hay algo profundo en esto: el deseo de transformar la tierra cruda en un espejo no se aprende, se descubre.';
+
+  @override
+  String get reflectionOrigins1Source =>
+      'Fumio Kayo, Universidad de Educación de Kyoto';
+
+  @override
+  String get reflectionOrigins2Title => 'La palabra en sí';
+
+  @override
+  String get reflectionOrigins2Body =>
+      'Hikaru significa «brillar» o «brillante». Dorodango se divide en doro (barro) y dango (bola de masa). Una bola de barro brillante — el nombre es desarmantemente humilde para algo capaz de alcanzar un acabado de espejo. Esta humildad es intencionada en la nomenclatura japonesa. A las cosas más extraordinarias se les suelen dar los nombres más sencillos, porque el objeto habla por sí mismo. Cuando sostienes un dorodango terminado, nadie necesita explicar qué es. La esfera de tierra pulida se comunica directamente, más allá del lenguaje, como testimonio de lo que la paciencia y la atención pueden extraer del material más ordinario.';
+
+  @override
+  String get reflectionOrigins2Source => 'Etimología japonesa';
+
+  @override
+  String get reflectionOrigins3Title => 'Bruce Gardner y Occidente';
+
+  @override
+  String get reflectionOrigins3Body =>
+      'El artista estadounidense Bruce Gardner se encontró con el dorodango mientras investigaba las tradiciones artesanales japonesas y se convirtió en uno de los primeros practicantes occidentales en documentar el proceso con detalle. Su trabajo ayudó a tender puentes entre culturas, demostrando que el atractivo de transformar la tierra es universal. Gardner señaló que los estudiantes occidentales suelen luchar más con la etapa de secado, no por la técnica, sino por la impaciencia. La esfera te pide que esperes, y en esa espera algo cambia. Dejas de intentar forzar el material y empiezas a escucharlo. Esta lección, observó Gardner, es el verdadero regalo de la práctica.';
+
+  @override
+  String get reflectionOrigins3Source => 'Bruce Gardner, dorodango.com';
+
+  @override
+  String get reflectionOrigins4Title => 'La tierra como espejo';
+
+  @override
+  String get reflectionOrigins4Body =>
+      'La etapa final de un dorodango logra algo casi paradójico: la tierra se convierte en espejo. El material más opaco de nuestro mundo — el barro — refleja la luz cuando se le presta suficiente atención paciente. La antigua filosofía japonesa no ve aquí ninguna contradicción. El potencial de brillantez siempre estuvo presente en el suelo; el artesano simplemente reveló lo que ya estaba ahí. Esta es una idea recurrente en la estética japonesa: el artesano no impone belleza al material, sino que la extrae. Tus manos han estado en conversación con esta tierra, y el brillo es la respuesta de la tierra.';
+
+  @override
+  String get reflectionOrigins4Source => 'Filosofía estética japonesa';
+
+  @override
+  String get reflectionWabi1Title => 'La belleza de la imperfección';
+
+  @override
+  String get reflectionWabi1Body =>
+      'El wabi-sabi es la estética japonesa arraigada en la aceptación de la imperfección y la impermanencia. Un cuenco de té agrietado, una viga de madera desgastada, el musgo que crece entre las piedras — no son defectos, sino huellas del tiempo y el uso. Tu dorodango no será una esfera perfecta. Llevará la impronta única de tus manos, la composición particular de tu tierra, la humedad del día en que lo hiciste. Estas variaciones no son errores que corregir, sino precisamente lo que hace que tu esfera sea solo tuya. No hay dos dorodango iguales, y ese es exactamente el punto.';
+
+  @override
+  String get reflectionWabi1Source =>
+      'Leonard Koren, Wabi-Sabi: para artistas, diseñadores, poetas y filósofos';
+
+  @override
+  String get reflectionWabi2Title => 'Nada dura';
+
+  @override
+  String get reflectionWabi2Body =>
+      'Uno de los tres pilares del wabi-sabi es la impermanencia: nada dura, nada está terminado, nada es perfecto. Tu dorodango, incluso cuando esté completo, seguirá cambiando. Continuará endureciéndose durante semanas. A lo largo de meses y años, su superficie puede desarrollar sutiles variaciones de tono. Si cae, se romperá, y la sección transversal revelará las capas de tu trabajo como estratos geológicos. Esta impermanencia no disminuye el objeto; lo profundiza. No estás construyendo algo eterno. Estás construyendo algo que existe bellamente en el tiempo, igual que tú.';
+
+  @override
+  String get reflectionWabi2Source => 'Richard Powell, Wabi Sabi Simple';
+
+  @override
+  String get reflectionWabi3Title => 'Pobreza de medios, riqueza de resultado';
+
+  @override
+  String get reflectionWabi3Body =>
+      'Wabi describía originalmente la soledad de vivir en la naturaleza, lejos de la sociedad. Con los siglos evolucionó para apreciar la belleza de la sencillez y la pobreza de medios. El dorodango es quizás la expresión más pura de esto: tu material es tierra y agua. Sin herramientas costosas, sin equipos especializados, sin ingredientes raros. La riqueza del resultado proviene enteramente de tu atención. En un mundo que a menudo equipara el gasto con la calidad, hay algo calladamente radical en crear un objeto bello con la tierra bajo tus pies. El coste del material es cero. La inversión es presencia.';
+
+  @override
+  String get reflectionWabi3Source => 'Kakuzo Okakura, El libro del té';
+
+  @override
+  String get reflectionWabi4Title => 'Ver lo que ya está ahí';
+
+  @override
+  String get reflectionWabi4Body =>
+      'El maestro del wabi-sabi no tanto crea belleza como la revela. Un diseñador de jardines contempla el paisaje existente antes de colocar una sola piedra. Un maestro del té elige el cuenco que se adapta a la estación, no el más ornamentado. Cuando pulieras tu dorodango, no estás pintando belleza sobre barro: estás extrayendo el brillo latente que las partículas de tierra ya poseían. La alineación de minúsculos granos minerales, comprimidos y alisados, refleja la luz de forma natural. No añadiste el brillo. Eliminaste todo lo que lo ocultaba. Este es el camino del wabi-sabi: no adición sino sustracción, no decoración sino revelación.';
+
+  @override
+  String get reflectionWabi4Source =>
+      'Soetsu Yanagi, La belleza de las cosas cotidianas';
+
+  @override
+  String get reflectionMa1Title => 'El espacio entre';
+
+  @override
+  String get reflectionMa1Body =>
+      'Ma (間) es el concepto japonés del espacio negativo: la pausa entre notas que da forma a la música, el vacío de una habitación que la hace habitable, el silencio en una conversación que permite que el significado aterrice. En el dorodango, la etapa de secado es ma puro. Nada visible ocurre, y sin embargo todo cambia bajo la superficie. La humedad migra hacia afuera por acción capilar, las partículas se asientan y se unen. La esfera trabaja incluso cuando tus manos no lo hacen. Aprender a confiar en este proceso invisible — a valorar la espera tanto como el hacer — es una de las lecciones más profundas que ofrece la práctica.';
+
+  @override
+  String get reflectionMa1Source =>
+      'Arata Isozaki, MA: Espacio-Tiempo en Japón';
+
+  @override
+  String get reflectionMa2Title => 'El vacío no es nada';
+
+  @override
+  String get reflectionMa2Body =>
+      'En el pensamiento occidental, el espacio vacío se percibe a menudo como ausencia: algo que debe llenarse. En la estética japonesa, el vacío es presencia. El tokonoma en una habitación tradicional contiene solo un pergamino y una flor, porque el espacio que los rodea es lo que les da poder. Ahora mismo tu dorodango descansa, y este descanso no es tiempo perdido. La pausa entre tus acciones deja que el material responda. Es un diálogo: tú moldeas, luego escuchas. Comprimes, luego esperas. La esfera enseña que la productividad y la quietud no son opuestos sino compañeros, cada uno haciendo que el otro tenga sentido.';
+
+  @override
+  String get reflectionMa2Source =>
+      'Lao Tzu, Tao Te Ching (Capítulo 11), a través de la interpretación japonesa';
+
+  @override
+  String get reflectionKintsugi1Title => 'Oro en las grietas';
+
+  @override
+  String get reflectionKintsugi1Body =>
+      'El kintsugi es el arte de reparar la cerámica rota con laca mezclada con oro. En lugar de ocultar el daño, la reparación se convierte en la parte más bella del objeto. Su historia se remonta al siglo XV, cuando un shogun japonés envió un cuenco de té agrietado a China para repararlo y quedó decepcionado por las feas grapas metálicas que recibió. Los artesanos japoneses desarrollaron una solución más bella. Si tu dorodango desarrolla una grieta durante el secado, te enfrentas a un momento kintsugi: puedes abandonarlo, o puedes trabajar con la grieta, incorporándola a la historia de la esfera. Algunos de los dorodango más llamativos llevan historia visible en su superficie.';
+
+  @override
+  String get reflectionKintsugi1Source =>
+      'Christy Bartlett, Flickwerk: La estética de la cerámica japonesa remendada';
+
+  @override
+  String get reflectionKintsugi2Title => 'Más fuerte en los lugares rotos';
+
+  @override
+  String get reflectionKintsugi2Body =>
+      'La filosofía del kintsugi se extiende mucho más allá de la cerámica. Sugiere que la rotura y la reparación son parte de la historia de un objeto, no algo que disimular. Aplicado al dorodango, esto significa que las imperfecciones que encuentres — una pequeña abolladura por el manejo, un parche desigual al empolvar, una sutil variación de color por diferentes capas de tierra — no son fracasos. Son capítulos. Cada marca registra un momento del proceso de creación. Los maestros del dorodango suelen decir que pueden leer toda la historia de una esfera desde su superficie, igual que un geólogo lee la historia de la tierra en la roca expuesta.';
+
+  @override
+  String get reflectionKintsugi2Source => 'Filosofía artesanal japonesa';
+
+  @override
+  String get reflectionShokunin1Title => 'El espíritu del artesano';
+
+  @override
+  String get reflectionShokunin1Body =>
+      'Shokunin significa artesano en japonés, pero conlleva un significado más profundo que su traducción sugiere. Shokunin katagi — el espíritu del artesano — describe una devoción al oficio que va más allá de la habilidad y entra en territorio moral. El shokunin siente una obligación social de dar lo mejor de sí para el beneficio de los demás. Incluso cuando hace algo para sí mismo, trabaja como si la vida de otra persona dependiera de la calidad. Esta intensidad de enfoque, aplicada a una simple esfera de barro, transforma lo que podría ser una actividad trivial en una meditación sobre lo que significa preocuparse profundamente por la calidad del propio trabajo.';
+
+  @override
+  String get reflectionShokunin1Source =>
+      'Tashio Odate, Herramientas japonesas de carpintería';
+
+  @override
+  String get reflectionShokunin2Title => 'Diez mil horas de tierra';
+
+  @override
+  String get reflectionShokunin2Body =>
+      'En los oficios tradicionales japoneses, la maestría se mide no en años sino en repeticiones. Un chef de sushi pasa años aprendiendo solo a preparar el arroz. Un pulidor de espadas completa un aprendizaje de diez años antes de trabajar de forma independiente. El dorodango sigue una versión comprimida de este arco: en horas, se atraviesa la frustración, el aburrimiento, el flujo y la satisfacción. Cada esfera que haces enseña algo que la anterior no podía. El núcleo de la segunda esfera será más denso. El empolvado de la tercera será más uniforme. Para la quinta, tus manos sabrán cosas que tu mente no puede articular. Este es el camino del shokunin: conocimiento que vive en el cuerpo.';
+
+  @override
+  String get reflectionShokunin2Source => 'Tradición de aprendizaje japonesa';
+
+  @override
+  String get reflectionShokunin3Title => 'El polvo habla';
+
+  @override
+  String get reflectionShokunin3Body =>
+      'Un practicante hábil del empolvado puede sentir la diferencia entre partículas de tierra de distintos tamaños con las yemas de los dedos. Las partículas más finas — las que pasan por un tamiz de 200 mallas — crean la superficie más suave y el brillo más profundo. Pero el enfoque del shokunin no consiste solo en usar el polvo más fino; consiste en entender por qué. Las partículas más pequeñas se empaquetan con mayor densidad, dejando menos huecos para que la luz se disperse. Cada capa de empolvado añade quizás veinte micrones de material. Cinco a diez capas construyen una capa más delgada que una carta de baraja, pero suficientemente fuerte para pulirse hasta lograr un espejo. La atención a esta escala es la esencia del oficio.';
+
+  @override
+  String get reflectionShokunin3Source => 'Ciencia de materiales del dorodango';
+
+  @override
+  String get reflectionShokunin4Title => 'El tacto del pulidor';
+
+  @override
+  String get reflectionShokunin4Body =>
+      'Los pulidores de espadas japoneses, o togishi, pasan décadas perfeccionando el arte de revelar el verdadero carácter de una hoja. Trabajan con una serie de piedras cada vez más finas, cada una eliminando menos material y revelando más detalle. La etapa final usa una piedra del tamaño de la yema de un dedo que se desliza sobre el acero con casi ninguna presión. Pulir el dorodango sigue el mismo principio: a medida que la superficie se vuelve más fina, tu tacto debe volverse más ligero. La presión fuerte sobre una superficie lisa rayará, no pulirá. La última etapa de acabado apenas roza la superficie. La maestría aquí se mide en lo que aprendes a contener, no en lo que aplicas.';
+
+  @override
+  String get reflectionShokunin4Source =>
+      'Tradición japonesa de pulido de espadas (togishi)';
+
+  @override
+  String get reflectionSoil1Title => 'Un mundo bajo tus pies';
+
+  @override
+  String get reflectionSoil1Body =>
+      'Una sola cucharadita de tierra sana contiene más microorganismos que personas hay en la Tierra. Bacterias, hongos, protozoos y nematodos forman una red viva que lleva miles de años construyéndose. La tierra que recogiste para tu dorodango carga esta historia. La composición mineral refleja el lecho de roca subyacente, erosionado a lo largo del tiempo geológico. El color cuenta una historia: los rojos y naranjas indican óxidos de hierro, los marrones oscuros sugieren materia orgánica rica, los grises apuntan a depósitos de arcilla. Cada dorodango es un retrato del lugar específico del que proviene — una pequeña esfera que guarda la historia profunda de su paisaje.';
+
+  @override
+  String get reflectionSoil1Source =>
+      'David Montgomery, Tierra: La erosión de las civilizaciones';
+
+  @override
+  String get reflectionSoil2Title => 'La arcilla recuerda';
+
+  @override
+  String get reflectionSoil2Body =>
+      'La arcilla es notable entre los componentes del suelo por su memoria. Las partículas de arcilla son planas y en forma de lámina; cuando se comprimen, se alinean en capas paralelas, como barajar un mazo de cartas y presionarlo. Esta alineación es lo que le da a tu dorodango su resistencia y su potencial de brillo. Las partículas, una vez alineadas, resisten volver al desorden. Recuerdan la presión de tus manos. Esto no es metáfora; es física. Cada compresión durante la formación del núcleo reorganiza permanentemente millones de partículas en una configuración más fuerte. La esfera literalmente toma la forma de tu cuidado.';
+
+  @override
+  String get reflectionSoil2Source =>
+      'Ciencia del suelo, mineralogía de la arcilla';
+
+  @override
+  String get reflectionPatience1Title => 'La revelación lenta';
+
+  @override
+  String get reflectionPatience1Body =>
+      'La vida moderna se optimiza para la velocidad. Entrega instantánea, actualizaciones en tiempo real, resultados inmediatos. El dorodango resiste todo esto. Solo la etapa de secado tarda horas, y no hay manera de acelerarla sin dañar la esfera. Esta paciencia forzada no es un defecto sino una característica. Los investigadores que estudian los estados de flujo han descubierto que las tareas manuales lentas y repetitivas — tejer, tallar madera, alfarería — activan la red de modo predeterminado del cerebro, la misma red asociada con la creatividad y la autorreflexión. Tu dorodango no solo se está secando ahora mismo; tu mente puede estar haciendo algunos de sus trabajos más interesantes en este espacio sin prisa.';
+
+  @override
+  String get reflectionPatience1Source => 'Mihaly Csikszentmihalyi, Fluir';
+
+  @override
+  String get reflectionPatience2Title => 'Lo que saben las manos';
+
+  @override
+  String get reflectionPatience2Body =>
+      'Hay un proverbio japonés: «Las manos aprenden antes de que la mente comprenda.» Observa a un niño haciendo dorodango por primera vez y lo verás en acción. Antes de poder explicar lo que está haciendo, sus manos ajustan instintivamente la presión, la velocidad de rotación y la humedad. Esta inteligencia táctil — desarrollada a lo largo de millones de años de evolución humana — es una de nuestras capacidades más infravaloradas. En una era de pantallas y abstracción, el dorodango es un regreso a la actividad humana fundamental de moldear el mundo físico con las manos. No es un paso atrás, sino una reconexión con algo esencial.';
+
+  @override
+  String get reflectionPatience2Source => 'Frank Wilson, La mano';
 }

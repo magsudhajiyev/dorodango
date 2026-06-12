@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dorodango/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/reflection_content.dart';
 import '../../../core/theme/app_colors.dart';
@@ -12,6 +13,7 @@ class ReflectionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final grouped = <ReflectionTheme, List<Reflection>>{};
     for (final r in ReflectionContent.all) {
       grouped.putIfAbsent(r.theme, () => []).add(r);
@@ -20,7 +22,7 @@ class ReflectionsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Reflections',
+          l10n.reflections,
           style: AppTypography.h2,
         ),
         backgroundColor: AppColors.bg,
@@ -56,6 +58,7 @@ class _ThemeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -65,7 +68,7 @@ class _ThemeSection extends StatelessWidget {
             bottom: AppSpacing.xs,
           ),
           child: Text(
-            theme.displayName,
+            theme.displayName(l10n),
             style: AppTypography.caption.copyWith(
               color: AppColors.shine,
               letterSpacing: 1.2,
@@ -95,6 +98,7 @@ class _LibraryCardState extends State<_LibraryCard> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final reflection = widget.reflection;
 
     return GestureDetector(
@@ -123,7 +127,7 @@ class _LibraryCardState extends State<_LibraryCard> {
                 ),
                 const SizedBox(width: AppSpacing.xs),
                 Expanded(
-                  child: Text(reflection.title, style: AppTypography.label),
+                  child: Text(reflection.title(l10n), style: AppTypography.label),
                 ),
                 Icon(
                   _expanded
@@ -137,12 +141,12 @@ class _LibraryCardState extends State<_LibraryCard> {
             if (_expanded) ...[
               const SizedBox(height: AppSpacing.xs),
               Text(
-                reflection.body,
+                reflection.body(l10n),
                 style: AppTypography.caption.copyWith(color: AppColors.ink),
               ),
               const SizedBox(height: AppSpacing.xs),
               Text(
-                reflection.source,
+                reflection.source(l10n),
                 style: AppTypography.monoSm.copyWith(
                   color: AppColors.inkFaint,
                 ),

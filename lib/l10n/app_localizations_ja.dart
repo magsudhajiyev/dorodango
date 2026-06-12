@@ -568,4 +568,229 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get wakeAck => 'はい？';
+
+  @override
+  String get themeDorodangoOrigins => '泥だんごの起源';
+
+  @override
+  String get themeWabiSabi => '侘寂';
+
+  @override
+  String get themeMa => '間';
+
+  @override
+  String get themeKintsugi => '金継ぎ';
+
+  @override
+  String get themeShokunin => '職人';
+
+  @override
+  String get themeSoil => '土';
+
+  @override
+  String get themePatience => '忍耐';
+
+  @override
+  String get reflectionOrigins1Title => '校庭の子どもたち';
+
+  @override
+  String get reflectionOrigins1Body =>
+      '光る泥だんごは日本の校庭から生まれました。子どもたちは、ただひたすら忍耐を重ねるだけで、普通の泥が非凡なものへと変わることを発見したのです。京都教育大学の加用文男教授は1990年代後半にこの伝統を記録し、日本のほぼすべての地域で子どもたちが独立してこの技法を生み出していたことを確認しました。誰かが教えたわけではなく、子どもたちは互いから学び合い、知識を縦ではなく横に伝えていったのです。そこには深い真理があります。生の土を鏡へと変えたいという欲求は、教わるものではなく、発見されるものなのです。';
+
+  @override
+  String get reflectionOrigins1Source => '加用文男、京都教育大学';
+
+  @override
+  String get reflectionOrigins2Title => '言葉そのもの';
+
+  @override
+  String get reflectionOrigins2Body =>
+      '「光る」は輝くこと、または輝いているという意味です。「泥だんご」は泥と団子に分かれます。光る泥の団子 — 鏡のような仕上がりに達しうるものにしては、その名は拍子抜けするほど謙虚です。この謙虚さは日本の命名において意図的なものです。最も非凡なものにはしばしば最も単純な名が与えられます。なぜなら、物そのものが語るからです。完成した泥だんごを手にするとき、説明は不要です。磨かれた土の球は言葉を超えて直接語りかけ、最も普通の素材から忍耐と注意が何を引き出せるかを証明しています。';
+
+  @override
+  String get reflectionOrigins2Source => '日本語の語源';
+
+  @override
+  String get reflectionOrigins3Title => 'ブルース・ガードナーと西洋';
+
+  @override
+  String get reflectionOrigins3Body =>
+      'アメリカ人アーティストのブルース・ガードナーは、日本の工芸の伝統を研究する中で泥だんごと出会い、その工程を詳細に記録した最初期の西洋実践者の一人となりました。彼の仕事は文化の橋渡しとなり、土を変容させることへの魅力が普遍的であることを示しました。ガードナーは、西洋の学生たちが最も苦労するのは乾燥の段階であると指摘しました。それは技法の問題ではなく、焦りの問題です。球はあなたに待つことを求め、その待機の中で何かが変わります。素材を強制しようとすることをやめ、素材に耳を傾け始めるのです。この教えこそが実践の真の贈り物だ、とガードナーは述べました。';
+
+  @override
+  String get reflectionOrigins3Source => 'Bruce Gardner、dorodango.com';
+
+  @override
+  String get reflectionOrigins4Title => '鏡としての土';
+
+  @override
+  String get reflectionOrigins4Body =>
+      '泥だんごの最終段階は、ほとんど逆説的とも言えることを成し遂げます。土が鏡になるのです。私たちの世界で最も鈍い素材 — 泥 — が、十分な忍耐ある注意を注がれることで光を反射します。古来の日本哲学はここに矛盾を見出しません。輝きの可能性は常に土の中に宿っていた。職人はそこにすでにあったものを明らかにしただけなのです。これは日本の美学に繰り返し現れる考え方です。職人は素材に美を押しつけるのではなく、素材から美を引き出すのです。あなたの手はこの土と対話してきました。そして輝きは、土の答えなのです。';
+
+  @override
+  String get reflectionOrigins4Source => '日本の美的哲学';
+
+  @override
+  String get reflectionWabi1Title => '不完全さの美';
+
+  @override
+  String get reflectionWabi1Body =>
+      '侘寂とは、不完全さと無常を受け入れることに根ざした日本の美学です。ひびの入った茶碗、風雨にさらされた木の梁、石と石の間に生える苔 — これらは欠点ではなく、時間と使用の証です。あなたの泥だんごは完璧な球にはなりません。それはあなたの手の独自の痕跡を、あなたの土の固有の組成を、あなたが作った日の湿度を帯びているでしょう。こうした違いは修正すべき誤りではなく、まさにあなたの球をあなただけのものにする要素です。同じ泥だんごは二つとして存在しない。それこそが要点なのです。';
+
+  @override
+  String get reflectionWabi1Source =>
+      'Leonard Koren, Wabi-Sabi: for Artists, Designers, Poets & Philosophers';
+
+  @override
+  String get reflectionWabi2Title => '何も続かない';
+
+  @override
+  String get reflectionWabi2Body =>
+      '侘寂の三つの柱の一つは無常です — 何も続かず、何も完成せず、何も完璧ではない。あなたの泥だんごは、完成した後も変化し続けています。数週間かけてさらに硬くなるでしょう。月日とともに、その表面は色調に微妙な変化を帯びることがあります。落としてしまえば割れ、断面はあなたの作業の層を地層のように露わにするでしょう。この無常はオブジェクトを損ないません。それを深めるのです。あなたは永遠に続くものを作っているのではありません。あなたと同じように、時の中に美しく在るものを作っているのです。';
+
+  @override
+  String get reflectionWabi2Source => 'Richard Powell, Wabi Sabi Simple';
+
+  @override
+  String get reflectionWabi3Title => '手段の貧しさ、結果の豊かさ';
+
+  @override
+  String get reflectionWabi3Body =>
+      '「侘び」はもともと、社会から遠く離れて自然の中で生きる孤独を表していました。幾世紀もかけて、シンプルさの美しさと手段の貧しさを愛でるように変化していきました。泥だんごはおそらくその最も純粋な表現です。あなたの素材は土と水です。高価な道具も、特殊な設備も、希少な材料も不要です。結果の豊かさはひとえにあなたの注意から生まれます。費用と品質をしばしば同一視する世界において、足元の土から美しいものを作るというのは、静かながら根底からの問いかけです。素材のコストはゼロ。投資は、存在することです。';
+
+  @override
+  String get reflectionWabi3Source => '岡倉覚三、茶の本';
+
+  @override
+  String get reflectionWabi4Title => 'すでにそこにあるものを見る';
+
+  @override
+  String get reflectionWabi4Body =>
+      '侘寂の達人は美を創るというよりも、美を明らかにします。庭園設計家は石を一つも置く前に、既存の景観を見ます。茶の湯の達人は季節に合った茶碗を選ぶのであって、最も華やかなものを選ぶわけではありません。泥だんごを磨くとき、あなたは泥に美を塗りつけているのではありません。土の粒子がすでに持っていた潜在的な輝きを引き出しているのです。圧縮され滑らかにされた微細な鉱物粒子の並びが、自然に光を反射します。あなたは輝きを加えたのではありません。それを隠していたすべてのものを取り除いたのです。これが侘寂の道です。加えることではなく引くこと、装飾ではなく啓示。';
+
+  @override
+  String get reflectionWabi4Source => '柳宗悦、日常の美';
+
+  @override
+  String get reflectionMa1Title => '間という空間';
+
+  @override
+  String get reflectionMa1Body =>
+      '間とは負の空間という日本の概念です。音楽に形を与える音符と音符の間の休止、部屋を使えるものにする空虚さ、意味が着地するのを可能にする会話の沈黙。泥だんごにおいて、乾燥の段階は純粋な間です。目に見えることは何も起きていないのに、表面の下では何もかもが変化しています。水分が毛細管現象によって外に向かって移動し、粒子が沈着して結合します。あなたの手が動いていなくても、球は働いています。この見えないプロセスを信頼すること — 行動と同じくらい待機に価値を見出すこと — が、この実践が提供する最も深い教えの一つです。';
+
+  @override
+  String get reflectionMa1Source => '磯崎新、MA: Space-Time in Japan';
+
+  @override
+  String get reflectionMa2Title => '空虚は無ではない';
+
+  @override
+  String get reflectionMa2Body =>
+      '西洋の思考では、空きスペースはしばしば不在として捉えられます。何か埋めるべきもの。日本の美学では、空虚は存在です。伝統的な部屋の床の間には、ただ一つの掛け軸と一輪の花しかありません。なぜならそれらを取り囲む空間こそが、その力の源だからです。今この瞬間、あなたの泥だんごは休んでいます。この休息は無駄な時間ではありません。あなたの動作の間の休止が、素材に答えることを許します。それは対話です。形を作り、そして聴く。圧縮し、そして待つ。球は教えてくれます。生産性と静けさは対立するものではなく、互いを意味あるものにするパートナーなのだと。';
+
+  @override
+  String get reflectionMa2Source => '老子、道徳経（第十一章）、日本的解釈を経て';
+
+  @override
+  String get reflectionKintsugi1Title => 'ひびの中の金';
+
+  @override
+  String get reflectionKintsugi1Body =>
+      '金継ぎとは、金を混ぜた漆で割れた陶器を修復する芸術です。損傷を隠すのではなく、修復そのものがオブジェクトの最も美しい部分になります。その歴史は15世紀に遡ります。ある日本の将軍がひびの入った茶碗を中国へ修理に送り、戻ってきた醜い金属製の留め金に失望しました。日本の職人はより美しい解決策を生み出しました。泥だんごが乾燥中にひびを生じたなら、あなたは金継ぎの瞬間に直面しています。諦めることもできますし、ひびとともに作業し、それを球の物語の一部として取り込むこともできます。最も印象的な泥だんごの中には、表面に目に見える歴史を刻んでいるものがあります。';
+
+  @override
+  String get reflectionKintsugi1Source =>
+      'Christy Bartlett, Flickwerk: The Aesthetics of Mended Japanese Ceramics';
+
+  @override
+  String get reflectionKintsugi2Title => '壊れた場所でより強く';
+
+  @override
+  String get reflectionKintsugi2Body =>
+      '金継ぎの哲学は陶器をはるかに超えて広がります。それは、傷と修復がオブジェクトの歴史の一部であり、隠すべきものではないことを示唆しています。泥だんごに当てはめると、これは、遭遇する不完全さ — 扱いによる小さなへこみ、粉かけの不均一なパッチ、異なる土の層による微妙な色の変化 — が失敗ではないことを意味します。それらは章なのです。それぞれの跡が、制作過程の一瞬を記録しています。泥だんごの熟練した実践者たちはよく、球の表面から球の全物語を読み取れると言います。地質学者が露出した岩から地球の歴史を読み取るように。';
+
+  @override
+  String get reflectionKintsugi2Source => '日本の工芸哲学';
+
+  @override
+  String get reflectionShokunin1Title => '職人の精神';
+
+  @override
+  String get reflectionShokunin1Body =>
+      '職人とは日本語で「artisan（職人）」を意味しますが、英語の訳語が示す以上の深い意味を持っています。職人気質 — 職人の精神 — は、技術を超えて道徳の領域にまで及ぶ、自らの仕事への献身を表します。職人は、他者の利益のために最善を尽くすという社会的義務を感じています。自分自身のために何かを作るときでも、他の誰かの人生がその品質にかかっているかのように働きます。この集中の強度を、単純な土の球に当てはめることで、つまらない活動になりかねないものを、自分の仕事の品質を深く気にかけるとはどういうことかという瞑想へと変えます。';
+
+  @override
+  String get reflectionShokunin1Source =>
+      'Tashio Odate, Japanese Woodworking Tools';
+
+  @override
+  String get reflectionShokunin2Title => '土の一万時間';
+
+  @override
+  String get reflectionShokunin2Body =>
+      '日本の伝統工芸において、習熟は年数ではなく反復回数で測られます。寿司職人は米の炊き方だけを学ぶのに何年もかけます。刀の研ぎ師は独立して働く前に十年の修行を積みます。泥だんごはこの弧の圧縮版をたどります。数時間の中で、葛藤、退屈、フロー、そして満足感を巡ります。作る球のたびに、前の球では学べなかった何かが教えられます。二つ目の球の芯はより密になります。三つ目の粉かけはより均一になります。五つ目になれば、あなたの手は心が言語化できないことを知っているでしょう。これが職人の道です — 体の中に生きる知識。';
+
+  @override
+  String get reflectionShokunin2Source => '日本の弟子制度の伝統';
+
+  @override
+  String get reflectionShokunin3Title => '粉が語る';
+
+  @override
+  String get reflectionShokunin3Body =>
+      '熟練した粉かけの実践者は、指先でさまざまな大きさの土の粒子の違いを感じ取ることができます。最も細かい粒子 — 200メッシュのふるいを通過するもの — が最も滑らかな表面と最も深い輝きを生み出します。しかし職人のアプローチは単に最も細かい粉を使うことではありません。なぜそうなのかを理解することです。小さな粒子はより密に詰まり、光が散乱する隙間を少なくします。粉かけの各層は約20ミクロンの素材を加えます。5から10層で、トランプ一枚より薄く、それでいて鏡面磨きに耐える強さを持つ殻を作り上げます。この規模での注意こそが、職人技の本質です。';
+
+  @override
+  String get reflectionShokunin3Source => '泥だんごの材料科学';
+
+  @override
+  String get reflectionShokunin4Title => '研ぎ師の手';
+
+  @override
+  String get reflectionShokunin4Body =>
+      '日本の刀の研ぎ師、すなわち砥師は、刀の真の性格を引き出す芸術を極めるために何十年もかけます。彼らはますます細かくなる一連の砥石を使って作業し、それぞれがより少ない素材を除去し、より多くの細部を明らかにします。最終段階では、指先ほどの大きさの砥石がほとんど圧力をかけずに鋼の上を滑ります。泥だんごを磨くことは同じ原則に従います。表面が細かくなるにつれ、あなたの触れ方はより軽くなければなりません。滑らかな表面への強い圧力は磨くのではなく、傷をつけます。仕上げの最終段階は、表面にほとんど触れないほどです。ここでの習熟は、加えるものではなく、差し控えることを学ぶことで測られます。';
+
+  @override
+  String get reflectionShokunin4Source => '日本の刀の研磨の伝統（砥師）';
+
+  @override
+  String get reflectionSoil1Title => '足元の世界';
+
+  @override
+  String get reflectionSoil1Body =>
+      '健康な土壌のティースプーン一杯には、地球上の人口よりも多くの微生物が含まれています。細菌、菌類、原生動物、線虫が何千年もかけて構築されてきた生きたウェブを形成しています。泥だんごのために集めた土はこの歴史を帯びています。鉱物組成は地質学的な時間をかけて風化した、地下の岩盤を反映しています。色は物語を語ります。赤とオレンジは酸化鉄を示し、濃い茶色は豊かな有機物を示唆し、グレーは粘土の堆積物を指します。すべての泥だんごは、それが来た特定の場所の肖像です — その景観の深い物語を宿す小さな球。';
+
+  @override
+  String get reflectionSoil1Source =>
+      'David Montgomery, Dirt: The Erosion of Civilizations';
+
+  @override
+  String get reflectionSoil2Title => '粘土は覚えている';
+
+  @override
+  String get reflectionSoil2Body =>
+      '粘土は土の構成要素の中で、その記憶力ゆえに注目に値します。粘土粒子は平らで板状であり、圧縮されると平行な層に整列します — トランプのデッキをシャッフルして平らに押しつけるようなものです。この整列こそが、泥だんごに強度と輝きの可能性を与えるものです。一度整列した粒子は、無秩序な状態に戻ることに抵抗します。あなたの手の圧力を覚えているのです。これは比喩ではありません。物理です。芯の形成中の各圧縮は、何百万もの粒子をより強固な配置へと永続的に再配置します。球は文字通り、あなたの思いやりの形を取るのです。';
+
+  @override
+  String get reflectionSoil2Source => '土壌科学、粘土鉱物学';
+
+  @override
+  String get reflectionPatience1Title => 'ゆっくりとした啓示';
+
+  @override
+  String get reflectionPatience1Body =>
+      '現代の生活はスピードのために最適化されています。即時配達、リアルタイムの更新、即座の結果。泥だんごはこれらすべてに抵抗します。乾燥の段階だけで何時間もかかり、球を傷つけずにそれを急ぐ方法はありません。この強制された忍耐は欠点ではなく特徴です。フロー状態を研究した研究者たちは、編み物、木彫り、陶芸などの遅くて反復的な手作業が、脳のデフォルトモードネットワークを活性化することを発見しました。このネットワークは創造性と自己省察に関連するものと同じです。今この瞬間、あなたの泥だんごは乾燥しているだけではありません。この余裕ある空間の中で、あなたの心は最も興味深い作業のいくつかをしているかもしれません。';
+
+  @override
+  String get reflectionPatience1Source => 'Mihaly Csikszentmihalyi, Flow';
+
+  @override
+  String get reflectionPatience2Title => '手が知ること';
+
+  @override
+  String get reflectionPatience2Body =>
+      '日本の諺があります。「心が理解する前に、手が学ぶ。」初めて泥だんごを作る子どもを観察すれば、それが実際に起きているのを目にするでしょう。自分が何をしているか説明できるようになる前に、子どもの手は圧力、回転速度、水分を本能的に調整しています。何百万年もの人間の進化を経て発達したこの触覚的知性は、私たちの最も過小評価されている能力の一つです。スクリーンと抽象の時代において、泥だんごは自分の手で物理的な世界を形作るという人間の根本的な活動への回帰です。それは後退ではなく、本質的な何かへの再接続なのです。';
+
+  @override
+  String get reflectionPatience2Source => 'Frank Wilson, The Hand';
 }

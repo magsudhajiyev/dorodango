@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dorodango/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_durations.dart';
@@ -46,6 +47,7 @@ class _ReflectionCardState extends ConsumerState<ReflectionCard> {
 
     final reflection = reflectionState.currentReflection;
     if (reflection == null) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context);
 
     // Check if the current reflection is relevant to this stage
     if (!reflection.relevantStages.contains(widget.stage)) {
@@ -79,7 +81,7 @@ class _ReflectionCardState extends ConsumerState<ReflectionCard> {
                 const SizedBox(width: AppSpacing.xs),
                 Expanded(
                   child: Text(
-                    reflection.title,
+                    reflection.title(l10n),
                     style: AppTypography.label,
                   ),
                 ),
@@ -95,7 +97,7 @@ class _ReflectionCardState extends ConsumerState<ReflectionCard> {
                 curve: AppDurations.easeCurve,
                 alignment: Alignment.topCenter,
                 child: Text(
-                  reflection.body,
+                  reflection.body(l10n),
                   style: AppTypography.caption.copyWith(color: AppColors.ink),
                   maxLines: _expanded ? null : 3,
                   overflow: _expanded ? null : TextOverflow.ellipsis,
@@ -109,7 +111,7 @@ class _ReflectionCardState extends ConsumerState<ReflectionCard> {
                 child: GestureDetector(
                   onTap: () => setState(() => _expanded = true),
                   child: Text(
-                    'Read more',
+                    l10n.readMore,
                     style: AppTypography.caption.copyWith(
                       color: AppColors.shine,
                       fontWeight: FontWeight.w600,
@@ -122,14 +124,14 @@ class _ReflectionCardState extends ConsumerState<ReflectionCard> {
 
             // Source + read time
             Text(
-              reflection.source,
+              reflection.source(l10n),
               style: AppTypography.monoSm.copyWith(
                 color: AppColors.inkFaint,
               ),
             ),
             const SizedBox(height: 2),
             Text(
-              '~${reflection.estimatedReadTime} min read',
+              l10n.estimatedReadTime(reflection.estimatedReadTime),
               style: AppTypography.monoSm.copyWith(
                 color: AppColors.inkFaint,
               ),

@@ -498,7 +498,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get goHunting => 'Ova başla';
 
   @override
-  String get handsFreeHint => 'Əlsiz rejim — bitirmək üçün “stop” deyin';
+  String get handsFreeHint => 'Əlsiz rejim — bitirmək üçün \"stop\" deyin';
 
   @override
   String get voiceGoodbye =>
@@ -614,11 +614,242 @@ class AppLocalizationsAz extends AppLocalizations {
   String get authErrorGeneric => 'Daxil olmaq alınmadı. Yenidən cəhd edin.';
 
   @override
-  String get wakeWordTooltip => '“Hey Doro” oyatma sözü';
+  String get wakeWordTooltip => '\"Hey Doro\" oyatma sözü';
 
   @override
-  String get sayHeyDoro => 'Lazım olanda “Hey Doro” deyin';
+  String get sayHeyDoro => 'Lazım olanda \"Hey Doro\" deyin';
 
   @override
   String get wakeAck => 'Bəli?';
+
+  @override
+  String get themeDorodangoOrigins => 'Dorodango Kökləri';
+
+  @override
+  String get themeWabiSabi => 'Wabi-Sabi';
+
+  @override
+  String get themeMa => 'Ma (間)';
+
+  @override
+  String get themeKintsugi => 'Kintsugi';
+
+  @override
+  String get themeShokunin => 'Shokunin';
+
+  @override
+  String get themeSoil => 'Torpaq';
+
+  @override
+  String get themePatience => 'Səbr';
+
+  @override
+  String get reflectionOrigins1Title => 'Məktəb Həyətinin Uşaqları';
+
+  @override
+  String get reflectionOrigins1Body =>
+      'Hikaru dorodango yapon məktəb həyətlərindən doğuldu — uşaqlar orada kəşf etdi ki, adi palçıq yalnız səbr vasitəsilə müstəsna bir şeyə çevrilə bilər. Kyoto Təhsil Universitetindən professor Fumio Kayo bu ənənəni 1990-cı illərin sonunda sənədləşdirdi və Yaponiyanın demək olar ki, hər bölgəsindəki uşaqların bu texnikanı müstəqil şəkildə inkişaf etdirdiyini aşkar etdi. Onlara heç kim öyrətmədi — biliyi üfüqi şəkildə, bir-birlərindən öyrəndilər. Bunda dərin bir məna var: xam torpağı güzgüyə çevirmək istəyi öyrənilmir, kəşf edilir.';
+
+  @override
+  String get reflectionOrigins1Source =>
+      'Fumio Kayo, Kyoto Təhsil Universiteti';
+
+  @override
+  String get reflectionOrigins2Title => 'Sözün Özü';
+
+  @override
+  String get reflectionOrigins2Body =>
+      'Hikaru \"parlamaq\" və ya \"parıldayan\" deməkdir. Dorodango isə doro (palçıq) və dango (köftə) sözlərindən ibarətdir. Parıldayan palçıq köftəsi — güzgü kimi cilalanmış bir şey üçün ad inanılmaz dərəcədə sadədir. Bu sadəlik Yapon adlandırmasında qəsdən mövcuddur. Ən qeyri-adi şeylərə çox vaxt ən sadə adlar verilir, çünki cismin özü özündən danışır. Hazır bir dorodangonu əlinizdə tutduqunuzda heç kimin izahat verməsinə ehtiyac yoxdur. Cilalanmış torpaq kürəsi dildən kənar, birbaşa müraciət edir — ən adi materialdan səbr və diqqətin nə çıxara biləcəyinin şahididir.';
+
+  @override
+  String get reflectionOrigins2Source => 'Yapon etimologiyası';
+
+  @override
+  String get reflectionOrigins3Title => 'Bruce Gardner və Qərb';
+
+  @override
+  String get reflectionOrigins3Body =>
+      'Amerikalı rəssam Bruce Gardner Yapon sənət ənənələrini araşdırarkən dorodango ilə tanış oldu və prosesi ətraflı sənədləşdirən ilk Qərb praktikantlarından biri oldu. Onun işi mədəniyyətlər arasında körpü qurdu — torpağı çevirmək həvəsinin evrensel olduğunu göstərdi. Gardner qeyd etdi ki, Qərb tələbələri ən çox qurutma mərhələsində çətinlik çəkir — texnika üzündən yox, səbirsizlik ucbatından. Kürə sizdən gözləməyi tələb edir, bu gözləmədə isə bir şey dəyişir. Materialı məcbur etməyi dayandırıb ona qulaq asmağa başlayırsınız. Gardner hesab edirdi ki, bu dərs məşqin əsl hədiyyəsidir.';
+
+  @override
+  String get reflectionOrigins3Source => 'Bruce Gardner, dorodango.com';
+
+  @override
+  String get reflectionOrigins4Title => 'Güzgü kimi Torpaq';
+
+  @override
+  String get reflectionOrigins4Body =>
+      'Dorodangonun son mərhələsi demək olar paradoksal bir şey nail olur: torpaq güzgüyə çevrilir. Dünyamızın ən tutqun materialı — kir — kifayət qədər səbirli diqqət verildikdə işığı əks etdirir. Qədim Yapon fəlsəfəsi burada heç bir ziddiyyət görmür. Parlaqlıq potensialı həmişə torpaqda mövcud idi; usta sadəcə artıq orada olanı üzə çıxardı. Bu, Yapon estetikasında təkrarlanan bir fikirdir: sənətkar materiala gözəllik yükləmir, onu ondan çıxarır. Əlləriniz bu torpaqla söhbət etdi və parıltı torpağın cavabıdır.';
+
+  @override
+  String get reflectionOrigins4Source => 'Yapon estetik fəlsəfəsi';
+
+  @override
+  String get reflectionWabi1Title => 'Qüsursuzluğun Gözəlliyi';
+
+  @override
+  String get reflectionWabi1Body =>
+      'Wabi-sabi qüsursuzluğu və keçiciliyi qəbul etməyə əsaslanan Yapon estetikasıdır. Çatlamış bir çay kasəsi, aşınmış taxta tir, daşların arasında böyüyən yosun — bunlar nöqsanlar deyil, zamanın və istifadənin imzalarıdır. Dorodangonuz mükəmməl bir kürə olmayacaq. Əllərinizin unikal izini, torpağınızın xüsusi tərkibini, onu hazırladığınız günün rütubətini özündə daşıyacaq. Bu fərqliliklər düzəldilməli xətalar deyil — kürənizi yalnız sizin edən şeylərdir. İki dorodango eyni olmur və bu məhz əsas məqamdır.';
+
+  @override
+  String get reflectionWabi1Source =>
+      'Leonard Koren, Wabi-Sabi: Rəssamlar, Dizaynerlər, Şairlər və Filosoflar üçün';
+
+  @override
+  String get reflectionWabi2Title => 'Heç Nə Davamlı Deyil';
+
+  @override
+  String get reflectionWabi2Body =>
+      'Wabi-sabinin üç dirəyindən biri keçicilikdir — heç nə davamlı deyil, heç nə bitmiş deyil, heç nə mükəmməl deyil. Dorodangonuz tamamlandıqdan sonra belə dəyişməyə davam edir. Həftələr ərzində bərkiməyə davam edəcək. Aylar və illər keçdikcə səthi incə ton dəyişiklikləri inkişaf etdirə bilər. Düşsə qırılacaq və kəsilmiş hissə işinizin təbəqələrini coğrafi süxur kimi ortaya çıxaracaq. Bu keçicilik cismi kiçiltmir; onu dərinləşdirir. Əbədi bir şey yaratmırsınız. Zamanda gözəl şəkildə mövcud olan bir şey yaradırsınız, necə ki siz də beləsiniz.';
+
+  @override
+  String get reflectionWabi2Source => 'Richard Powell, Wabi Sabi Simple';
+
+  @override
+  String get reflectionWabi3Title =>
+      'Vasitənin Yoxsulluğu, Nəticənin Zənginliyi';
+
+  @override
+  String get reflectionWabi3Body =>
+      'Wabi əvvəlcə cəmiyyətdən uzaqda, təbiətdə yaşamağın tənhalığını ifadə edirdi. Əsrlər boyunca sadəliyin gözəlliyini və vasitə yoxsulluğunu qiymətləndirəcək şəkildə inkişaf etdi. Dorodango bəlkə bunun ən saf ifadəsidir: materialınız torpaq və sudur. Bahalı alətlər yox, xüsusi avadanlıq yox, nadir inqrediyentlər yox. Nəticənin zənginliyi tamamilə diqqətinizdən gəlir. Xərci keyfiyyətlə tez-tez eyniləşdirən bir dünyada ayaqlarınızın altındakı torpaqdan gözəl bir cisim yaratmaqda sakit bir radikallıq var. Material xərci sıfırdır. İnvestisiya — mövcudluqdur.';
+
+  @override
+  String get reflectionWabi3Source => 'Kakuzo Okakura, Çay Kitabı';
+
+  @override
+  String get reflectionWabi4Title => 'Artıq Olanı Görmək';
+
+  @override
+  String get reflectionWabi4Body =>
+      'Wabi-sabi ustası gözəlliyi yaratmaqdan çox üzə çıxarır. Bir bağça dizayneri tək bir daş yerləşdirməzdən əvvəl mövcud mənzərəni görür. Çay ustası ən bəzəkli kasəni yox, mövsümə uyğun kasəni seçir. Dorodangonuzu cilalayadə palçığa gözəllik boyamırsınız — torpaq hissəciklərinin artıq sahib olduğu gizli parlaqlığı üzə çıxarırsınız. Sıxılmış və hamarlanmış kiçik mineral dənələrinin hizalanması təbii olaraq işığı əks etdirir. Parlaqlığı siz əlavə etmədiniz. Onu gizlədən hər şeyi kənarlaşdırdınız. Bu wabi-sabi yoludur: əlavə etmək deyil, çıxarmaq; bəzəmək deyil, üzə çıxarmaq.';
+
+  @override
+  String get reflectionWabi4Source =>
+      'Soetsu Yanagi, Gündəlik Əşyaların Gözəlliyi';
+
+  @override
+  String get reflectionMa1Title => 'Aralarındakı Boşluq';
+
+  @override
+  String get reflectionMa1Body =>
+      'Ma (間) mənfi məkanın Yapon konsepsiyasıdır — musiqiyə formasını verən notlar arasındakı pauza, onu istifadə edilə bilən hala gətirən otağın boşluğu, mənananın yerləşməsinə imkan verən söhbətdəki sükut. Dorodangoda qurutma mərhələsi saf madır. Görünən heç nə baş vermir, lakin səthin altında hər şey dəyişir. Nəm kapilyar hərəkətlə xaricə miqrasiya edir, hissəciklər oturur və bağlanır. Əlləriniz hərəkətsiz olarkən kürə işləyir. Bu görünməz prosesə etibar etməyi — gözləməyi etmək qədər qiymətləndirməyi — öyrənmək, məşqin təklif etdiyi ən dərin dərslərdən biridir.';
+
+  @override
+  String get reflectionMa1Source =>
+      'Arata Isozaki, MA: Yaponiyadakı Məkan-Zaman';
+
+  @override
+  String get reflectionMa2Title => 'Boşluq Heç Nə Deyil';
+
+  @override
+  String get reflectionMa2Body =>
+      'Qərb düşüncəsində boş məkan çox vaxt yoxluq kimi görülür — doldurulması lazım olan bir şey. Yapon estetikasında isə boşluq varlıqdır. Ənənəvi otaqdakı tokonoma taxa yalnız bir tumar və bir çiçək saxlayır, çünki onların ətrafındakı məkan onlara güc verən şeydir. İndi dorodangonuz istirahət edir və bu istirahət boşa getmir. Hərəkətləriniz arasındakı pauza materialın cavab verməsinə imkan yaradır. Bu bir dialoqudur: siz formalaşdırırsınız, sonra qulaq asırsınız. Sıxışdırırsınız, sonra gözləyirsiniz. Kürə öyrədir ki, məhsuldarlıq və sakinlik bir-birinə zid deyil, hər biri digərini anlamlı edən ortaqlardır.';
+
+  @override
+  String get reflectionMa2Source =>
+      'Lao Tzu, Tao Te Ching (Fəsil 11), Yapon təfsiri ilə';
+
+  @override
+  String get reflectionKintsugi1Title => 'Çatlaqlardakı Qızıl';
+
+  @override
+  String get reflectionKintsugi1Body =>
+      'Kintsugi qızıl qarışıqlı lak ilə qırılmış keramikanı onarmaq sənətidir. Zərəri gizlətmək əvəzinə, təmir cismin ən gözəl hissəsinə çevrilir. Tarixi on beşinci əsrə dayanır — Yapon şogun çatlamış çay kasəsini Çinə onartmağa göndərdi və aldığı çirkin metal stapler onu məyus etdi. Yapon sənətkarları daha gözəl bir həll yolu inkişaf etdirdi. Dorodangonuz qurutma zamanı bir çatlaq əmələ gətirirsə, kintsugi anıyla üzləşirsiniz: onu tərk edə bilərsiniz, ya da çatlaqla işləyib onu kürənin hekayəsinə daxil edə bilərsiniz. Ən diqqətəlayiq dorodangolardan bəziləri səthində görünən tarixi daşıyır.';
+
+  @override
+  String get reflectionKintsugi1Source =>
+      'Christy Bartlett, Flickwerk: Yamaqlanmış Yapon Keramikasının Estetikası';
+
+  @override
+  String get reflectionKintsugi2Title => 'Qırılan Yerlərdə Daha Güclü';
+
+  @override
+  String get reflectionKintsugi2Body =>
+      'Kintsugi fəlsəfəsi keramikanın çox ötəsinə uzanır. O göstərir ki, qırılma və təmir bir cismin tarixinin bir hissəsidir, gizlədilməli bir şey deyil. Dorodangoya tətbiq edildikdə bu o deməkdir ki, qarşılaşdığınız qüsurlar — işləmə zamanı kiçik bir çuxur, qeyri-bərabər tozlama, müxtəlif torpaq təbəqələrindən fərqli rəng dəyişikliyi — uğursuzluqlar deyil. Onlar fəsillərdir. Hər iz istehsal prosesinin bir anını qeyd edir. Usta dorodango praktikantları çox vaxt deyirlər ki, kürənin bütün hekayəsini onun səthinə baxaraq oxuya bilirlər, necə ki bir geoloq açıq qayada yerin tarixini oxuyur.';
+
+  @override
+  String get reflectionKintsugi2Source => 'Yapon sənət fəlsəfəsi';
+
+  @override
+  String get reflectionShokunin1Title => 'Ustanın Ruhu';
+
+  @override
+  String get reflectionShokunin1Body =>
+      'Shokunin Yaponca usta və ya sənətkar deməkdir, lakin İngilis dilinə çevrilməsindən daha dərin bir məna daşıyır. Shokunin katagi — ustanın ruhu — başqalarının xeyrinə ən yaxşısını etməyə olan sədaqəti ifadə edir ki, bu da bacarığın ötəsinə keçərək əxlaqi sahəyə girir. Shokunin özü üçün bir şey hazırlayanda belə, sanki başqa birinin həyatı işin keyfiyyətindən asılıdır kimi çalışır. Sadə bir palçıq kürəsinə tətbiq edilən bu diqqət intensivliyi, önemsiz ola biləcək bir fəaliyyəti işinizin keyfiyyətinə dərindən əhəmiyyət verməyin nə demək olduğuna dair meditasiyaya çevirir.';
+
+  @override
+  String get reflectionShokunin1Source =>
+      'Tashio Odate, Yapon Ağac İşləmə Alətləri';
+
+  @override
+  String get reflectionShokunin2Title => 'Torpağın On Min Saatı';
+
+  @override
+  String get reflectionShokunin2Body =>
+      'Ənənəvi Yapon sənətlərində ustalıq illər ilə deyil, təkrarlamalarla ölçülür. Suşi şefi yalnız düyü hazırlamağı öyrənmək üçün illər keçirir. Qılınc parlaqçısı müstəqil işləməzdən əvvəl on illik çıraqlıq tamamlayır. Dorodango bu yayın sıxışdırılmış versiyasını izləyir: saatlar ərzində məyusluq, can sıxıntısı, axın halı və məmnuniyyət dövrəsindən keçirsiniz. Hazırladığınız hər kürə əvvəlkinin öyrədə bilmədiyini öyrədir. İkinci kürənin nüvəsi daha sıx olacaq. Üçüncünün tozlaması daha bərabər olacaq. Beşinciyə qədər əlləriniz ağlınızın ifadə edə bilmədiyini biləcək. Bu shokunin yoludur — bədəndə yaşayan bilik.';
+
+  @override
+  String get reflectionShokunin2Source => 'Yapon çıraqlıq ənənəsi';
+
+  @override
+  String get reflectionShokunin3Title => 'Toz Danışır';
+
+  @override
+  String get reflectionShokunin3Body =>
+      'Bacarıqlı bir tozlama praktikantı barmaqlarının ucu ilə müxtəlif ölçüdəki torpaq hissəcikləri arasındakı fərqi hiss edə bilər. Ən incə hissəciklər — 200 məşlü ələkdən keçənlər — ən hamar səthi və ən dərin parlaqlığı yaradır. Lakin shokunin yanaşması yalnız ən incə tozu istifadə etmək deyil; bunun niyəsini anlamaqdır. Daha kiçik hissəciklər daha sıx paketlənir, işığın saçılması üçün daha az boşluq buraxır. Hər tozlama təbəqəsi bəlkə iyirmi mikron material əlavə edir. Beş-on təbəqə bir kart dəstindən daha nazik, lakin güzgü kimi cilalanmağa güclü bir qabıq yaradır. Bu miqyasda diqqət sənətkarlığın mahiyyətidir.';
+
+  @override
+  String get reflectionShokunin3Source => 'Dorodangonun material elmi';
+
+  @override
+  String get reflectionShokunin4Title => 'Parlatanın Toxunuşu';
+
+  @override
+  String get reflectionShokunin4Body =>
+      'Yapon qılınc parlatanları, ya da togishi, bir bıçağın həqiqi xarakterini üzə çıxarmaq sənətini mükəmməlləşdirməyə onilliklər həsr edir. Hər biri daha az material götürən və daha çox detal ortaya çıxaran giderek incələn daşlar silsiləsindən keçirlər. Son mərhələdə barmaq ucu boyda bir daş istifadə edilir ki, az qala heç bir təzyiq tətbiq etmədən poladın üzərində sürüşür. Dorodango cilalaması eyni prinsipi izləyir: səth daha incə hala gəldikcə toxunuşunuz daha yüngül olmalıdır. Hamar bir səthdə güclü təzyiq calalamaq əvəzinə cızıq yaradacaq. Bitirmənin son mərhələsi səthi cəmi qoparmaq üzrədir. Burada ustalıq tətbiq etdiklərinizlə deyil, öyrəndiklərinizi saxlamaqla ölçülür.';
+
+  @override
+  String get reflectionShokunin4Source =>
+      'Yapon qılınc parlatma ənənəsi (togishi)';
+
+  @override
+  String get reflectionSoil1Title => 'Ayaqlarınızın Altındakı Dünya';
+
+  @override
+  String get reflectionSoil1Body =>
+      'Sağlıklı torpağın bir çay qaşığı Yer üzündəki insan sayından daha çox mikroorqanizm ehtiva edir. Bakteriyalar, göbələklər, protozoa və nematodlar minillər boyunca qurulan canlı bir tor əmələ gətirir. Dorodangonuz üçün topladığınız torpaq bu tarixi daşıyır. Mineral tərkibi geoloji zamanla aşınan altdakı ana qayaya işarə edir. Rəng bir hekayə anladır: qırmızılar və narıncılar dəmir oksidlərini göstərir, tünd qəhvəyilər zəngin üzvi maddəni, bozlar isə gil yataqlarını. Hər dorodango gəldiyi xüsusi yerin portretidir — landşaftının dərin hekayəsini saxlayan kiçik bir kürə.';
+
+  @override
+  String get reflectionSoil1Source =>
+      'David Montgomery, Torpaq: Sivilizasiyaların Eroziyası';
+
+  @override
+  String get reflectionSoil2Title => 'Gil Xatırlayır';
+
+  @override
+  String get reflectionSoil2Body =>
+      'Gil, yaddaşı sayəsində torpaq komponentləri arasında fərqlənir. Gil hissəcikləri yastı və lövhə şəklindədir; sıxıldıqda paralel təbəqələrdə düzülürlər — bir kart dəstini qarışdırıb düz basmağa bənzər. Bu düzülüş dorodangonuza həm güc, həm də parlaqlıq potensialı verir. Hissəciklər bir dəfə düzüldükdə, nizamsızlığa qayıtmağa müqavimət göstərir. Əllərinizin təzyiqini xatırlayırlar. Bu metafora deyil; fizikadır. Nüvə formalaşdırma zamanındakı hər sıxışdırma milyonlarla hissəciyi daimi olaraq daha güclü bir konfiqurasiyaya yenidən düzür. Kürə sözün tam mənasında qayğınızın formasını alır.';
+
+  @override
+  String get reflectionSoil2Source => 'Torpaq elmi, gil mineralogiyası';
+
+  @override
+  String get reflectionPatience1Title => 'Yavaş Üzə Çıxış';
+
+  @override
+  String get reflectionPatience1Body =>
+      'Müasir həyat sürəti optimallaşdırır. Ani çatdırılma, real vaxt yeniləmələri, dərhal nəticələr. Dorodango bütün bunlara müqavimət göstərir. Yalnız qurutma mərhələsi saatlar çəkir və kürəyə zərər vermədən onu tezləşdirməyin yolu yoxdur. Bu məcburi səbr bir hata deyil, bir xüsusiyyətdir. Axın hallarını araşdıran tədqiqatçılar müəyyən etdi ki, yavaş, təkrarlanan əl işləri — toxuculuq, ağac oyma, dulusçuluq — beyindəki default rejim şəbəkəsini aktivləşdirir; bu yaradıcılıq və özünüdərk ilə əlaqəli eyni şəbəkədir. Dorodangonuz indi yalnız qurumuyor; ağlınız bu tələsiksiz məkanda ən maraqlı işlərindən birini görüyor ola bilər.';
+
+  @override
+  String get reflectionPatience1Source => 'Mihaly Csikszentmihalyi, Axın';
+
+  @override
+  String get reflectionPatience2Title => 'Əllərin Bildiyi';
+
+  @override
+  String get reflectionPatience2Body =>
+      'Yapon bir atalar sözü var: \"Əllər ağıldan əvvəl öyrənir.\" İlk dəfə dorodango hazırlayan uşağa baxın, bunu gözünüzlə görərsiniz. Nə etdiklərini izah edə bilməzdən əvvəl əlləri instinktiv olaraq təzyiqi, fırlanma sürətini və nəmi tənzimləyir. Bu toxunma zəkası — milyonlarla il insan təkamülü boyunca inkişaf etmiş — ən az qiymətləndirilən qabiliyyətlərimizdən biridir. Ekranlar və abstraksiya çağında dorodango, fiziki dünyayı əllərlə formalaşdırmanın əsas insan fəaliyyətinə qayıdışdır. Bu bir addım geri deyil — əsas bir şeylə yenidən bağlantıdır.';
+
+  @override
+  String get reflectionPatience2Source => 'Frank Wilson, Əl';
 }
