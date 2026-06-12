@@ -177,5 +177,14 @@
   "restorePurchases": "Ripristina acquisti",
   "purchaseSuccess": "Crediti aggiunti. Buona creazione!",
   "purchaseFailed": "L'acquisto non è andato a buon fine. Non ti è stato addebitato nulla.",
-  "packBestValue": "Più conveniente"
+  "packBestValue": "Più conveniente",
+
+  "welcomeBegin": "Inizia",
+  "welcomeFreeCredits": "{count} crediti gratuiti del coach IA inclusi",
+  "welcomeFeatureGuide": "Una guida serena, passo dopo passo, dal fango alla lucentezza a specchio",
+  "welcomeFeatureCoach": "Un coach IA a mani libere mentre le tue mani sono nell'argilla",
+  "welcomeFeatureHunt": "Pianta il tuo dorodango finito e dai la caccia a quelli vicini",
+  "logout": "Esci",
+  "logoutWarning": "Uscendo da un account ospite perderai i tuoi dorodango, i crediti e la collezione. Continuare?",
+  "cancel": "Annulla"
 }

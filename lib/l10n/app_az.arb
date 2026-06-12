@@ -177,5 +177,14 @@
   "restorePurchases": "Satınalmaları bərpa et",
   "purchaseSuccess": "Kreditlər əlavə olundu. Uğurlar!",
   "purchaseFailed": "Satınalma tamamlanmadı. Sizdən ödəniş tutulmadı.",
-  "packBestValue": "Ən sərfəli"
+  "packBestValue": "Ən sərfəli",
+
+  "welcomeBegin": "Başla",
+  "welcomeFreeCredits": "{count} pulsuz AI məşqçi krediti daxildir",
+  "welcomeFeatureGuide": "Palçıqdan güzgü parıltısına qədər sakit, addım-addım bələdçi",
+  "welcomeFeatureCoach": "Əlləriniz gildə olarkən əlsiz AI məşqçi",
+  "welcomeFeatureHunt": "Hazır dorodangonuzu əkin və yaxınlıqdakıları ovlayın",
+  "logout": "Çıxış",
+  "logoutWarning": "Qonaq hesabından çıxdıqda dorodangolarınız, kreditləriniz və kolleksiyanız itir. Davam edilsin?",
+  "cancel": "Ləğv et"
 }

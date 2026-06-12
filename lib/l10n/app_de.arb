@@ -177,5 +177,14 @@
   "restorePurchases": "Käufe wiederherstellen",
   "purchaseSuccess": "Credits hinzugefügt. Frohes Bauen!",
   "purchaseFailed": "Der Kauf wurde nicht abgeschlossen. Ihnen wurde nichts berechnet.",
-  "packBestValue": "Bester Wert"
+  "packBestValue": "Bester Wert",
+
+  "welcomeBegin": "Loslegen",
+  "welcomeFreeCredits": "{count} kostenlose KI-Coach-Credits inklusive",
+  "welcomeFeatureGuide": "Eine ruhige Schritt-für-Schritt-Anleitung vom Schlamm zum Spiegelglanz",
+  "welcomeFeatureCoach": "Ein freihändiger KI-Coach, während Ihre Hände im Ton sind",
+  "welcomeFeatureHunt": "Pflanzen Sie Ihr fertiges Dorodango ein und jagen Sie welche in der Nähe",
+  "logout": "Abmelden",
+  "logoutWarning": "Beim Abmelden von einem Gastkonto gehen Ihre Dorodangos, Credits und Ihre Sammlung verloren. Fortfahren?",
+  "cancel": "Abbrechen"
 }

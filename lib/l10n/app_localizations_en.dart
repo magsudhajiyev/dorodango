@@ -547,4 +547,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get packBestValue => 'Best value';
+
+  @override
+  String get welcomeBegin => 'Begin';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return '$count free AI coach credits included';
+  }
+
+  @override
+  String get welcomeFeatureGuide =>
+      'A calm, step-by-step guide from mud to mirror shine';
+
+  @override
+  String get welcomeFeatureCoach =>
+      'A hands-free AI coach while your hands are in the clay';
+
+  @override
+  String get welcomeFeatureHunt =>
+      'Plant your finished dorodango and hunt ones nearby';
+
+  @override
+  String get logout => 'Log out';
+
+  @override
+  String get logoutWarning =>
+      'Logging out of a guest account loses your builds, credits and collection. Continue?';
+
+  @override
+  String get cancel => 'Cancel';
 }

@@ -138,9 +138,54 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 color: AppColors.inkFaint),
             onTap: () => context.pushNamed(RouteNames.collection),
           ).animate(delay: 240.ms).fadeIn(duration: 350.ms),
+          const SizedBox(height: AppSpacing.md),
+
+          // Log out
+          ListTile(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            tileColor: AppColors.surface,
+            leading: const Icon(Icons.logout_rounded, color: AppColors.rust),
+            title: Text(
+              l10n.logout,
+              style: AppTypography.label.copyWith(color: AppColors.rust),
+            ),
+            onTap: () => _confirmLogout(context),
+          ).animate(delay: 320.ms).fadeIn(duration: 350.ms),
         ],
       ),
     );
+  }
+
+  Future<void> _confirmLogout(BuildContext context) async {
+    final l10n = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        backgroundColor: AppColors.bg,
+        title: Text(l10n.logout, style: AppTypography.h2),
+        content: Text(
+          l10n.logoutWarning,
+          style: AppTypography.body.copyWith(color: AppColors.inkSoft),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.cancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            style: TextButton.styleFrom(foregroundColor: AppColors.rust),
+            child: Text(l10n.logout),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    // The router redirects to the welcome screen once the auth stream
+    // emits the signed-out state.
+    await ref.read(authRepositoryProvider).signOut();
   }
 }
 

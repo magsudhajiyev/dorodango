@@ -499,4 +499,31 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get packBestValue => 'お得';
+
+  @override
+  String get welcomeBegin => 'はじめる';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return 'AIコーチクレジット$count回分が無料';
+  }
+
+  @override
+  String get welcomeFeatureGuide => '泥から鏡の輝きまで、静かなステップバイステップガイド';
+
+  @override
+  String get welcomeFeatureCoach => '手が泥だらけでも使えるハンズフリーAIコーチ';
+
+  @override
+  String get welcomeFeatureHunt => '完成したどろだんごを植えて、近くのものをハント';
+
+  @override
+  String get logout => 'ログアウト';
+
+  @override
+  String get logoutWarning =>
+      'ゲストアカウントからログアウトすると、どろだんご、クレジット、コレクションが失われます。続行しますか？';
+
+  @override
+  String get cancel => 'キャンセル';
 }

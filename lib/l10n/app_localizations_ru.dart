@@ -546,4 +546,33 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get packBestValue => 'Выгоднее всего';
+
+  @override
+  String get welcomeBegin => 'Начать';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return '$count бесплатных кредитов ИИ-коуча в подарок';
+  }
+
+  @override
+  String get welcomeFeatureGuide =>
+      'Спокойное пошаговое руководство — от грязи до зеркального блеска';
+
+  @override
+  String get welcomeFeatureCoach => 'Голосовой ИИ-коуч, пока ваши руки в глине';
+
+  @override
+  String get welcomeFeatureHunt =>
+      'Посадите готовый дороданго и охотьтесь за чужими поблизости';
+
+  @override
+  String get logout => 'Выйти';
+
+  @override
+  String get logoutWarning =>
+      'При выходе из гостевого аккаунта вы потеряете свои дороданго, кредиты и коллекцию. Продолжить?';
+
+  @override
+  String get cancel => 'Отмена';
 }

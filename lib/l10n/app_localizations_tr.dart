@@ -548,4 +548,34 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get packBestValue => 'En avantajlı';
+
+  @override
+  String get welcomeBegin => 'Başla';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return '$count ücretsiz yapay zeka koç kredisi dahil';
+  }
+
+  @override
+  String get welcomeFeatureGuide =>
+      'Çamurdan ayna parlaklığına, sakin ve adım adım bir rehber';
+
+  @override
+  String get welcomeFeatureCoach =>
+      'Elleriniz kildeyken eller serbest yapay zeka koçu';
+
+  @override
+  String get welcomeFeatureHunt =>
+      'Bitmiş dorodangonuzu ekin ve yakındakileri avlayın';
+
+  @override
+  String get logout => 'Çıkış yap';
+
+  @override
+  String get logoutWarning =>
+      'Misafir hesabından çıkarsanız dorodangolarınız, kredileriniz ve koleksiyonunuz kaybolur. Devam edilsin mi?';
+
+  @override
+  String get cancel => 'İptal';
 }

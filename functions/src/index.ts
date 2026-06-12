@@ -18,6 +18,9 @@ export {notifyNearbyHunters} from "./notifyNearbyHunters";
 // Re-export revenuecatWebhook
 export {revenuecatWebhook} from "./revenuecatWebhook";
 
+// Re-export onUserCreated
+export {onUserCreated} from "./onUserCreated";
+
 // getCredits callable
 export const getCredits = onCall(
   {region: "us-east4"},

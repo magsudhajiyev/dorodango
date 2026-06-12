@@ -1031,6 +1031,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Best value'**
   String get packBestValue;
+
+  /// No description provided for @welcomeBegin.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin'**
+  String get welcomeBegin;
+
+  /// No description provided for @welcomeFreeCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} free AI coach credits included'**
+  String welcomeFreeCredits(int count);
+
+  /// No description provided for @welcomeFeatureGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'A calm, step-by-step guide from mud to mirror shine'**
+  String get welcomeFeatureGuide;
+
+  /// No description provided for @welcomeFeatureCoach.
+  ///
+  /// In en, this message translates to:
+  /// **'A hands-free AI coach while your hands are in the clay'**
+  String get welcomeFeatureCoach;
+
+  /// No description provided for @welcomeFeatureHunt.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant your finished dorodango and hunt ones nearby'**
+  String get welcomeFeatureHunt;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get logout;
+
+  /// No description provided for @logoutWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Logging out of a guest account loses your builds, credits and collection. Continue?'**
+  String get logoutWarning;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
 }
 
 class _AppLocalizationsDelegate

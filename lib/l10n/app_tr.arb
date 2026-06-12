@@ -177,5 +177,14 @@
   "restorePurchases": "Satın almaları geri yükle",
   "purchaseSuccess": "Krediler eklendi. İyi çalışmalar!",
   "purchaseFailed": "Satın alma tamamlanmadı. Sizden ücret alınmadı.",
-  "packBestValue": "En avantajlı"
+  "packBestValue": "En avantajlı",
+
+  "welcomeBegin": "Başla",
+  "welcomeFreeCredits": "{count} ücretsiz yapay zeka koç kredisi dahil",
+  "welcomeFeatureGuide": "Çamurdan ayna parlaklığına, sakin ve adım adım bir rehber",
+  "welcomeFeatureCoach": "Elleriniz kildeyken eller serbest yapay zeka koçu",
+  "welcomeFeatureHunt": "Bitmiş dorodangonuzu ekin ve yakındakileri avlayın",
+  "logout": "Çıkış yap",
+  "logoutWarning": "Misafir hesabından çıkarsanız dorodangolarınız, kredileriniz ve koleksiyonunuz kaybolur. Devam edilsin mi?",
+  "cancel": "İptal"
 }

@@ -177,5 +177,14 @@
   "restorePurchases": "購入を復元",
   "purchaseSuccess": "クレジットを追加しました。良い制作を！",
   "purchaseFailed": "購入が完了しませんでした。請求はされていません。",
-  "packBestValue": "お得"
+  "packBestValue": "お得",
+
+  "welcomeBegin": "はじめる",
+  "welcomeFreeCredits": "AIコーチクレジット{count}回分が無料",
+  "welcomeFeatureGuide": "泥から鏡の輝きまで、静かなステップバイステップガイド",
+  "welcomeFeatureCoach": "手が泥だらけでも使えるハンズフリーAIコーチ",
+  "welcomeFeatureHunt": "完成したどろだんごを植えて、近くのものをハント",
+  "logout": "ログアウト",
+  "logoutWarning": "ゲストアカウントからログアウトすると、どろだんご、クレジット、コレクションが失われます。続行しますか？",
+  "cancel": "キャンセル"
 }

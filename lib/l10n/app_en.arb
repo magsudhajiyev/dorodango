@@ -190,5 +190,15 @@
   "restorePurchases": "Restore purchases",
   "purchaseSuccess": "Credits added. Happy building!",
   "purchaseFailed": "The purchase didn't complete. You weren't charged.",
-  "packBestValue": "Best value"
+  "packBestValue": "Best value",
+
+  "welcomeBegin": "Begin",
+  "welcomeFreeCredits": "{count} free AI coach credits included",
+  "@welcomeFreeCredits": { "placeholders": { "count": { "type": "int" } } },
+  "welcomeFeatureGuide": "A calm, step-by-step guide from mud to mirror shine",
+  "welcomeFeatureCoach": "A hands-free AI coach while your hands are in the clay",
+  "welcomeFeatureHunt": "Plant your finished dorodango and hunt ones nearby",
+  "logout": "Log out",
+  "logoutWarning": "Logging out of a guest account loses your builds, credits and collection. Continue?",
+  "cancel": "Cancel"
 }

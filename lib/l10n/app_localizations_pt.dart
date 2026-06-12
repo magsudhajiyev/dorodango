@@ -552,4 +552,34 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get packBestValue => 'Melhor custo';
+
+  @override
+  String get welcomeBegin => 'Começar';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return '$count créditos grátis do coach de IA incluídos';
+  }
+
+  @override
+  String get welcomeFeatureGuide =>
+      'Um guia calmo, passo a passo, da lama ao brilho de espelho';
+
+  @override
+  String get welcomeFeatureCoach =>
+      'Um coach de IA mãos-livres enquanto suas mãos estão na argila';
+
+  @override
+  String get welcomeFeatureHunt =>
+      'Plante seu dorodango pronto e cace os que estão por perto';
+
+  @override
+  String get logout => 'Sair';
+
+  @override
+  String get logoutWarning =>
+      'Ao sair de uma conta de convidado, você perde seus dorodangos, créditos e coleção. Continuar?';
+
+  @override
+  String get cancel => 'Cancelar';
 }

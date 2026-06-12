@@ -550,4 +550,33 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get packBestValue => 'Ən sərfəli';
+
+  @override
+  String get welcomeBegin => 'Başla';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return '$count pulsuz AI məşqçi krediti daxildir';
+  }
+
+  @override
+  String get welcomeFeatureGuide =>
+      'Palçıqdan güzgü parıltısına qədər sakit, addım-addım bələdçi';
+
+  @override
+  String get welcomeFeatureCoach => 'Əlləriniz gildə olarkən əlsiz AI məşqçi';
+
+  @override
+  String get welcomeFeatureHunt =>
+      'Hazır dorodangonuzu əkin və yaxınlıqdakıları ovlayın';
+
+  @override
+  String get logout => 'Çıxış';
+
+  @override
+  String get logoutWarning =>
+      'Qonaq hesabından çıxdıqda dorodangolarınız, kreditləriniz və kolleksiyanız itir. Davam edilsin?';
+
+  @override
+  String get cancel => 'Ləğv et';
 }

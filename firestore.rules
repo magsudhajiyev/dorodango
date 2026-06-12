@@ -19,7 +19,13 @@ service cloud.firestore {
 
     match /users/{uid} {
       allow read: if request.auth != null && request.auth.uid == uid;
-      allow create: if request.auth != null && request.auth.uid == uid;
+      // New accounts may seed themselves with exactly the signup bonus
+      // (the onUserCreated function grants it server-side as well), or
+      // create the doc without a credits field at all — never any other
+      // credit amount.
+      allow create: if request.auth != null && request.auth.uid == uid
+        && (!request.resource.data.keys().hasAny(['credits'])
+            || request.resource.data.credits == 10);
       allow update: if request.auth != null && request.auth.uid == uid
         && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['credits']));
 

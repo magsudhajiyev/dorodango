@@ -555,4 +555,34 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get packBestValue => 'Bester Wert';
+
+  @override
+  String get welcomeBegin => 'Loslegen';
+
+  @override
+  String welcomeFreeCredits(int count) {
+    return '$count kostenlose KI-Coach-Credits inklusive';
+  }
+
+  @override
+  String get welcomeFeatureGuide =>
+      'Eine ruhige Schritt-für-Schritt-Anleitung vom Schlamm zum Spiegelglanz';
+
+  @override
+  String get welcomeFeatureCoach =>
+      'Ein freihändiger KI-Coach, während Ihre Hände im Ton sind';
+
+  @override
+  String get welcomeFeatureHunt =>
+      'Pflanzen Sie Ihr fertiges Dorodango ein und jagen Sie welche in der Nähe';
+
+  @override
+  String get logout => 'Abmelden';
+
+  @override
+  String get logoutWarning =>
+      'Beim Abmelden von einem Gastkonto gehen Ihre Dorodangos, Credits und Ihre Sammlung verloren. Fortfahren?';
+
+  @override
+  String get cancel => 'Abbrechen';
 }
