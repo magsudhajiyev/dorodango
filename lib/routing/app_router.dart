@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../features/auth/providers/auth_provider.dart';
 import '../features/auth/screens/welcome_screen.dart';
+import '../features/auth/screens/auth_screen.dart';
 import '../features/guided_build/screens/build_start_screen.dart';
 import '../features/guided_build/screens/stage_screen.dart';
 import '../features/guided_build/screens/build_complete_screen.dart';
@@ -22,10 +23,11 @@ final routerProvider = Provider<GoRouter>((ref) {
     initialLocation: '/',
     redirect: (context, state) {
       final isLoggedIn = authState.valueOrNull != null;
-      final isOnSplash = state.matchedLocation == '/';
+      final isAuthFlow = state.matchedLocation == '/' ||
+          state.matchedLocation == '/auth';
 
-      if (!isLoggedIn && !isOnSplash) return '/';
-      if (isLoggedIn && isOnSplash) return '/home';
+      if (!isLoggedIn && !isAuthFlow) return '/';
+      if (isLoggedIn && isAuthFlow) return '/home';
       return null;
     },
     routes: [
@@ -33,6 +35,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/',
         name: RouteNames.splash,
         builder: (context, state) => const WelcomeScreen(),
+      ),
+      GoRoute(
+        path: '/auth',
+        name: RouteNames.auth,
+        builder: (context, state) => const AuthScreen(),
       ),
       GoRoute(
         path: '/home',

@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Planta tu dorodango terminado y caza los cercanos",
   "logout": "Cerrar sesión",
   "logoutWarning": "Al cerrar sesión de una cuenta de invitado se pierden tus dorodangos, créditos y colección. ¿Continuar?",
-  "cancel": "Cancelar"
+  "cancel": "Cancelar",
+
+  "signInTitle": "Iniciar sesión",
+  "registerTitle": "Crear cuenta",
+  "emailHint": "Correo electrónico",
+  "passwordHint": "Contraseña",
+  "authToggleToRegister": "¿Eres nuevo? Crea una cuenta",
+  "authToggleToLogin": "¿Ya tienes cuenta? Inicia sesión",
+  "continueAsGuest": "Continuar como invitado",
+  "authErrorInvalidCredentials": "El correo o la contraseña son incorrectos.",
+  "authErrorEmailInUse": "Ya existe una cuenta con este correo.",
+  "authErrorWeakPassword": "La contraseña debe tener al menos 6 caracteres.",
+  "authErrorGeneric": "No se pudo iniciar sesión. Inténtalo de nuevo."
 }

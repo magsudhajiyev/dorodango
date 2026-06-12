@@ -580,4 +580,40 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get cancel => 'Cancelar';
+
+  @override
+  String get signInTitle => 'Iniciar sesión';
+
+  @override
+  String get registerTitle => 'Crear cuenta';
+
+  @override
+  String get emailHint => 'Correo electrónico';
+
+  @override
+  String get passwordHint => 'Contraseña';
+
+  @override
+  String get authToggleToRegister => '¿Eres nuevo? Crea una cuenta';
+
+  @override
+  String get authToggleToLogin => '¿Ya tienes cuenta? Inicia sesión';
+
+  @override
+  String get continueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get authErrorInvalidCredentials =>
+      'El correo o la contraseña son incorrectos.';
+
+  @override
+  String get authErrorEmailInUse => 'Ya existe una cuenta con este correo.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'La contraseña debe tener al menos 6 caracteres.';
+
+  @override
+  String get authErrorGeneric =>
+      'No se pudo iniciar sesión. Inténtalo de nuevo.';
 }

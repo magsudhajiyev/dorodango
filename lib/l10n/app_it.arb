@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Pianta il tuo dorodango finito e dai la caccia a quelli vicini",
   "logout": "Esci",
   "logoutWarning": "Uscendo da un account ospite perderai i tuoi dorodango, i crediti e la collezione. Continuare?",
-  "cancel": "Annulla"
+  "cancel": "Annulla",
+
+  "signInTitle": "Accedi",
+  "registerTitle": "Crea account",
+  "emailHint": "Email",
+  "passwordHint": "Password",
+  "authToggleToRegister": "Nuovo qui? Crea un account",
+  "authToggleToLogin": "Hai già un account? Accedi",
+  "continueAsGuest": "Continua come ospite",
+  "authErrorInvalidCredentials": "Email o password errati.",
+  "authErrorEmailInUse": "Esiste già un account con questa email.",
+  "authErrorWeakPassword": "La password deve contenere almeno 6 caratteri.",
+  "authErrorGeneric": "Accesso non riuscito. Riprova."
 }

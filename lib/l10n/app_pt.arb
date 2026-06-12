@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Plante seu dorodango pronto e cace os que estão por perto",
   "logout": "Sair",
   "logoutWarning": "Ao sair de uma conta de convidado, você perde seus dorodangos, créditos e coleção. Continuar?",
-  "cancel": "Cancelar"
+  "cancel": "Cancelar",
+
+  "signInTitle": "Entrar",
+  "registerTitle": "Criar conta",
+  "emailHint": "E-mail",
+  "passwordHint": "Senha",
+  "authToggleToRegister": "Novo por aqui? Crie uma conta",
+  "authToggleToLogin": "Já tem uma conta? Entre",
+  "continueAsGuest": "Continuar como convidado",
+  "authErrorInvalidCredentials": "E-mail ou senha incorretos.",
+  "authErrorEmailInUse": "Já existe uma conta com este e-mail.",
+  "authErrorWeakPassword": "A senha deve ter pelo menos 6 caracteres.",
+  "authErrorGeneric": "Falha ao entrar. Tente novamente."
 }

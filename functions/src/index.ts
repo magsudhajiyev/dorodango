@@ -21,7 +21,9 @@ export {revenuecatWebhook} from "./revenuecatWebhook";
 // Re-export onUserCreated
 export {onUserCreated} from "./onUserCreated";
 
-// getCredits callable
+// getCredits callable — self-healing: accounts that never received their
+// signup bonus (e.g. created while a rules bug denied the client seed)
+// get it granted here.
 export const getCredits = onCall(
   {region: "us-east4"},
   async (request) => {
@@ -29,11 +31,15 @@ export const getCredits = onCall(
       throw new HttpsError("unauthenticated", "Must be signed in.");
     }
     const uid = request.auth.uid;
-    const doc = await admin
-      .firestore()
-      .collection("users")
-      .doc(uid)
-      .get();
+    const userRef = admin.firestore().collection("users").doc(uid);
+    const doc = await userRef.get();
+    if (!doc.exists) {
+      await userRef.set({
+        credits: 10,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      return {credits: 10};
+    }
     const credits = (doc.data()?.credits as number) ?? 0;
     return {credits};
   }

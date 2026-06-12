@@ -579,4 +579,37 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get cancel => 'Ləğv et';
+
+  @override
+  String get signInTitle => 'Daxil ol';
+
+  @override
+  String get registerTitle => 'Hesab yarat';
+
+  @override
+  String get emailHint => 'E-poçt';
+
+  @override
+  String get passwordHint => 'Şifrə';
+
+  @override
+  String get authToggleToRegister => 'Yenisiniz? Hesab yaradın';
+
+  @override
+  String get authToggleToLogin => 'Hesabınız var? Daxil olun';
+
+  @override
+  String get continueAsGuest => 'Qonaq kimi davam et';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-poçt və ya şifrə yanlışdır.';
+
+  @override
+  String get authErrorEmailInUse => 'Bu e-poçt ilə hesab artıq mövcuddur.';
+
+  @override
+  String get authErrorWeakPassword => 'Şifrə ən azı 6 simvol olmalıdır.';
+
+  @override
+  String get authErrorGeneric => 'Daxil olmaq alınmadı. Yenidən cəhd edin.';
 }

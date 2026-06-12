@@ -2,26 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:dorodango/l10n/app_localizations.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../routing/route_names.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
 import '../../hunt/widgets/dorodango_ball.dart';
 import '../providers/auth_provider.dart';
 
-/// First screen: a welcome pitch for signed-out users (sign-in happens when
-/// they tap Begin), or a brief loader while an existing session restores.
-class WelcomeScreen extends ConsumerStatefulWidget {
+/// First screen: a welcome pitch for signed-out users (Begin leads to the
+/// login/register screen), or a brief loader while a session restores.
+class WelcomeScreen extends ConsumerWidget {
   const WelcomeScreen({super.key});
 
   @override
-  ConsumerState<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
-  bool _started = false;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final authState = ref.watch(authStateProvider);
 
@@ -32,27 +27,17 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
           child: authState.when(
             loading: () => _Loader(l10n: l10n),
             error: (e, _) => _Error(l10n: l10n, message: e.toString()),
-            data: (user) {
-              if (user == null && !_started) {
-                return _buildWelcome(l10n);
-              }
-              // Signing in (or session restoring) — router redirects to
-              // /home once the auth stream emits the user.
-              final ensure = ref.watch(ensureAuthProvider);
-              return ensure.when(
-                data: (_) => _Loader(l10n: l10n),
-                loading: () => _Loader(l10n: l10n),
-                error: (e, _) =>
-                    _Error(l10n: l10n, message: e.toString()),
-              );
-            },
+            data: (user) => user == null
+                // The router redirects signed-in users to /home.
+                ? _buildWelcome(context, l10n)
+                : _Loader(l10n: l10n),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildWelcome(AppLocalizations l10n) {
+  Widget _buildWelcome(BuildContext context, AppLocalizations l10n) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -119,12 +104,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
         SizedBox(
           height: 56,
           child: ElevatedButton(
-            onPressed: () {
-              // Re-run sign-in even if a previous (logged-out) session
-              // left a cached value behind.
-              ref.invalidate(ensureAuthProvider);
-              setState(() => _started = true);
-            },
+            onPressed: () => context.pushNamed(RouteNames.auth),
             child: Text(l10n.welcomeBegin),
           ),
         ).animate(delay: 500.ms).fadeIn(duration: 400.ms),
@@ -215,7 +195,7 @@ class _Error extends ConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.lg),
           ElevatedButton(
-            onPressed: () => ref.invalidate(ensureAuthProvider),
+            onPressed: () => ref.invalidate(authStateProvider),
             child: Text(l10n.retry),
           ),
         ],

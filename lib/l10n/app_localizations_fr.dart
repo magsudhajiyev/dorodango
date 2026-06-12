@@ -583,4 +583,38 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get cancel => 'Annuler';
+
+  @override
+  String get signInTitle => 'Se connecter';
+
+  @override
+  String get registerTitle => 'Créer un compte';
+
+  @override
+  String get emailHint => 'E-mail';
+
+  @override
+  String get passwordHint => 'Mot de passe';
+
+  @override
+  String get authToggleToRegister => 'Nouveau ici ? Créez un compte';
+
+  @override
+  String get authToggleToLogin => 'Déjà un compte ? Connectez-vous';
+
+  @override
+  String get continueAsGuest => 'Continuer en tant qu\'invité';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-mail ou mot de passe incorrect.';
+
+  @override
+  String get authErrorEmailInUse => 'Un compte existe déjà avec cet e-mail.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Le mot de passe doit contenir au moins 6 caractères.';
+
+  @override
+  String get authErrorGeneric => 'Échec de la connexion. Veuillez réessayer.';
 }

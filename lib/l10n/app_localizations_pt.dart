@@ -582,4 +582,38 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get cancel => 'Cancelar';
+
+  @override
+  String get signInTitle => 'Entrar';
+
+  @override
+  String get registerTitle => 'Criar conta';
+
+  @override
+  String get emailHint => 'E-mail';
+
+  @override
+  String get passwordHint => 'Senha';
+
+  @override
+  String get authToggleToRegister => 'Novo por aqui? Crie uma conta';
+
+  @override
+  String get authToggleToLogin => 'Já tem uma conta? Entre';
+
+  @override
+  String get continueAsGuest => 'Continuar como convidado';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-mail ou senha incorretos.';
+
+  @override
+  String get authErrorEmailInUse => 'Já existe uma conta com este e-mail.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'A senha deve ter pelo menos 6 caracteres.';
+
+  @override
+  String get authErrorGeneric => 'Falha ao entrar. Tente novamente.';
 }

@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Hazır dorodangonuzu əkin və yaxınlıqdakıları ovlayın",
   "logout": "Çıxış",
   "logoutWarning": "Qonaq hesabından çıxdıqda dorodangolarınız, kreditləriniz və kolleksiyanız itir. Davam edilsin?",
-  "cancel": "Ləğv et"
+  "cancel": "Ləğv et",
+
+  "signInTitle": "Daxil ol",
+  "registerTitle": "Hesab yarat",
+  "emailHint": "E-poçt",
+  "passwordHint": "Şifrə",
+  "authToggleToRegister": "Yenisiniz? Hesab yaradın",
+  "authToggleToLogin": "Hesabınız var? Daxil olun",
+  "continueAsGuest": "Qonaq kimi davam et",
+  "authErrorInvalidCredentials": "E-poçt və ya şifrə yanlışdır.",
+  "authErrorEmailInUse": "Bu e-poçt ilə hesab artıq mövcuddur.",
+  "authErrorWeakPassword": "Şifrə ən azı 6 simvol olmalıdır.",
+  "authErrorGeneric": "Daxil olmaq alınmadı. Yenidən cəhd edin."
 }

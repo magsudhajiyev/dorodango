@@ -200,5 +200,17 @@
   "welcomeFeatureHunt": "Plant your finished dorodango and hunt ones nearby",
   "logout": "Log out",
   "logoutWarning": "Logging out of a guest account loses your builds, credits and collection. Continue?",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+
+  "signInTitle": "Log in",
+  "registerTitle": "Create account",
+  "emailHint": "Email",
+  "passwordHint": "Password",
+  "authToggleToRegister": "New here? Create an account",
+  "authToggleToLogin": "Already have an account? Log in",
+  "continueAsGuest": "Continue as a guest",
+  "authErrorInvalidCredentials": "Email or password is incorrect.",
+  "authErrorEmailInUse": "An account with this email already exists.",
+  "authErrorWeakPassword": "The password must be at least 6 characters.",
+  "authErrorGeneric": "Sign-in failed. Please try again."
 }

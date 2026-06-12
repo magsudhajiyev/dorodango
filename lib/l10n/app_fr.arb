@@ -186,5 +186,17 @@
   "welcomeFeatureHunt": "Plantez votre dorodango terminé et chassez ceux à proximité",
   "logout": "Se déconnecter",
   "logoutWarning": "En vous déconnectant d'un compte invité, vous perdez vos dorodangos, crédits et votre collection. Continuer ?",
-  "cancel": "Annuler"
+  "cancel": "Annuler",
+
+  "signInTitle": "Se connecter",
+  "registerTitle": "Créer un compte",
+  "emailHint": "E-mail",
+  "passwordHint": "Mot de passe",
+  "authToggleToRegister": "Nouveau ici ? Créez un compte",
+  "authToggleToLogin": "Déjà un compte ? Connectez-vous",
+  "continueAsGuest": "Continuer en tant qu'invité",
+  "authErrorInvalidCredentials": "E-mail ou mot de passe incorrect.",
+  "authErrorEmailInUse": "Un compte existe déjà avec cet e-mail.",
+  "authErrorWeakPassword": "Le mot de passe doit contenir au moins 6 caractères.",
+  "authErrorGeneric": "Échec de la connexion. Veuillez réessayer."
 }

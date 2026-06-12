@@ -578,4 +578,37 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get cancel => 'İptal';
+
+  @override
+  String get signInTitle => 'Giriş yap';
+
+  @override
+  String get registerTitle => 'Hesap oluştur';
+
+  @override
+  String get emailHint => 'E-posta';
+
+  @override
+  String get passwordHint => 'Şifre';
+
+  @override
+  String get authToggleToRegister => 'Yeni misiniz? Hesap oluşturun';
+
+  @override
+  String get authToggleToLogin => 'Zaten hesabınız var mı? Giriş yapın';
+
+  @override
+  String get continueAsGuest => 'Misafir olarak devam et';
+
+  @override
+  String get authErrorInvalidCredentials => 'E-posta veya şifre hatalı.';
+
+  @override
+  String get authErrorEmailInUse => 'Bu e-posta ile bir hesap zaten var.';
+
+  @override
+  String get authErrorWeakPassword => 'Şifre en az 6 karakter olmalıdır.';
+
+  @override
+  String get authErrorGeneric => 'Giriş yapılamadı. Lütfen tekrar deneyin.';
 }

@@ -526,4 +526,37 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get cancel => 'キャンセル';
+
+  @override
+  String get signInTitle => 'ログイン';
+
+  @override
+  String get registerTitle => 'アカウント作成';
+
+  @override
+  String get emailHint => 'メールアドレス';
+
+  @override
+  String get passwordHint => 'パスワード';
+
+  @override
+  String get authToggleToRegister => '初めてですか？アカウントを作成';
+
+  @override
+  String get authToggleToLogin => 'アカウントをお持ちですか？ログイン';
+
+  @override
+  String get continueAsGuest => 'ゲストとして続行';
+
+  @override
+  String get authErrorInvalidCredentials => 'メールアドレスまたはパスワードが正しくありません。';
+
+  @override
+  String get authErrorEmailInUse => 'このメールアドレスのアカウントは既に存在します。';
+
+  @override
+  String get authErrorWeakPassword => 'パスワードは6文字以上にしてください。';
+
+  @override
+  String get authErrorGeneric => 'ログインに失敗しました。もう一度お試しください。';
 }
