@@ -860,4 +860,16 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get reflectionPatience2Source => 'Frank Wilson, Die Hand';
+
+  @override
+  String get voiceOutOfCredits =>
+      'Ihre KI-Credits sind aufgebraucht. Ich reagiere weiterhin auf Befehle wie weiter, wiederholen und Hilfe.';
+
+  @override
+  String get voiceError =>
+      'Etwas ist schiefgelaufen. Tippen Sie auf die Kugel, um es erneut zu versuchen.';
+
+  @override
+  String get voiceConnectionLost =>
+      'Die Verbindung ist abgebrochen. Prüfen Sie Ihr Internet und tippen Sie auf die Kugel.';
 }

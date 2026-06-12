@@ -7,6 +7,19 @@ import {buildSystemPrompt} from "./systemPrompt";
 
 const anthropicApiKey = defineSecret("ANTHROPIC_API_KEY");
 
+const LANGUAGE_NAMES: Record<string, string> = {
+  en: "English",
+  az: "Azerbaijani",
+  de: "German",
+  es: "Spanish",
+  fr: "French",
+  it: "Italian",
+  ja: "Japanese",
+  pt: "Portuguese",
+  ru: "Russian",
+  tr: "Turkish",
+};
+
 export const sendMessage = onCall(
   {
     region: "us-east4",
@@ -86,7 +99,13 @@ export const sendMessage = onCall(
         ? stages[stages.length - 1].stage
         : "core_forming";
 
-    const systemPrompt = buildSystemPrompt(buildData, stages, currentStage);
+    let systemPrompt = buildSystemPrompt(buildData, stages, currentStage);
+    const language = LANGUAGE_NAMES[data.languageCode ?? ""];
+    if (language && language !== "English") {
+      systemPrompt +=
+        `\n\nIMPORTANT: The user speaks ${language}. ` +
+        `Always respond in ${language}.`;
+    }
 
     // 5. Call Claude
     try {

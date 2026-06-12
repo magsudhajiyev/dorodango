@@ -12,6 +12,7 @@ import '../../guided_build/providers/build_session_provider.dart';
 import '../../guided_build/providers/credits_provider.dart';
 import '../services/ai_chat_service.dart';
 import '../services/command_parser.dart';
+import '../services/voice_phrases.dart';
 import '../services/stt_service.dart';
 import '../services/tts_service.dart';
 
@@ -71,24 +72,6 @@ class VoiceController {
   /// Callback to update the conversation-mode provider from outside.
   void Function(bool active)? onConversationModeChanged;
 
-  /// Voice is English-only for now (see [updateLocale]).
-  static const Set<String> _stopPhrases = {
-    'stop',
-    'stop listening',
-    "that's all",
-    'thats all',
-    'that is all',
-    'goodbye',
-    'bye',
-    'exit',
-    'quit',
-    'end conversation',
-    "i'm done",
-    'im done',
-    'done',
-    'no thanks',
-    'nothing else',
-  };
 
   VoiceController({
     required this.stt,
@@ -103,14 +86,25 @@ class VoiceController {
   List<ChatMessage> get conversationHistory =>
       List.unmodifiable(_conversationHistory);
 
+  String _languageCode = 'en';
+
   void updateLocale(String languageCode, AppLocalizations l10n) {
-    // Voice feature is English-only for now (TTS quality varies by locale)
-    final enL10n = lookupAppLocalizations(const Locale('en'));
-    _l10n = enL10n;
-    _stageContent = StageContent(enL10n);
-    tts.setLocale('en');
-    stt.setLocale('en');
-    parser.setLocale('en');
+    // The full voice loop follows the app language: recognition, command
+    // patterns, wake/stop phrases, spoken responses, and the AI's replies.
+    _languageCode = voiceSupportedLanguages.contains(languageCode)
+        ? languageCode
+        : 'en';
+    if (_languageCode == languageCode) {
+      _l10n = l10n;
+      _stageContent = StageContent(l10n);
+    } else {
+      final enL10n = lookupAppLocalizations(const Locale('en'));
+      _l10n = enL10n;
+      _stageContent = StageContent(enL10n);
+    }
+    tts.setLocale(_languageCode);
+    stt.setLocale(_languageCode);
+    parser.setLocale(_languageCode);
   }
 
   /// Wake-word ("Hey Doro") passive listening: while enabled and nothing
@@ -124,17 +118,6 @@ class VoiceController {
   /// Callback to update the wake-word provider from outside.
   void Function(bool enabled)? onWakeWordChanged;
 
-  /// Common recognizer spellings of "hey doro".
-  static const List<String> _wakePhrases = [
-    'hey doro',
-    'hey dora',
-    'hey duro',
-    'hey dodo',
-    'hey dorough',
-    'okay doro',
-    'ok doro',
-    'ok dora',
-  ];
 
   /// Starts the hands-free conversation loop.
   Future<void> startConversation() async {
@@ -196,8 +179,9 @@ class VoiceController {
   }
 
   bool _containsWakePhrase(String text) {
-    final normalized = text.toLowerCase().replaceAll(RegExp(r'[.,!?]'), '');
-    return _wakePhrases.any(normalized.contains);
+    final normalized =
+        text.toLowerCase().replaceAll(RegExp(r'[.,!?、。！？]'), '');
+    return wakePhrasesFor(_languageCode).any(normalized.contains);
   }
 
   Future<void> _onWakeDetected() async {
@@ -348,12 +332,14 @@ class VoiceController {
     }
   }
 
+  String _normalizePhrase(String text) => text
+      .toLowerCase()
+      .replaceAll(RegExp(r"[.,!?、。！？'’\s]"), '');
+
   bool _isStopPhrase(String text) {
-    final normalized = text
-        .toLowerCase()
-        .replaceAll(RegExp(r'[.,!?]'), '')
-        .trim();
-    return _stopPhrases.contains(normalized);
+    final normalized = _normalizePhrase(text);
+    return stopPhrasesFor(_languageCode)
+        .any((phrase) => _normalizePhrase(phrase) == normalized);
   }
 
   /// Reopens the mic for the next turn while the conversation loop is on.
@@ -456,6 +442,7 @@ class VoiceController {
         message: rawText,
         buildId: buildId,
         conversationHistory: history,
+        languageCode: _languageCode,
       );
 
       // Update credits
@@ -476,9 +463,9 @@ class VoiceController {
       _setConversationMode(false);
       if (e.code == 'resource-exhausted') {
         creditsNotifier.set(0);
-        const message =
+        final message = _l10n?.voiceOutOfCredits ??
             "You're out of AI credits. I can still respond to commands "
-            'like next, repeat, and help.';
+                'like next, repeat, and help.';
         _addMessage(ChatMessage(
           role: 'assistant',
           content: message,
@@ -487,7 +474,8 @@ class VoiceController {
         // Muddy hands: the user must HEAR why the coach went quiet.
         await _speak(message);
       } else {
-        const message = 'Something went wrong. Tap the orb to try again.';
+        final message = _l10n?.voiceError ??
+            'Something went wrong. Tap the orb to try again.';
         _addMessage(ChatMessage(
           role: 'assistant',
           content: message,
@@ -497,7 +485,7 @@ class VoiceController {
       }
     } catch (_) {
       _setConversationMode(false);
-      const message =
+      final message = _l10n?.voiceConnectionLost ??
           'I lost the connection. Check your internet and tap the orb.';
       _addMessage(ChatMessage(
         role: 'assistant',

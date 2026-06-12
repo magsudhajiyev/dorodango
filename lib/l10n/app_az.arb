@@ -290,5 +290,9 @@
 
   "reflectionPatience2Title": "Əllərin Bildiyi",
   "reflectionPatience2Body": "Yapon bir atalar sözü var: \"Əllər ağıldan əvvəl öyrənir.\" İlk dəfə dorodango hazırlayan uşağa baxın, bunu gözünüzlə görərsiniz. Nə etdiklərini izah edə bilməzdən əvvəl əlləri instinktiv olaraq təzyiqi, fırlanma sürətini və nəmi tənzimləyir. Bu toxunma zəkası — milyonlarla il insan təkamülü boyunca inkişaf etmiş — ən az qiymətləndirilən qabiliyyətlərimizdən biridir. Ekranlar və abstraksiya çağında dorodango, fiziki dünyayı əllərlə formalaşdırmanın əsas insan fəaliyyətinə qayıdışdır. Bu bir addım geri deyil — əsas bir şeylə yenidən bağlantıdır.",
-  "reflectionPatience2Source": "Frank Wilson, Əl"
+  "reflectionPatience2Source": "Frank Wilson, Əl",
+
+  "voiceOutOfCredits": "AI kreditləriniz bitib. Yenə də növbəti, təkrar və kömək kimi əmrlərə cavab verə bilərəm.",
+  "voiceError": "Nəsə səhv getdi. Yenidən cəhd etmək üçün kürəyə toxunun.",
+  "voiceConnectionLost": "Bağlantı kəsildi. İnterneti yoxlayın və kürəyə toxunun."
 }

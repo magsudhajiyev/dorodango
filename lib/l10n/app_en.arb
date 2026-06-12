@@ -304,5 +304,9 @@
 
   "reflectionPatience2Title": "What the Hands Know",
   "reflectionPatience2Body": "There is a Japanese proverb: \"The hands learn before the mind understands.\" Watch a child making dorodango for the first time, and you will see this in action. Before they can explain what they are doing, their hands are adjusting pressure, rotating speed, and moisture instinctively. This tactile intelligence — developed over millions of years of human evolution — is one of our most undervalued capacities. In an age of screens and abstraction, dorodango is a return to the fundamental human activity of shaping the physical world with your hands. It is not a step backward but a reconnection with something essential.",
-  "reflectionPatience2Source": "Frank Wilson, The Hand"
+  "reflectionPatience2Source": "Frank Wilson, The Hand",
+
+  "voiceOutOfCredits": "You're out of AI credits. I can still respond to commands like next, repeat, and help.",
+  "voiceError": "Something went wrong. Tap the orb to try again.",
+  "voiceConnectionLost": "I lost the connection. Check your internet and tap the orb."
 }

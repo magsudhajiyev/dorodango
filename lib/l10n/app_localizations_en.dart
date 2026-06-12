@@ -850,4 +850,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reflectionPatience2Source => 'Frank Wilson, The Hand';
+
+  @override
+  String get voiceOutOfCredits =>
+      'You\'re out of AI credits. I can still respond to commands like next, repeat, and help.';
+
+  @override
+  String get voiceError => 'Something went wrong. Tap the orb to try again.';
+
+  @override
+  String get voiceConnectionLost =>
+      'I lost the connection. Check your internet and tap the orb.';
 }

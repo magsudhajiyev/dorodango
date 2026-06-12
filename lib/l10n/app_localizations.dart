@@ -1565,6 +1565,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Frank Wilson, The Hand'**
   String get reflectionPatience2Source;
+
+  /// No description provided for @voiceOutOfCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re out of AI credits. I can still respond to commands like next, repeat, and help.'**
+  String get voiceOutOfCredits;
+
+  /// No description provided for @voiceError.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Tap the orb to try again.'**
+  String get voiceError;
+
+  /// No description provided for @voiceConnectionLost.
+  ///
+  /// In en, this message translates to:
+  /// **'I lost the connection. Check your internet and tap the orb.'**
+  String get voiceConnectionLost;
 }
 
 class _AppLocalizationsDelegate

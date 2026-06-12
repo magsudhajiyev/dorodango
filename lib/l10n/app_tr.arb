@@ -290,5 +290,9 @@
 
   "reflectionPatience2Title": "Ellerin Bildikleri",
   "reflectionPatience2Body": "Japonca'da bir atasözü vardır: «Eller, zihin anlamadan önce öğrenir.» Bir çocuğun ilk kez dorodango yaptığını izleyin ve bunu eylemde göreceksiniz. Ne yaptıklarını açıklayamadan önce, elleri basıncı, dönüş hızını ve nemi içgüdüsel olarak ayarlamaya başlar. Milyonlarca yıllık insan evrimi boyunca geliştirilen bu dokunsal zekâ, en az takdir gören kapasitelerimizden biridir. Ekranlar ve soyutlama çağında dorodango, fiziksel dünyayı kendi ellerinizle şekillendirme gibi temel insani eyleme bir geri dönüştür. Bu geriye değil, esasa yeniden bağlanmaktır.",
-  "reflectionPatience2Source": "Frank Wilson, The Hand"
+  "reflectionPatience2Source": "Frank Wilson, The Hand",
+
+  "voiceOutOfCredits": "Yapay zeka krediniz bitti. Yine de ileri, tekrar ve yardım gibi komutlara yanıt verebilirim.",
+  "voiceError": "Bir şeyler ters gitti. Tekrar denemek için küreye dokunun.",
+  "voiceConnectionLost": "Bağlantı koptu. İnternetinizi kontrol edip küreye dokunun."
 }

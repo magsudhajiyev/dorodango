@@ -20,6 +20,7 @@ export interface SendMessageRequest {
   message: string;
   buildId: string;
   conversationHistory: ChatMessage[];
+  languageCode?: string;
 }
 
 export interface SendMessageResponse {

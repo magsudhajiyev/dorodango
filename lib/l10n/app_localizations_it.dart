@@ -856,4 +856,16 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get reflectionPatience2Source => 'Frank Wilson, The Hand';
+
+  @override
+  String get voiceOutOfCredits =>
+      'Hai esaurito i crediti IA. Posso ancora rispondere a comandi come avanti, ripeti e aiuto.';
+
+  @override
+  String get voiceError =>
+      'Qualcosa è andato storto. Tocca la sfera per riprovare.';
+
+  @override
+  String get voiceConnectionLost =>
+      'Ho perso la connessione. Controlla internet e tocca la sfera.';
 }

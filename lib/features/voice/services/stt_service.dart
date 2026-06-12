@@ -44,7 +44,37 @@ class SttService {
   }
 
   void setLocale(String languageCode) {
-    _localeId = _localeMap[languageCode] ?? 'en_US';
+    final next = _localeMap[languageCode] ?? 'en_US';
+    if (next != _localeId) {
+      _localeId = next;
+      _resolvedLocaleId = null;
+    }
+  }
+
+  String? _resolvedLocaleId;
+
+  /// Uses the requested locale when the device's recognizer supports it,
+  /// falling back to a same-language variant and finally to en_US, so
+  /// listening never fails just because a speech pack is missing.
+  Future<String> _resolveLocaleId() async {
+    final cached = _resolvedLocaleId;
+    if (cached != null) return cached;
+    try {
+      final available = await _speech.locales();
+      if (available.isEmpty) return _resolvedLocaleId = _localeId;
+      String normalize(String id) => id.replaceAll('-', '_');
+      final ids = available.map((l) => normalize(l.localeId)).toList();
+      if (ids.contains(_localeId)) return _resolvedLocaleId = _localeId;
+      final language = _localeId.split('_').first;
+      final sameLanguage = ids.where((id) => id.startsWith('${language}_'));
+      if (sameLanguage.isNotEmpty) {
+        return _resolvedLocaleId = sameLanguage.first;
+      }
+      debugPrint('[Voice] locale $_localeId unavailable, using en_US');
+      return _resolvedLocaleId = 'en_US';
+    } catch (_) {
+      return _resolvedLocaleId = _localeId;
+    }
   }
 
   /// Returns false when the recognizer could not be started — callers must
@@ -59,6 +89,7 @@ class SttService {
       onError?.call('error_not_available');
       return false;
     }
+    final localeId = await _resolveLocaleId();
 
     try {
       await _speech.listen(
@@ -72,7 +103,7 @@ class SttService {
           listenMode: stt.ListenMode.confirmation,
           cancelOnError: true,
           partialResults: true,
-          localeId: _localeId,
+          localeId: localeId,
           pauseFor: pauseFor,
           listenFor: listenFor,
         ),

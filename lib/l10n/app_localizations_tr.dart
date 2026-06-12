@@ -849,4 +849,16 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get reflectionPatience2Source => 'Frank Wilson, The Hand';
+
+  @override
+  String get voiceOutOfCredits =>
+      'Yapay zeka krediniz bitti. Yine de ileri, tekrar ve yardım gibi komutlara yanıt verebilirim.';
+
+  @override
+  String get voiceError =>
+      'Bir şeyler ters gitti. Tekrar denemek için küreye dokunun.';
+
+  @override
+  String get voiceConnectionLost =>
+      'Bağlantı koptu. İnternetinizi kontrol edip küreye dokunun.';
 }

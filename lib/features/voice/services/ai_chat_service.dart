@@ -14,6 +14,7 @@ class AiChatService {
     required String message,
     required String buildId,
     required List<ChatMessage> conversationHistory,
+    String? languageCode,
   }) async {
     final callable = _functions.httpsCallable(
       'sendMessage',
@@ -25,6 +26,7 @@ class AiChatService {
       'buildId': buildId,
       'conversationHistory':
           conversationHistory.map((m) => m.toJson()).toList(),
+      'languageCode': ?languageCode,
     });
 
     return (

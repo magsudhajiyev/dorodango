@@ -290,5 +290,9 @@
 
   "reflectionPatience2Title": "Ce que les mains savent",
   "reflectionPatience2Body": "Il y a un proverbe japonais : « Les mains apprennent avant que l'esprit comprenne. » Regardez un enfant faire un dorodango pour la première fois, et vous verrez cela en action. Avant de pouvoir expliquer ce qu'il fait, ses mains ajustent la pression, la vitesse de rotation et l'humidité de manière instinctive. Cette intelligence tactile — développée au cours de millions d'années d'évolution humaine — est l'une de nos capacités les plus sous-estimées. À l'ère des écrans et de l'abstraction, le dorodango est un retour à l'activité humaine fondamentale de façonner le monde physique avec ses mains. Ce n'est pas un pas en arrière mais une reconnexion avec quelque chose d'essentiel.",
-  "reflectionPatience2Source": "Frank Wilson, The Hand"
+  "reflectionPatience2Source": "Frank Wilson, The Hand",
+
+  "voiceOutOfCredits": "Vous n'avez plus de crédits IA. Je peux encore répondre aux commandes comme suivant, répéter et aide.",
+  "voiceError": "Quelque chose s'est mal passé. Touchez l'orbe pour réessayer.",
+  "voiceConnectionLost": "J'ai perdu la connexion. Vérifiez votre internet et touchez l'orbe."
 }

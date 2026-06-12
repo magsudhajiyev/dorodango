@@ -852,4 +852,16 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get reflectionPatience2Source => 'Frank Wilson, Əl';
+
+  @override
+  String get voiceOutOfCredits =>
+      'AI kreditləriniz bitib. Yenə də növbəti, təkrar və kömək kimi əmrlərə cavab verə bilərəm.';
+
+  @override
+  String get voiceError =>
+      'Nəsə səhv getdi. Yenidən cəhd etmək üçün kürəyə toxunun.';
+
+  @override
+  String get voiceConnectionLost =>
+      'Bağlantı kəsildi. İnterneti yoxlayın və kürəyə toxunun.';
 }
