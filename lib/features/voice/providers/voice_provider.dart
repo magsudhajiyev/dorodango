@@ -28,7 +28,6 @@ final voiceControllerProvider = Provider((ref) {
     buildSession: ref.read(buildSessionProvider.notifier),
     getBuildState: () => ref.read(buildSessionProvider),
     creditsNotifier: ref.read(creditsProvider.notifier),
-    getCredits: () => ref.read(creditsProvider),
   );
 });
 
@@ -47,7 +46,6 @@ class VoiceController {
   final BuildSessionNotifier buildSession;
   final BuildSessionState Function() getBuildState;
   final CreditsNotifier creditsNotifier;
-  final int Function() getCredits;
 
   AppLocalizations? _l10n;
   StageContent? _stageContent;
@@ -97,7 +95,6 @@ class VoiceController {
     required this.buildSession,
     required this.getBuildState,
     required this.creditsNotifier,
-    required this.getCredits,
   });
 
   List<ChatMessage> get conversationHistory =>
@@ -274,10 +271,11 @@ class VoiceController {
       final command = parser.parse(text);
       if (command != VoiceCommand.unknown) {
         await _handleCommand(text);
-      } else if (getCredits() > 0) {
-        await _handleAiMessage(text);
       } else {
-        await _handleCommand(text);
+        // Anything that isn't a known command goes to the AI coach. The
+        // server enforces credits — don't gate on the locally cached
+        // balance, which can be stale (e.g. fetch hasn't landed yet).
+        await _handleAiMessage(text);
       }
     } finally {
       _handlingInput = false;
@@ -336,31 +334,36 @@ class VoiceController {
       // Don't keep the hands-free loop running into repeated failures.
       _setConversationMode(false);
       if (e.code == 'resource-exhausted') {
-        // Out of credits — add system message, fall back
-        _addMessage(ChatMessage(
-          role: 'assistant',
-          content: 'Out of credits. Switching to basic commands.',
-          timestamp: DateTime.now(),
-        ));
         creditsNotifier.set(0);
-        buildSession.setVoiceState(VoiceState.idle);
-      } else {
-        // Other error
+        const message =
+            "You're out of AI credits. I can still respond to commands "
+            'like next, repeat, and help.';
         _addMessage(ChatMessage(
           role: 'assistant',
-          content: 'Something went wrong. Tap to try again.',
+          content: message,
           timestamp: DateTime.now(),
         ));
-        buildSession.setVoiceState(VoiceState.idle);
+        // Muddy hands: the user must HEAR why the coach went quiet.
+        await _speak(message);
+      } else {
+        const message = 'Something went wrong. Tap the orb to try again.';
+        _addMessage(ChatMessage(
+          role: 'assistant',
+          content: message,
+          timestamp: DateTime.now(),
+        ));
+        await _speak(message);
       }
     } catch (_) {
       _setConversationMode(false);
+      const message =
+          'I lost the connection. Check your internet and tap the orb.';
       _addMessage(ChatMessage(
         role: 'assistant',
-        content: 'Connection timed out. Check internet.',
+        content: message,
         timestamp: DateTime.now(),
       ));
-      buildSession.setVoiceState(VoiceState.idle);
+      await _speak(message);
     }
   }
 
