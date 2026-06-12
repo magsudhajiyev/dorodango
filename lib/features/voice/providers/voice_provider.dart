@@ -402,7 +402,14 @@ class VoiceController {
         return;
       }
 
-      final command = parser.parse(text);
+      // Commands are short imperatives ("next", "repeat that"). The parser
+      // matches by substring, so only consult it for brief utterances —
+      // otherwise a real question like "...can you help me" gets hijacked
+      // by the canned 'help' response instead of reaching the AI coach.
+      final isShortUtterance =
+          text.split(RegExp(r'\s+')).length <= 5;
+      final command =
+          isShortUtterance ? parser.parse(text) : VoiceCommand.unknown;
       if (command != VoiceCommand.unknown) {
         await _handleCommand(text);
       } else {
