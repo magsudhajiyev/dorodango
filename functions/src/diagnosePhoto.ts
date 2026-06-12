@@ -18,6 +18,7 @@ const stageKeyToOrder: Record<string, number> = {
 export const diagnosePhoto = onCall(
   {
     region: "us-east4",
+    invoker: "public",
     timeoutSeconds: 90,
     memory: "512MiB",
     secrets: [anthropicApiKey],

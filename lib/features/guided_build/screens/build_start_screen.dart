@@ -18,6 +18,7 @@ import '../../soil/providers/soil_provider.dart';
 import '../../soil/services/location_service.dart';
 import '../../soil/widgets/soil_card.dart';
 import '../../soil/widgets/soil_prediction_card.dart';
+import '../providers/credits_provider.dart';
 
 class BuildStartScreen extends ConsumerStatefulWidget {
   const BuildStartScreen({super.key});
@@ -28,6 +29,14 @@ class BuildStartScreen extends ConsumerStatefulWidget {
 
 class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
   final _soilController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(creditsProvider.notifier).fetch();
+    });
+  }
 
   @override
   void dispose() {

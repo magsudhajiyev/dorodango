@@ -50,6 +50,7 @@ function buildUserPrompt(data: PredictDorodangoRequest): string {
 export const predictDorodango = onCall(
   {
     region: "us-east4",
+    invoker: "public",
     timeoutSeconds: 60,
     secrets: [anthropicApiKey],
   },

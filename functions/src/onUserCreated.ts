@@ -20,6 +20,7 @@ export const onUserCreated = functionsV1
       tx.set(userRef, {
         credits: SIGNUP_CREDITS,
         createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        ...(user.email ? {email: user.email} : {}),
       });
     });
     console.log(`Seeded ${SIGNUP_CREDITS} credits for new user ${user.uid}.`);

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../data/repositories/auth_repository.dart';
 import '../../../data/services/firestore_service.dart';
 import '../../../data/models/user_model.dart';
+import '../../guided_build/providers/credits_provider.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return AuthRepository();
@@ -19,7 +20,8 @@ final authStateProvider = StreamProvider<User?>((ref) {
 /// Seeds the user document with the signup bonus when missing. Idempotent;
 /// the onUserCreated function and the self-healing getCredits callable do
 /// the same server-side, so a rules denial here is not fatal.
-Future<void> _ensureUserDoc(FirestoreService firestore, String uid) async {
+Future<void> _ensureUserDoc(
+    FirestoreService firestore, String uid, String? email) async {
   try {
     final existing = await firestore.getUser(uid);
     if (existing == null) {
@@ -27,6 +29,7 @@ Future<void> _ensureUserDoc(FirestoreService firestore, String uid) async {
         uid: uid,
         credits: 10,
         createdAt: DateTime.now(),
+        email: email,
       ));
     }
   } catch (_) {
@@ -42,7 +45,10 @@ final ensureAuthProvider = FutureProvider<User>((ref) async {
   if (user == null) {
     throw StateError('Not signed in');
   }
-  await _ensureUserDoc(ref.read(firestoreServiceProvider), user.uid);
+  await _ensureUserDoc(
+      ref.read(firestoreServiceProvider), user.uid, user.email);
+  // Eagerly fetch credits so they're available on the home screen.
+  ref.read(creditsProvider.notifier).fetch();
   return user;
 });
 
@@ -75,9 +81,9 @@ class AuthController extends StateNotifier<AuthFormState> {
     state = const AuthFormState(loading: true);
     try {
       final credential = await signIn();
-      final uid = credential.user?.uid;
-      if (uid != null) {
-        await _ensureUserDoc(_firestore, uid);
+      final user = credential.user;
+      if (user != null) {
+        await _ensureUserDoc(_firestore, user.uid, user.email);
       }
       if (mounted) state = const AuthFormState();
       // The auth state stream triggers the router redirect to /home.

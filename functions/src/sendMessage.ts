@@ -10,6 +10,7 @@ const anthropicApiKey = defineSecret("ANTHROPIC_API_KEY");
 export const sendMessage = onCall(
   {
     region: "us-east4",
+    invoker: "public",
     timeoutSeconds: 60,
     secrets: [anthropicApiKey],
   },

@@ -25,7 +25,7 @@ export {onUserCreated} from "./onUserCreated";
 // signup bonus (e.g. created while a rules bug denied the client seed)
 // get it granted here.
 export const getCredits = onCall(
-  {region: "us-east4"},
+  {region: "us-east4", invoker: "public"},
   async (request) => {
     if (!request.auth) {
       throw new HttpsError("unauthenticated", "Must be signed in.");
@@ -37,6 +37,7 @@ export const getCredits = onCall(
       await userRef.set({
         credits: 10,
         createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        ...(request.auth.token.email ? {email: request.auth.token.email} : {}),
       });
       return {credits: 10};
     }
