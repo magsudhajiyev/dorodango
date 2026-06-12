@@ -15,6 +15,9 @@ export {predictDorodango} from "./predictDorodango";
 // Re-export notifyNearbyHunters
 export {notifyNearbyHunters} from "./notifyNearbyHunters";
 
+// Re-export revenuecatWebhook
+export {revenuecatWebhook} from "./revenuecatWebhook";
+
 // getCredits callable
 export const getCredits = onCall(
   {region: "us-east4"},

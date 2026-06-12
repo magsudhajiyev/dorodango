@@ -4,6 +4,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
+import '../../monetization/widgets/credit_paywall_sheet.dart';
 import '../providers/credits_provider.dart';
 
 class CreditBadge extends ConsumerWidget {
@@ -14,7 +15,9 @@ class CreditBadge extends ConsumerWidget {
     final credits = ref.watch(creditsProvider);
     final isEmpty = credits <= 0;
 
-    return AnimatedContainer(
+    return GestureDetector(
+      onTap: () => CreditPaywallSheet.show(context),
+      child: AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.sm,
@@ -46,7 +49,8 @@ class CreditBadge extends ConsumerWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -174,5 +174,21 @@
   "goHunting": "Go hunting",
 
   "handsFreeHint": "Hands-free — say “stop” to end",
-  "voiceGoodbye": "Happy polishing. Tap the orb when you need me again."
+  "voiceGoodbye": "Happy polishing. Tap the orb when you need me again.",
+
+  "profile": "Profile",
+  "guestUser": "Guest builder",
+  "creditsBalance": "{count} credits",
+  "@creditsBalance": { "placeholders": { "count": { "type": "int" } } },
+  "buyCredits": "Get credits",
+  "statsBuilds": "Builds",
+  "statsPlanted": "Planted",
+  "statsFound": "Found",
+  "paywallTitle": "AI Coach credits",
+  "paywallSubtitle": "Credits power the voice coach, photo diagnosis, and predictions — 1 credit per interaction.",
+  "paywallUnavailable": "Purchases aren't available in this build yet.",
+  "restorePurchases": "Restore purchases",
+  "purchaseSuccess": "Credits added. Happy building!",
+  "purchaseFailed": "The purchase didn't complete. You weren't charged.",
+  "packBestValue": "Best value"
 }

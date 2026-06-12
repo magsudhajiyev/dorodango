@@ -162,5 +162,20 @@
   "goHunting": "Partir à la chasse",
 
   "handsFreeHint": "Mains libres — dites « stop » pour terminer",
-  "voiceGoodbye": "Bon polissage ! Touchez l'orbe quand vous aurez besoin de moi."
+  "voiceGoodbye": "Bon polissage ! Touchez l'orbe quand vous aurez besoin de moi.",
+
+  "profile": "Profil",
+  "guestUser": "Artisan invité",
+  "creditsBalance": "{count} crédits",
+  "buyCredits": "Obtenir des crédits",
+  "statsBuilds": "Dorodangos",
+  "statsPlanted": "Plantés",
+  "statsFound": "Trouvés",
+  "paywallTitle": "Crédits du coach IA",
+  "paywallSubtitle": "Les crédits alimentent le coach vocal, le diagnostic photo et les prédictions — 1 crédit par interaction.",
+  "paywallUnavailable": "Les achats ne sont pas encore disponibles dans cette version.",
+  "restorePurchases": "Restaurer les achats",
+  "purchaseSuccess": "Crédits ajoutés. Bonne création !",
+  "purchaseFailed": "L'achat n'a pas abouti. Vous n'avez pas été débité.",
+  "packBestValue": "Meilleur prix"
 }

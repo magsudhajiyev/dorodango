@@ -455,4 +455,48 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get voiceGoodbye => '良い磨きを！また必要になったらオーブをタップしてください。';
+
+  @override
+  String get profile => 'プロフィール';
+
+  @override
+  String get guestUser => 'ゲストビルダー';
+
+  @override
+  String creditsBalance(int count) {
+    return '$countクレジット';
+  }
+
+  @override
+  String get buyCredits => 'クレジットを購入';
+
+  @override
+  String get statsBuilds => '作成数';
+
+  @override
+  String get statsPlanted => '植えた数';
+
+  @override
+  String get statsFound => '発見数';
+
+  @override
+  String get paywallTitle => 'AIコーチクレジット';
+
+  @override
+  String get paywallSubtitle => 'クレジットは音声コーチ、写真診断、予測に使われます — 1回につき1クレジット。';
+
+  @override
+  String get paywallUnavailable => 'このビルドではまだ購入できません。';
+
+  @override
+  String get restorePurchases => '購入を復元';
+
+  @override
+  String get purchaseSuccess => 'クレジットを追加しました。良い制作を！';
+
+  @override
+  String get purchaseFailed => '購入が完了しませんでした。請求はされていません。';
+
+  @override
+  String get packBestValue => 'お得';
 }

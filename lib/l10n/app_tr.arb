@@ -162,5 +162,20 @@
   "goHunting": "Ava çık",
 
   "handsFreeHint": "Eller serbest — bitirmek için “dur” deyin",
-  "voiceGoodbye": "İyi parlatmalar! Bana tekrar ihtiyacın olursa küreye dokun."
+  "voiceGoodbye": "İyi parlatmalar! Bana tekrar ihtiyacın olursa küreye dokun.",
+
+  "profile": "Profil",
+  "guestUser": "Misafir usta",
+  "creditsBalance": "{count} kredi",
+  "buyCredits": "Kredi al",
+  "statsBuilds": "Dorodango",
+  "statsPlanted": "Ekilen",
+  "statsFound": "Bulunan",
+  "paywallTitle": "Yapay Zeka Koç kredileri",
+  "paywallSubtitle": "Krediler sesli koçu, fotoğraf teşhisini ve tahminleri çalıştırır — etkileşim başına 1 kredi.",
+  "paywallUnavailable": "Bu sürümde satın almalar henüz kullanılamıyor.",
+  "restorePurchases": "Satın almaları geri yükle",
+  "purchaseSuccess": "Krediler eklendi. İyi çalışmalar!",
+  "purchaseFailed": "Satın alma tamamlanmadı. Sizden ücret alınmadı.",
+  "packBestValue": "En avantajlı"
 }

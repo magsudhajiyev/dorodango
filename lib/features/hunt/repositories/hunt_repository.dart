@@ -88,6 +88,18 @@ class HuntRepository {
     });
   }
 
+  /// Cheap aggregate counts for the profile screen.
+  Future<int> plantedCountBy(String uid) async {
+    final agg =
+        await _plants.where('ownerUid', isEqualTo: uid).count().get();
+    return agg.count ?? 0;
+  }
+
+  Future<int> foundCountBy(String uid) async {
+    final agg = await _plants.where('foundBy', isEqualTo: uid).count().get();
+    return agg.count ?? 0;
+  }
+
   /// The user's trophy shelf: everything they have found, newest first.
   Future<List<PlantModel>> foundBy(String uid) async {
     final snapshot = await _plants

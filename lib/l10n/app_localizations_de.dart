@@ -508,4 +508,51 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get voiceGoodbye =>
       'Frohes Polieren! Tippen Sie auf die Kugel, wenn Sie mich wieder brauchen.';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get guestUser => 'Gast';
+
+  @override
+  String creditsBalance(int count) {
+    return '$count Credits';
+  }
+
+  @override
+  String get buyCredits => 'Credits kaufen';
+
+  @override
+  String get statsBuilds => 'Dorodangos';
+
+  @override
+  String get statsPlanted => 'Eingepflanzt';
+
+  @override
+  String get statsFound => 'Gefunden';
+
+  @override
+  String get paywallTitle => 'KI-Coach-Credits';
+
+  @override
+  String get paywallSubtitle =>
+      'Credits ermöglichen Sprach-Coach, Fotodiagnose und Vorhersagen — 1 Credit pro Interaktion.';
+
+  @override
+  String get paywallUnavailable =>
+      'Käufe sind in diesem Build noch nicht verfügbar.';
+
+  @override
+  String get restorePurchases => 'Käufe wiederherstellen';
+
+  @override
+  String get purchaseSuccess => 'Credits hinzugefügt. Frohes Bauen!';
+
+  @override
+  String get purchaseFailed =>
+      'Der Kauf wurde nicht abgeschlossen. Ihnen wurde nichts berechnet.';
+
+  @override
+  String get packBestValue => 'Bester Wert';
 }

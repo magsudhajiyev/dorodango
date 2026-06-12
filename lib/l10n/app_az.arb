@@ -162,5 +162,20 @@
   "goHunting": "Ova başla",
 
   "handsFreeHint": "Əlsiz rejim — bitirmək üçün “stop” deyin",
-  "voiceGoodbye": "Uğurlu cilalama! Yenidən lazım olsam, kürəyə toxunun."
+  "voiceGoodbye": "Uğurlu cilalama! Yenidən lazım olsam, kürəyə toxunun.",
+
+  "profile": "Profil",
+  "guestUser": "Qonaq usta",
+  "creditsBalance": "{count} kredit",
+  "buyCredits": "Kredit al",
+  "statsBuilds": "Dorodango",
+  "statsPlanted": "Əkilib",
+  "statsFound": "Tapılıb",
+  "paywallTitle": "AI Məşqçi kreditləri",
+  "paywallSubtitle": "Kreditlər səsli məşqçini, foto diaqnozu və proqnozları işlədir — hər istifadə 1 kredit.",
+  "paywallUnavailable": "Bu versiyada satınalmalar hələ mövcud deyil.",
+  "restorePurchases": "Satınalmaları bərpa et",
+  "purchaseSuccess": "Kreditlər əlavə olundu. Uğurlar!",
+  "purchaseFailed": "Satınalma tamamlanmadı. Sizdən ödəniş tutulmadı.",
+  "packBestValue": "Ən sərfəli"
 }

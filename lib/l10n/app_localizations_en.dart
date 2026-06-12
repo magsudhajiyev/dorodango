@@ -500,4 +500,51 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get voiceGoodbye =>
       'Happy polishing. Tap the orb when you need me again.';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get guestUser => 'Guest builder';
+
+  @override
+  String creditsBalance(int count) {
+    return '$count credits';
+  }
+
+  @override
+  String get buyCredits => 'Get credits';
+
+  @override
+  String get statsBuilds => 'Builds';
+
+  @override
+  String get statsPlanted => 'Planted';
+
+  @override
+  String get statsFound => 'Found';
+
+  @override
+  String get paywallTitle => 'AI Coach credits';
+
+  @override
+  String get paywallSubtitle =>
+      'Credits power the voice coach, photo diagnosis, and predictions — 1 credit per interaction.';
+
+  @override
+  String get paywallUnavailable =>
+      'Purchases aren\'t available in this build yet.';
+
+  @override
+  String get restorePurchases => 'Restore purchases';
+
+  @override
+  String get purchaseSuccess => 'Credits added. Happy building!';
+
+  @override
+  String get purchaseFailed =>
+      'The purchase didn\'t complete. You weren\'t charged.';
+
+  @override
+  String get packBestValue => 'Best value';
 }

@@ -6,6 +6,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
 import '../../../data/models/soil_data.dart';
+import '../../monetization/widgets/credit_paywall_sheet.dart';
 import '../providers/soil_prediction_provider.dart';
 
 /// "Predict my dorodango" button plus the AI prediction result.
@@ -65,13 +66,20 @@ class SoilPredictionCard extends ConsumerWidget {
             ],
           ),
         ),
-      PredictionStatus.outOfCredits => Padding(
-          padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
-          child: Text(
-            l10n.outOfCredits,
-            style: AppTypography.caption.copyWith(color: AppColors.error),
-            textAlign: TextAlign.center,
-          ),
+      PredictionStatus.outOfCredits => Column(
+          children: [
+            Text(
+              l10n.outOfCredits,
+              style: AppTypography.caption.copyWith(color: AppColors.error),
+              textAlign: TextAlign.center,
+            ),
+            TextButton.icon(
+              onPressed: () => CreditPaywallSheet.show(context),
+              icon: const Icon(Icons.add_circle_outline_rounded, size: 18),
+              label: Text(l10n.buyCredits),
+              style: TextButton.styleFrom(foregroundColor: AppColors.clay),
+            ),
+          ],
         ),
       PredictionStatus.error => Column(
           children: [

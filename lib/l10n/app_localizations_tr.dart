@@ -501,4 +501,51 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get voiceGoodbye =>
       'İyi parlatmalar! Bana tekrar ihtiyacın olursa küreye dokun.';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get guestUser => 'Misafir usta';
+
+  @override
+  String creditsBalance(int count) {
+    return '$count kredi';
+  }
+
+  @override
+  String get buyCredits => 'Kredi al';
+
+  @override
+  String get statsBuilds => 'Dorodango';
+
+  @override
+  String get statsPlanted => 'Ekilen';
+
+  @override
+  String get statsFound => 'Bulunan';
+
+  @override
+  String get paywallTitle => 'Yapay Zeka Koç kredileri';
+
+  @override
+  String get paywallSubtitle =>
+      'Krediler sesli koçu, fotoğraf teşhisini ve tahminleri çalıştırır — etkileşim başına 1 kredi.';
+
+  @override
+  String get paywallUnavailable =>
+      'Bu sürümde satın almalar henüz kullanılamıyor.';
+
+  @override
+  String get restorePurchases => 'Satın almaları geri yükle';
+
+  @override
+  String get purchaseSuccess => 'Krediler eklendi. İyi çalışmalar!';
+
+  @override
+  String get purchaseFailed =>
+      'Satın alma tamamlanmadı. Sizden ücret alınmadı.';
+
+  @override
+  String get packBestValue => 'En avantajlı';
 }

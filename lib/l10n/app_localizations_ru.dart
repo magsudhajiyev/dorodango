@@ -501,4 +501,49 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get voiceGoodbye =>
       'Удачной полировки! Коснитесь шара, когда я снова понадоблюсь.';
+
+  @override
+  String get profile => 'Профиль';
+
+  @override
+  String get guestUser => 'Гость';
+
+  @override
+  String creditsBalance(int count) {
+    return 'Кредитов: $count';
+  }
+
+  @override
+  String get buyCredits => 'Получить кредиты';
+
+  @override
+  String get statsBuilds => 'Дороданго';
+
+  @override
+  String get statsPlanted => 'Посажено';
+
+  @override
+  String get statsFound => 'Найдено';
+
+  @override
+  String get paywallTitle => 'Кредиты ИИ-коуча';
+
+  @override
+  String get paywallSubtitle =>
+      'Кредиты используются для голосового коуча, фотодиагностики и прогнозов — 1 кредит за обращение.';
+
+  @override
+  String get paywallUnavailable => 'Покупки пока недоступны в этой сборке.';
+
+  @override
+  String get restorePurchases => 'Восстановить покупки';
+
+  @override
+  String get purchaseSuccess => 'Кредиты добавлены. Удачной лепки!';
+
+  @override
+  String get purchaseFailed => 'Покупка не завершена. Деньги не списаны.';
+
+  @override
+  String get packBestValue => 'Выгоднее всего';
 }

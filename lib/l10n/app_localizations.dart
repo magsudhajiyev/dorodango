@@ -947,6 +947,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Happy polishing. Tap the orb when you need me again.'**
   String get voiceGoodbye;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @guestUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest builder'**
+  String get guestUser;
+
+  /// No description provided for @creditsBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} credits'**
+  String creditsBalance(int count);
+
+  /// No description provided for @buyCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'Get credits'**
+  String get buyCredits;
+
+  /// No description provided for @statsBuilds.
+  ///
+  /// In en, this message translates to:
+  /// **'Builds'**
+  String get statsBuilds;
+
+  /// No description provided for @statsPlanted.
+  ///
+  /// In en, this message translates to:
+  /// **'Planted'**
+  String get statsPlanted;
+
+  /// No description provided for @statsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Found'**
+  String get statsFound;
+
+  /// No description provided for @paywallTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Coach credits'**
+  String get paywallTitle;
+
+  /// No description provided for @paywallSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits power the voice coach, photo diagnosis, and predictions — 1 credit per interaction.'**
+  String get paywallSubtitle;
+
+  /// No description provided for @paywallUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases aren\'t available in this build yet.'**
+  String get paywallUnavailable;
+
+  /// No description provided for @restorePurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get restorePurchases;
+
+  /// No description provided for @purchaseSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits added. Happy building!'**
+  String get purchaseSuccess;
+
+  /// No description provided for @purchaseFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The purchase didn\'t complete. You weren\'t charged.'**
+  String get purchaseFailed;
+
+  /// No description provided for @packBestValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Best value'**
+  String get packBestValue;
 }
 
 class _AppLocalizationsDelegate

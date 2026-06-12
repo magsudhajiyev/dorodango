@@ -12,6 +12,7 @@ import '../features/settings/screens/settings_screen.dart';
 import '../features/soil/screens/soil_map_screen.dart';
 import '../features/hunt/screens/hunt_map_screen.dart';
 import '../features/hunt/screens/collection_screen.dart';
+import '../features/profile/screens/profile_screen.dart';
 import 'route_names.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -82,6 +83,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/soil-map',
         name: RouteNames.soilMap,
         builder: (context, state) => const SoilMapScreen(),
+      ),
+      GoRoute(
+        path: '/profile',
+        name: RouteNames.profile,
+        builder: (context, state) => const ProfileScreen(),
       ),
       GoRoute(
         path: '/hunt',

@@ -162,5 +162,20 @@
   "goHunting": "Auf die Jagd",
 
   "handsFreeHint": "Freihändig — sagen Sie „Stopp“ zum Beenden",
-  "voiceGoodbye": "Frohes Polieren! Tippen Sie auf die Kugel, wenn Sie mich wieder brauchen."
+  "voiceGoodbye": "Frohes Polieren! Tippen Sie auf die Kugel, wenn Sie mich wieder brauchen.",
+
+  "profile": "Profil",
+  "guestUser": "Gast",
+  "creditsBalance": "{count} Credits",
+  "buyCredits": "Credits kaufen",
+  "statsBuilds": "Dorodangos",
+  "statsPlanted": "Eingepflanzt",
+  "statsFound": "Gefunden",
+  "paywallTitle": "KI-Coach-Credits",
+  "paywallSubtitle": "Credits ermöglichen Sprach-Coach, Fotodiagnose und Vorhersagen — 1 Credit pro Interaktion.",
+  "paywallUnavailable": "Käufe sind in diesem Build noch nicht verfügbar.",
+  "restorePurchases": "Käufe wiederherstellen",
+  "purchaseSuccess": "Credits hinzugefügt. Frohes Bauen!",
+  "purchaseFailed": "Der Kauf wurde nicht abgeschlossen. Ihnen wurde nichts berechnet.",
+  "packBestValue": "Bester Wert"
 }

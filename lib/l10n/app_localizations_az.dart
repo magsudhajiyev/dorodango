@@ -503,4 +503,51 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get voiceGoodbye =>
       'Uğurlu cilalama! Yenidən lazım olsam, kürəyə toxunun.';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get guestUser => 'Qonaq usta';
+
+  @override
+  String creditsBalance(int count) {
+    return '$count kredit';
+  }
+
+  @override
+  String get buyCredits => 'Kredit al';
+
+  @override
+  String get statsBuilds => 'Dorodango';
+
+  @override
+  String get statsPlanted => 'Əkilib';
+
+  @override
+  String get statsFound => 'Tapılıb';
+
+  @override
+  String get paywallTitle => 'AI Məşqçi kreditləri';
+
+  @override
+  String get paywallSubtitle =>
+      'Kreditlər səsli məşqçini, foto diaqnozu və proqnozları işlədir — hər istifadə 1 kredit.';
+
+  @override
+  String get paywallUnavailable =>
+      'Bu versiyada satınalmalar hələ mövcud deyil.';
+
+  @override
+  String get restorePurchases => 'Satınalmaları bərpa et';
+
+  @override
+  String get purchaseSuccess => 'Kreditlər əlavə olundu. Uğurlar!';
+
+  @override
+  String get purchaseFailed =>
+      'Satınalma tamamlanmadı. Sizdən ödəniş tutulmadı.';
+
+  @override
+  String get packBestValue => 'Ən sərfəli';
 }

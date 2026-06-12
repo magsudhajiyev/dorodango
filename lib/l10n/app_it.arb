@@ -162,5 +162,20 @@
   "goHunting": "Vai a caccia",
 
   "handsFreeHint": "Mani libere — di' «stop» per terminare",
-  "voiceGoodbye": "Buona lucidatura! Tocca la sfera quando ti servo di nuovo."
+  "voiceGoodbye": "Buona lucidatura! Tocca la sfera quando ti servo di nuovo.",
+
+  "profile": "Profilo",
+  "guestUser": "Artigiano ospite",
+  "creditsBalance": "{count} crediti",
+  "buyCredits": "Ottieni crediti",
+  "statsBuilds": "Dorodango",
+  "statsPlanted": "Piantati",
+  "statsFound": "Trovati",
+  "paywallTitle": "Crediti del coach IA",
+  "paywallSubtitle": "I crediti alimentano il coach vocale, la diagnosi foto e le previsioni — 1 credito per interazione.",
+  "paywallUnavailable": "Gli acquisti non sono ancora disponibili in questa versione.",
+  "restorePurchases": "Ripristina acquisti",
+  "purchaseSuccess": "Crediti aggiunti. Buona creazione!",
+  "purchaseFailed": "L'acquisto non è andato a buon fine. Non ti è stato addebitato nulla.",
+  "packBestValue": "Più conveniente"
 }

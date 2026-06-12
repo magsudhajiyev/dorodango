@@ -504,4 +504,50 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get voiceGoodbye =>
       '¡Feliz pulido! Toca el orbe cuando me necesites de nuevo.';
+
+  @override
+  String get profile => 'Perfil';
+
+  @override
+  String get guestUser => 'Constructor invitado';
+
+  @override
+  String creditsBalance(int count) {
+    return '$count créditos';
+  }
+
+  @override
+  String get buyCredits => 'Conseguir créditos';
+
+  @override
+  String get statsBuilds => 'Dorodangos';
+
+  @override
+  String get statsPlanted => 'Plantados';
+
+  @override
+  String get statsFound => 'Encontrados';
+
+  @override
+  String get paywallTitle => 'Créditos del coach de IA';
+
+  @override
+  String get paywallSubtitle =>
+      'Los créditos impulsan el coach de voz, el diagnóstico por foto y las predicciones — 1 crédito por interacción.';
+
+  @override
+  String get paywallUnavailable =>
+      'Las compras aún no están disponibles en esta versión.';
+
+  @override
+  String get restorePurchases => 'Restaurar compras';
+
+  @override
+  String get purchaseSuccess => 'Créditos añadidos. ¡Feliz construcción!';
+
+  @override
+  String get purchaseFailed => 'La compra no se completó. No se te ha cobrado.';
+
+  @override
+  String get packBestValue => 'Mejor precio';
 }

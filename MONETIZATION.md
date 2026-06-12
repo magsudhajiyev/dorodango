@@ -71,6 +71,44 @@ classic social-game flywheel.
 1. `finish` field on plant docs + user inventory subcollection; render via a
    `tint` parameter on `DorodangoBall`.
 
+## Unit economics (why this is profitable)
+
+Cost per credit consumed (current models, typical prompt sizes):
+
+| Feature | Model | Est. tokens in/out | Cost/call |
+|---|---|---|---|
+| Voice coach turn | Sonnet | ~2,000 / ~300 | ~$0.010 |
+| Photo diagnosis (2 passes) | Haiku 4.5 | ~3,500 / ~700 | ~$0.007 |
+| Dorodango prediction | Opus 4.8 | ~600 / ~200 | ~$0.008 |
+
+**Blended COGS: ≈ $0.01 per credit** (long coach conversations can reach
+~$0.02; prompt caching pulls the average down).
+
+Revenue per credit after the store's cut (30%, or 15% under the small
+business programs both stores offer under $1M/yr):
+
+| Pack | Gross/credit | Net/credit (15%) | Margin vs $0.01 COGS |
+|---|---|---|---|
+| 25 / $1.99 | $0.080 | $0.068 | ~85% |
+| 100 / $5.99 | $0.060 | $0.051 | ~80% |
+| 300 / $12.99 | $0.043 | $0.037 | ~73% |
+
+Other numbers that matter:
+- **Free signup credits:** 10 × $0.01 = **$0.10 per signup** — cheap trial.
+- **Subscription:** $3.99/mo nets ~$3.39; 100 credits fully consumed costs
+  ~$1.00 → ≥70% margin even on heavy users, protected by the fair-use cap.
+- **Fixed costs** (Firebase functions/Firestore/FCM) are cents per MAU at
+  this scale; the first real fixed cost is a paid map-tile provider
+  (~$25–50/mo) once OSM usage policy requires it.
+
+Profitability is therefore not a per-transaction question — every pack sold
+is ~75–85% gross margin — it's a **conversion** question. At a typical
+2–4% payer rate and one $5.99 pack per payer/quarter, ~1,000 MAU ≈
+$50–100/mo gross: enough to cover infra early, and the margin holds as it
+scales. The levers, in order: paywall placement at out-of-credit moments
+(done), free-credit tuning (10 ≈ 2–3 builds), then the subscription for
+habitual builders.
+
 ## KPIs to watch
 - Credit burn per weekly-active builder (target: free 10 exhausted within
   2–3 builds → natural conversion moment)

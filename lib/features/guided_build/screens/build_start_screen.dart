@@ -154,10 +154,10 @@ class _BuildStartScreenState extends ConsumerState<BuildStartScreen> {
                                 context.goNamed(RouteNames.reflections),
                           ),
                           _QuickLink(
-                            icon: Icons.settings_rounded,
-                            label: l10n.settings,
+                            icon: Icons.person_rounded,
+                            label: l10n.profile,
                             onTap: () =>
-                                context.goNamed(RouteNames.settings),
+                                context.goNamed(RouteNames.profile),
                           ),
                         ],
                       ).animate(delay: 200.ms).fadeIn(duration: 400.ms),

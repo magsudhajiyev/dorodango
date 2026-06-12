@@ -162,5 +162,20 @@
   "goHunting": "ハントに行く",
 
   "handsFreeHint": "ハンズフリー — 終了するには「ストップ」と言ってください",
-  "voiceGoodbye": "良い磨きを！また必要になったらオーブをタップしてください。"
+  "voiceGoodbye": "良い磨きを！また必要になったらオーブをタップしてください。",
+
+  "profile": "プロフィール",
+  "guestUser": "ゲストビルダー",
+  "creditsBalance": "{count}クレジット",
+  "buyCredits": "クレジットを購入",
+  "statsBuilds": "作成数",
+  "statsPlanted": "植えた数",
+  "statsFound": "発見数",
+  "paywallTitle": "AIコーチクレジット",
+  "paywallSubtitle": "クレジットは音声コーチ、写真診断、予測に使われます — 1回につき1クレジット。",
+  "paywallUnavailable": "このビルドではまだ購入できません。",
+  "restorePurchases": "購入を復元",
+  "purchaseSuccess": "クレジットを追加しました。良い制作を！",
+  "purchaseFailed": "購入が完了しませんでした。請求はされていません。",
+  "packBestValue": "お得"
 }
