@@ -38,6 +38,9 @@ final conversationProvider =
 /// Whether the hands-free conversation loop is active.
 final conversationModeProvider = StateProvider<bool>((ref) => false);
 
+/// Whether the "Hey Doro" wake word is listening.
+final wakeWordProvider = StateProvider<bool>((ref) => false);
+
 class VoiceController {
   final SttService stt;
   final TtsService tts;
@@ -110,12 +113,118 @@ class VoiceController {
     parser.setLocale('en');
   }
 
+  /// Wake-word ("Hey Doro") passive listening: while enabled and nothing
+  /// else is using the mic, a low-key recognition loop runs and starts the
+  /// conversation when the wake phrase is heard.
+  bool _wakeWordEnabled = false;
+  bool _passiveActive = false;
+  int _passiveErrorStreak = 0;
+  Timer? _passiveRestartTimer;
+
+  /// Callback to update the wake-word provider from outside.
+  void Function(bool enabled)? onWakeWordChanged;
+
+  /// Common recognizer spellings of "hey doro".
+  static const List<String> _wakePhrases = [
+    'hey doro',
+    'hey dora',
+    'hey duro',
+    'hey dodo',
+    'hey dorough',
+    'okay doro',
+    'ok doro',
+    'ok dora',
+  ];
+
   /// Starts the hands-free conversation loop.
   Future<void> startConversation() async {
+    _passiveRestartTimer?.cancel();
+    if (_passiveActive) {
+      _passiveActive = false;
+      await stt.cancel();
+    }
     _setConversationMode(true);
     stt.onStatus = _handleSttStatus;
     stt.onError = _handleSttError;
     await startListening();
+  }
+
+  /// Enables/disables the "Hey Doro" wake word.
+  Future<void> setWakeWordEnabled(bool enabled) async {
+    if (_wakeWordEnabled == enabled) return;
+    _wakeWordEnabled = enabled;
+    _passiveErrorStreak = 0;
+    onWakeWordChanged?.call(enabled);
+    debugPrint('[Voice] wake word ${enabled ? 'on' : 'off'}');
+    if (enabled) {
+      stt.onStatus = _handleSttStatus;
+      stt.onError = _handleSttError;
+      await _startPassiveListen();
+    } else {
+      _passiveRestartTimer?.cancel();
+      if (_passiveActive) {
+        _passiveActive = false;
+        await stt.cancel();
+      }
+    }
+  }
+
+  Future<void> _startPassiveListen() async {
+    if (!_wakeWordEnabled || _conversationMode || _passiveActive) return;
+    if (getBuildState().voiceState != VoiceState.idle) {
+      _schedulePassiveRestart();
+      return;
+    }
+    _passiveActive = true;
+    final started = await stt.startListening(
+      // Long windows: this session just waits for the wake phrase; the
+      // restart loop picks it back up when the platform ends it.
+      pauseFor: const Duration(seconds: 10),
+      listenFor: const Duration(seconds: 55),
+      onResult: (text, isFinal) {
+        if (!_passiveActive) return;
+        if (_containsWakePhrase(text)) {
+          _onWakeDetected();
+        }
+      },
+    );
+    if (started) {
+      _passiveErrorStreak = 0;
+    } else {
+      _passiveActive = false;
+    }
+  }
+
+  bool _containsWakePhrase(String text) {
+    final normalized = text.toLowerCase().replaceAll(RegExp(r'[.,!?]'), '');
+    return _wakePhrases.any(normalized.contains);
+  }
+
+  Future<void> _onWakeDetected() async {
+    debugPrint('[Voice] wake phrase detected');
+    _passiveActive = false;
+    _passiveRestartTimer?.cancel();
+    await stt.cancel();
+    _setConversationMode(true);
+    await _speak(_l10n?.wakeAck ?? 'Yes?');
+    await startListening();
+  }
+
+  void _schedulePassiveRestart() {
+    if (!_wakeWordEnabled) return;
+    _passiveRestartTimer?.cancel();
+    _passiveRestartTimer = Timer(const Duration(milliseconds: 600), () {
+      if (_wakeWordEnabled &&
+          !_conversationMode &&
+          !_passiveActive &&
+          getBuildState().voiceState == VoiceState.idle &&
+          !stt.isListening) {
+        _startPassiveListen();
+      } else if (_wakeWordEnabled && !_passiveActive) {
+        // Something is still using the mic or speaking — try again later.
+        _schedulePassiveRestart();
+      }
+    });
   }
 
   /// Stops TTS mid-sentence so the user can talk over the assistant.
@@ -149,12 +258,16 @@ class VoiceController {
     _setConversationMode(false);
     await stt.stopListening();
     buildSession.setVoiceState(VoiceState.idle);
+    _schedulePassiveRestart();
   }
 
   void _setConversationMode(bool active) {
     if (_conversationMode == active) return;
     _conversationMode = active;
-    if (!active) _silenceExitTimer?.cancel();
+    if (!active) {
+      _silenceExitTimer?.cancel();
+      _schedulePassiveRestart();
+    }
     onConversationModeChanged?.call(active);
   }
 
@@ -166,6 +279,15 @@ class VoiceController {
   }
 
   void _handleSttStatus(String status) {
+    // Passive wake-word session ended (silence window or platform cap):
+    // just spin it up again.
+    if (_passiveActive) {
+      if (status == 'done' || status == 'notListening') {
+        _passiveActive = false;
+        _schedulePassiveRestart();
+      }
+      return;
+    }
     if (!_conversationMode) return;
     // The platform stopped listening. On Android the 'done' status often
     // arrives BEFORE the final result is delivered, so don't end the loop
@@ -186,6 +308,18 @@ class VoiceController {
   }
 
   void _handleSttError(String errorMsg) {
+    if (_passiveActive) {
+      _passiveActive = false;
+      _passiveErrorStreak++;
+      if (_passiveErrorStreak > 4) {
+        // The recognizer keeps refusing — stop draining the battery.
+        debugPrint('[Voice] disabling wake word after repeated errors');
+        setWakeWordEnabled(false);
+      } else {
+        _schedulePassiveRestart();
+      }
+      return;
+    }
     if (!_conversationMode) return;
     if (getBuildState().voiceState != VoiceState.listening) return;
 

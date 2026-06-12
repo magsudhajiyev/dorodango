@@ -198,5 +198,9 @@
   "authErrorInvalidCredentials": "El correo o la contraseña son incorrectos.",
   "authErrorEmailInUse": "Ya existe una cuenta con este correo.",
   "authErrorWeakPassword": "La contraseña debe tener al menos 6 caracteres.",
-  "authErrorGeneric": "No se pudo iniciar sesión. Inténtalo de nuevo."
+  "authErrorGeneric": "No se pudo iniciar sesión. Inténtalo de nuevo.",
+
+  "wakeWordTooltip": "Palabra de activación «Hey Doro»",
+  "sayHeyDoro": "Di «Hey Doro» cuando me necesites",
+  "wakeAck": "¿Sí?"
 }

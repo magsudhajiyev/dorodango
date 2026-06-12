@@ -612,4 +612,13 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Daxil olmaq alınmadı. Yenidən cəhd edin.';
+
+  @override
+  String get wakeWordTooltip => '“Hey Doro” oyatma sözü';
+
+  @override
+  String get sayHeyDoro => 'Lazım olanda “Hey Doro” deyin';
+
+  @override
+  String get wakeAck => 'Bəli?';
 }

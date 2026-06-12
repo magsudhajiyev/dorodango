@@ -616,4 +616,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Falha ao entrar. Tente novamente.';
+
+  @override
+  String get wakeWordTooltip => 'Palavra de ativação “Hey Doro”';
+
+  @override
+  String get sayHeyDoro => 'Diga “Hey Doro” quando precisar de mim';
+
+  @override
+  String get wakeAck => 'Sim?';
 }

@@ -198,5 +198,9 @@
   "authErrorInvalidCredentials": "メールアドレスまたはパスワードが正しくありません。",
   "authErrorEmailInUse": "このメールアドレスのアカウントは既に存在します。",
   "authErrorWeakPassword": "パスワードは6文字以上にしてください。",
-  "authErrorGeneric": "ログインに失敗しました。もう一度お試しください。"
+  "authErrorGeneric": "ログインに失敗しました。もう一度お試しください。",
+
+  "wakeWordTooltip": "ウェイクワード「ヘイ、ドロ」",
+  "sayHeyDoro": "必要なときは「ヘイ、ドロ」と言ってください",
+  "wakeAck": "はい？"
 }

@@ -1145,6 +1145,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign-in failed. Please try again.'**
   String get authErrorGeneric;
+
+  /// No description provided for @wakeWordTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'“Hey Doro” wake word'**
+  String get wakeWordTooltip;
+
+  /// No description provided for @sayHeyDoro.
+  ///
+  /// In en, this message translates to:
+  /// **'Say “Hey Doro” when you need me'**
+  String get sayHeyDoro;
+
+  /// No description provided for @wakeAck.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes?'**
+  String get wakeAck;
 }
 
 class _AppLocalizationsDelegate

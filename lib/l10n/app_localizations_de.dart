@@ -621,4 +621,13 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get authErrorGeneric =>
       'Anmeldung fehlgeschlagen. Bitte erneut versuchen.';
+
+  @override
+  String get wakeWordTooltip => '„Hey Doro“-Aktivierungswort';
+
+  @override
+  String get sayHeyDoro => 'Sagen Sie „Hey Doro“, wenn Sie mich brauchen';
+
+  @override
+  String get wakeAck => 'Ja?';
 }

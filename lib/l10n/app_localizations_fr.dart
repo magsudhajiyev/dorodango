@@ -617,4 +617,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Échec de la connexion. Veuillez réessayer.';
+
+  @override
+  String get wakeWordTooltip => 'Mot d\'activation « Hey Doro »';
+
+  @override
+  String get sayHeyDoro => 'Dites « Hey Doro » quand vous avez besoin de moi';
+
+  @override
+  String get wakeAck => 'Oui ?';
 }

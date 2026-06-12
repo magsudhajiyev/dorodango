@@ -212,5 +212,9 @@
   "authErrorInvalidCredentials": "Email or password is incorrect.",
   "authErrorEmailInUse": "An account with this email already exists.",
   "authErrorWeakPassword": "The password must be at least 6 characters.",
-  "authErrorGeneric": "Sign-in failed. Please try again."
+  "authErrorGeneric": "Sign-in failed. Please try again.",
+
+  "wakeWordTooltip": "“Hey Doro” wake word",
+  "sayHeyDoro": "Say “Hey Doro” when you need me",
+  "wakeAck": "Yes?"
 }

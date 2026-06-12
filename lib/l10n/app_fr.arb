@@ -198,5 +198,9 @@
   "authErrorInvalidCredentials": "E-mail ou mot de passe incorrect.",
   "authErrorEmailInUse": "Un compte existe déjà avec cet e-mail.",
   "authErrorWeakPassword": "Le mot de passe doit contenir au moins 6 caractères.",
-  "authErrorGeneric": "Échec de la connexion. Veuillez réessayer."
+  "authErrorGeneric": "Échec de la connexion. Veuillez réessayer.",
+
+  "wakeWordTooltip": "Mot d'activation « Hey Doro »",
+  "sayHeyDoro": "Dites « Hey Doro » quand vous avez besoin de moi",
+  "wakeAck": "Oui ?"
 }

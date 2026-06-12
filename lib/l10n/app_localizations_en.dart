@@ -612,4 +612,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Sign-in failed. Please try again.';
+
+  @override
+  String get wakeWordTooltip => '“Hey Doro” wake word';
+
+  @override
+  String get sayHeyDoro => 'Say “Hey Doro” when you need me';
+
+  @override
+  String get wakeAck => 'Yes?';
 }

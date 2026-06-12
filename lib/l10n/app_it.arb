@@ -198,5 +198,9 @@
   "authErrorInvalidCredentials": "Email o password errati.",
   "authErrorEmailInUse": "Esiste già un account con questa email.",
   "authErrorWeakPassword": "La password deve contenere almeno 6 caratteri.",
-  "authErrorGeneric": "Accesso non riuscito. Riprova."
+  "authErrorGeneric": "Accesso non riuscito. Riprova.",
+
+  "wakeWordTooltip": "Parola di attivazione «Hey Doro»",
+  "sayHeyDoro": "Di' «Hey Doro» quando ti servo",
+  "wakeAck": "Sì?"
 }

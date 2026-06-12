@@ -559,4 +559,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'ログインに失敗しました。もう一度お試しください。';
+
+  @override
+  String get wakeWordTooltip => 'ウェイクワード「ヘイ、ドロ」';
+
+  @override
+  String get sayHeyDoro => '必要なときは「ヘイ、ドロ」と言ってください';
+
+  @override
+  String get wakeAck => 'はい？';
 }

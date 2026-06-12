@@ -198,5 +198,9 @@
   "authErrorInvalidCredentials": "E-Mail oder Passwort ist falsch.",
   "authErrorEmailInUse": "Mit dieser E-Mail existiert bereits ein Konto.",
   "authErrorWeakPassword": "Das Passwort muss mindestens 6 Zeichen haben.",
-  "authErrorGeneric": "Anmeldung fehlgeschlagen. Bitte erneut versuchen."
+  "authErrorGeneric": "Anmeldung fehlgeschlagen. Bitte erneut versuchen.",
+
+  "wakeWordTooltip": "„Hey Doro“-Aktivierungswort",
+  "sayHeyDoro": "Sagen Sie „Hey Doro“, wenn Sie mich brauchen",
+  "wakeAck": "Ja?"
 }

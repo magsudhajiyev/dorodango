@@ -616,4 +616,13 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get authErrorGeneric =>
       'No se pudo iniciar sesión. Inténtalo de nuevo.';
+
+  @override
+  String get wakeWordTooltip => 'Palabra de activación «Hey Doro»';
+
+  @override
+  String get sayHeyDoro => 'Di «Hey Doro» cuando me necesites';
+
+  @override
+  String get wakeAck => '¿Sí?';
 }

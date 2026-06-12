@@ -198,5 +198,9 @@
   "authErrorInvalidCredentials": "E-poçt və ya şifrə yanlışdır.",
   "authErrorEmailInUse": "Bu e-poçt ilə hesab artıq mövcuddur.",
   "authErrorWeakPassword": "Şifrə ən azı 6 simvol olmalıdır.",
-  "authErrorGeneric": "Daxil olmaq alınmadı. Yenidən cəhd edin."
+  "authErrorGeneric": "Daxil olmaq alınmadı. Yenidən cəhd edin.",
+
+  "wakeWordTooltip": "“Hey Doro” oyatma sözü",
+  "sayHeyDoro": "Lazım olanda “Hey Doro” deyin",
+  "wakeAck": "Bəli?"
 }

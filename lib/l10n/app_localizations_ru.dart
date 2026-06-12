@@ -609,4 +609,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Не удалось войти. Попробуйте ещё раз.';
+
+  @override
+  String get wakeWordTooltip => 'Фраза пробуждения «Хей, Доро»';
+
+  @override
+  String get sayHeyDoro => 'Скажите «Хей, Доро», когда я понадоблюсь';
+
+  @override
+  String get wakeAck => 'Да?';
 }

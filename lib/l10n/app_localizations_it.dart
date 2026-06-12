@@ -616,4 +616,13 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Accesso non riuscito. Riprova.';
+
+  @override
+  String get wakeWordTooltip => 'Parola di attivazione «Hey Doro»';
+
+  @override
+  String get sayHeyDoro => 'Di\' «Hey Doro» quando ti servo';
+
+  @override
+  String get wakeAck => 'Sì?';
 }

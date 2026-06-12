@@ -70,10 +70,22 @@ class _StageScreenState extends ConsumerState<StageScreen> {
           ref.read(conversationModeProvider.notifier).state = active;
         }
       };
+      voice.onWakeWordChanged = (enabled) {
+        if (mounted) {
+          ref.read(wakeWordProvider.notifier).state = enabled;
+        }
+      };
 
       // Fetch credits
       ref.read(creditsProvider.notifier).fetch();
     });
+  }
+
+  @override
+  void dispose() {
+    // Don't keep the wake-word mic running when the user leaves the build.
+    ref.read(voiceControllerProvider).setWakeWordEnabled(false);
+    super.dispose();
   }
 
   @override
@@ -164,14 +176,35 @@ class _StageScreenState extends ConsumerState<StageScreen> {
                     const CreditBadge(),
                     const SizedBox(width: AppSpacing.md),
                     const VoiceOrb(),
-                    const SizedBox(width: AppSpacing.sm),
+                    const SizedBox(width: AppSpacing.xs),
+                    IconButton(
+                      tooltip: l10n.wakeWordTooltip,
+                      icon: Icon(
+                        ref.watch(wakeWordProvider)
+                            ? Icons.hearing_rounded
+                            : Icons.hearing_disabled_rounded,
+                        size: 22,
+                        color: ref.watch(wakeWordProvider)
+                            ? AppColors.clay
+                            : AppColors.inkFaint,
+                      ),
+                      onPressed: () {
+                        final enabled = ref.read(wakeWordProvider);
+                        ref
+                            .read(voiceControllerProvider)
+                            .setWakeWordEnabled(!enabled);
+                      },
+                    ),
                     Flexible(
                       child: Text(
                         ref.watch(conversationModeProvider)
                             ? l10n.handsFreeHint
-                            : l10n.tapToSpeak,
+                            : ref.watch(wakeWordProvider)
+                                ? l10n.sayHeyDoro
+                                : l10n.tapToSpeak,
                         style: AppTypography.caption.copyWith(
-                          color: ref.watch(conversationModeProvider)
+                          color: ref.watch(conversationModeProvider) ||
+                                  ref.watch(wakeWordProvider)
                               ? AppColors.clay
                               : AppColors.inkSoft,
                         ),

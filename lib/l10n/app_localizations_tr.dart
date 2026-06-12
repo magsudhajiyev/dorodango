@@ -611,4 +611,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get authErrorGeneric => 'Giriş yapılamadı. Lütfen tekrar deneyin.';
+
+  @override
+  String get wakeWordTooltip => '“Hey Doro” uyandırma sözü';
+
+  @override
+  String get sayHeyDoro => 'Bana ihtiyacın olduğunda “Hey Doro” de';
+
+  @override
+  String get wakeAck => 'Evet?';
 }
