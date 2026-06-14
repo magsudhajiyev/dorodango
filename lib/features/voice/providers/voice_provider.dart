@@ -120,9 +120,12 @@ class VoiceController {
   /// Callback to update the wake-word provider from outside.
   void Function(bool enabled)? onWakeWordChanged;
 
-  /// Fired when the wake word can't be armed because the Porcupine
-  /// AccessKey or keyword model hasn't been configured.
+  /// Fired when the wake word can't be armed (e.g. the model download
+  /// failed or the mic was denied).
   void Function()? onWakeWordUnavailable;
+
+  /// Fired when the one-time wake-word model download is starting.
+  void Function()? onWakeWordPreparing;
 
   /// Starts the hands-free conversation loop.
   Future<void> startConversation() async {
@@ -136,10 +139,6 @@ class VoiceController {
   /// Enables/disables the "Hey Doro" wake word.
   Future<void> setWakeWordEnabled(bool enabled) async {
     if (_wakeWordEnabled == enabled) return;
-    if (enabled && !wakeWord.isConfigured) {
-      onWakeWordUnavailable?.call();
-      return;
-    }
     _wakeWordEnabled = enabled;
     onWakeWordChanged?.call(enabled);
     debugPrint('[Voice] wake word ${enabled ? 'on' : 'off'}');
@@ -160,7 +159,10 @@ class VoiceController {
       // Mic is busy — re-armed after the conversation ends.
       return;
     }
-    final ok = await wakeWord.start(_onWakeDetected);
+    final ok = await wakeWord.start(
+      _onWakeDetected,
+      onPreparing: () => onWakeWordPreparing?.call(),
+    );
     if (!ok && _wakeWordEnabled) {
       _wakeWordEnabled = false;
       onWakeWordChanged?.call(false);
@@ -206,6 +208,7 @@ class VoiceController {
     onConversationModeChanged = null;
     onWakeWordChanged = null;
     onWakeWordUnavailable = null;
+    onWakeWordPreparing = null;
     await wakeWord.stop();
     await stt.cancel();
     await tts.stop();

@@ -33,8 +33,9 @@ dependencies:
   speech_to_text: ^7.0.0
   flutter_tts: ^4.2.0
 
-  # Wake word ("Hey Doro") — dedicated on-device engine
-  porcupine_flutter: ^3.0.3
+  # Wake word ("Hey Doro") — on-device, open-source (Vosk)
+  vosk_flutter_2: ^1.0.5
+  path_provider: ^2.1.5
 
   # Camera / Photos
   image_picker: ^1.1.2
@@ -70,4 +71,3 @@ flutter:
   assets:
     - assets/fonts/
     - assets/images/
-    - assets/wake/

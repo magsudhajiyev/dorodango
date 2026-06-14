@@ -1,59 +1,71 @@
 {
   "@@locale": "en",
-
   "appTitle": "Dorodango",
   "appSubtitle": "The art of polishing earth",
-
   "retry": "Retry",
   "skip": "Skip",
   "error": "Error: {message}",
-  "@error": { "placeholders": { "message": { "type": "String" } } },
-
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
   "soilSourceHint": "Where did you find your soil? (optional)",
   "startNewBuild": "Start New Build",
   "viewBuildLog": "View Build Log",
-
   "buildLog": "Build Log",
   "buildDetail": "Build Detail",
   "noBuildsYet": "No builds yet",
   "startFirstDorodango": "Start your first dorodango!",
   "noStagesRecorded": "No stages recorded.",
   "unknownSoil": "Unknown soil",
-
   "statusComplete": "Complete",
   "statusInProgress": "In Progress",
   "statusAbandoned": "Abandoned",
-
   "buildCompleteTitle": "Your Dorodango\nis Complete",
   "buildCompleteBody": "From raw earth to mirror shine.\nStore it in a cool, dry place — it will\ncontinue to harden over the coming weeks.",
   "startAnotherBuild": "Start Another Build",
-
   "nextStage": "Next Stage",
   "completeBuild": "Complete Build",
   "tapToSpeak": "Tap to speak",
-
   "captureProgress": "Capture your progress",
   "captureSubtitle": "Take a photo to save in your build log.",
   "takePhoto": "Take Photo",
   "chooseFromGallery": "Choose from Gallery",
-
   "suggestedDuration": "Suggested: ~{duration}",
-  "@suggestedDuration": { "placeholders": { "duration": { "type": "String" } } },
+  "@suggestedDuration": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
   "durationHours": "{hours}h",
-  "@durationHours": { "placeholders": { "hours": { "type": "int" } } },
+  "@durationHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
   "durationMinutes": "{minutes}min",
-  "@durationMinutes": { "placeholders": { "minutes": { "type": "int" } } },
-
+  "@durationMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "settings": "Settings",
   "language": "Language",
   "systemDefault": "System Default",
-
   "stageCoreForming": "Core Forming",
   "stageDrying": "Drying",
   "stageDustingCapping": "Dusting & Capping",
   "stagePolishing": "Polishing",
   "stageFinished": "Finished",
-
   "coreFormingSummary": "Gather soil and compress it into a tight sphere.",
   "coreFormingStep1": "Find soil with a mix of clay and fine sand — avoid pure clay or sandy soil.",
   "coreFormingStep2": "Add water gradually until the soil holds together when squeezed.",
@@ -63,7 +75,6 @@
   "coreFormingTip": "The core should feel dense and heavy for its size. If it crumbles, add a tiny bit more water.",
   "coreFormingMistake": "Too much water makes the core sticky and hard to shape. Start drier than you think.",
   "coreFormingVoice": "Time to form your core. Find soil with a good mix of clay and fine sand. Add water gradually and squeeze it into a tight ball, about tennis ball sized. Keep rotating and compressing for fifteen to twenty minutes until it feels solid and dense.",
-
   "dryingSummary": "Let moisture migrate to the surface while maintaining shape.",
   "dryingStep1": "Place the sphere on a soft surface or hold it gently.",
   "dryingStep2": "Wait 20–30 minutes for moisture to migrate to the surface.",
@@ -73,7 +84,6 @@
   "dryingTip": "Patience is everything here. Rushing to the next stage will cause cracks.",
   "dryingMistake": "Letting it dry too fast in direct sun causes surface cracks. Dry slowly in shade.",
   "dryingVoice": "Now we dry. Place your sphere down gently and wait twenty to thirty minutes for moisture to reach the surface. When it feels damp, brush off loose material. Repeat this cycle. The sphere is ready for dusting when the surface no longer feels wet. This takes patience — usually several hours.",
-
   "dustingCappingSummary": "Apply layers of fine dry soil to build a smooth outer shell.",
   "dustingCappingStep1": "Sift soil through a fine mesh to get ultra-fine dry powder.",
   "dustingCappingStep2": "Sprinkle a thin layer of powder over the sphere.",
@@ -83,7 +93,6 @@
   "dustingCappingTip": "The finer the dust, the better the final shine. Use the finest particles you can find.",
   "dustingCappingMistake": "Applying dust too thick causes flaking. Thin, even layers are the key.",
   "dustingCappingVoice": "Time to dust and cap. Sift your soil to get the finest powder possible. Sprinkle a thin layer over the sphere and gently rub it in with your palm. Rest ten to fifteen minutes between coats. Apply five to ten coats until the surface is uniformly smooth.",
-
   "polishingSummary": "Burnish the surface to bring out a natural shine.",
   "polishingStep1": "Make sure the surface is completely dry to the touch.",
   "polishingStep2": "Using a smooth surface (plastic bag, glass jar, or soft cloth), gently rub the sphere.",
@@ -93,7 +102,6 @@
   "polishingTip": "Less pressure is more. Let the tool glide — forcing it can gouge the surface.",
   "polishingMistake": "Polishing before fully dry embeds moisture and causes dull spots.",
   "polishingVoice": "Time to polish. Make sure the surface is completely dry. Using a smooth surface like a plastic bag or glass jar, gently rub the sphere in circular motions. Keep the pressure light and consistent. Work the entire surface for thirty to sixty minutes. The shine will develop gradually.",
-
   "finishedSummary": "Your dorodango is complete. Admire your work!",
   "finishedStep1": "Take a final photo of your finished sphere.",
   "finishedStep2": "Store it in a cool, dry place away from direct sunlight.",
@@ -102,32 +110,60 @@
   "finishedTip": "Display it on a soft surface. Some makers create wooden stands.",
   "finishedMistake": "Dropping it! Handle gently. The polished shell is thin.",
   "finishedVoice": "Congratulations! Your dorodango is complete. Take a final photo and store it in a cool, dry place. It will continue to harden over the coming weeks. Handle with care and enjoy your creation.",
-
   "helpResponse": "You are on stage {order} of 5: {title}. {summary}",
-  "@helpResponse": { "placeholders": { "order": { "type": "int" }, "title": { "type": "String" }, "summary": { "type": "String" } } },
+  "@helpResponse": {
+    "placeholders": {
+      "order": {
+        "type": "int"
+      },
+      "title": {
+        "type": "String"
+      },
+      "summary": {
+        "type": "String"
+      }
+    }
+  },
   "dryingTimeResponse": "Drying typically takes two to four hours. Be patient and check every twenty to thirty minutes.",
   "dryingTimeNotOnStage": "You are not currently on the drying stage. The drying stage comes after core forming.",
   "whatWentWrongResponse": "Common mistake at this stage: {mistake}",
-  "@whatWentWrongResponse": { "placeholders": { "mistake": { "type": "String" } } },
+  "@whatWentWrongResponse": {
+    "placeholders": {
+      "mistake": {
+        "type": "String"
+      }
+    }
+  },
   "diagnoseStubResponse": "Photo diagnosis will be available in a future update. For now, check the common mistakes listed for your current stage.",
   "alreadyComplete": "Your dorodango is already complete!",
   "voiceUnknownCommand": "I didn't understand that. Try saying next, repeat, help, or what went wrong.",
-
   "continueBuild": "Continue Build",
   "stageProgress": "Stage {order}/5 — {stageName}",
-  "@stageProgress": { "placeholders": { "order": { "type": "int" }, "stageName": { "type": "String" } } },
-
+  "@stageProgress": {
+    "placeholders": {
+      "order": {
+        "type": "int"
+      },
+      "stageName": {
+        "type": "String"
+      }
+    }
+  },
   "reflections": "Reflections",
   "readMore": "Read more",
   "listenLabel": "Listen",
   "sourcePrefix": "Source: ",
   "estimatedReadTime": "~{minutes} min read",
-  "@estimatedReadTime": { "placeholders": { "minutes": { "type": "int" } } },
-
+  "@estimatedReadTime": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "analyzingPhoto": "Analyzing your photo...",
   "diagnosisError": "Could not analyze photo. Tap to retry.",
   "photoUnclear": "Photo unclear",
-
   "detectSoil": "Detect soil from my location",
   "soilDetecting": "Reading your local soil…",
   "soilTypeLabel": "Local soil type",
@@ -139,7 +175,6 @@
   "soilSuitabilitySandy": "Sandy — it may crumble. Mix in clay-rich soil if you can.",
   "soilLocationDenied": "Location unavailable. Allow location access to detect your soil.",
   "soilLookupFailed": "Couldn't read soil data for this location.",
-
   "soilMap": "Soil map",
   "soilMapHint": "Tap the map to inspect the soil",
   "predictResult": "Predict my dorodango",
@@ -147,7 +182,6 @@
   "predictionTitle": "AI prediction",
   "predictionFailed": "Prediction failed. Try again.",
   "outOfCredits": "Out of credits.",
-
   "hunt": "Dorodango Hunt",
   "plantDorodango": "Plant this dorodango",
   "plantExplainer": "Hide your finished dorodango somewhere public. Hunters nearby will be notified — and one of them might find it.",
@@ -159,27 +193,48 @@
   "noPlantsNearby": "No dorodango planted nearby yet. Be the first!",
   "foundIt": "I found it!",
   "metersAway": "{distance} m away",
-  "@metersAway": { "placeholders": { "distance": { "type": "int" } } },
+  "@metersAway": {
+    "placeholders": {
+      "distance": {
+        "type": "int"
+      }
+    }
+  },
   "getCloser": "Get closer to claim it",
   "foundCongrats": "You found a dorodango!",
   "hintLabel": "Hint",
   "huntLocationNeeded": "Allow location access to join the hunt.",
-
   "myCollection": "My Collection",
   "collectionCount": "{count} found",
-  "@collectionCount": { "placeholders": { "count": { "type": "int" } } },
+  "@collectionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "collectionEmpty": "Nothing here yet — go find your first dorodango!",
   "foundOnDate": "Found on {date}",
-  "@foundOnDate": { "placeholders": { "date": { "type": "String" } } },
+  "@foundOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
   "goHunting": "Go hunting",
-
   "handsFreeHint": "Hands-free — say \"stop\" to end",
   "voiceGoodbye": "Happy polishing. Tap the orb when you need me again.",
-
   "profile": "Profile",
   "guestUser": "Guest builder",
   "creditsBalance": "{count} credits",
-  "@creditsBalance": { "placeholders": { "count": { "type": "int" } } },
+  "@creditsBalance": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "buyCredits": "Get credits",
   "statsBuilds": "Builds",
   "statsPlanted": "Planted",
@@ -191,17 +246,21 @@
   "purchaseSuccess": "Credits added. Happy building!",
   "purchaseFailed": "The purchase didn't complete. You weren't charged.",
   "packBestValue": "Best value",
-
   "welcomeBegin": "Begin",
   "welcomeFreeCredits": "{count} free AI coach credits included",
-  "@welcomeFreeCredits": { "placeholders": { "count": { "type": "int" } } },
+  "@welcomeFreeCredits": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "welcomeFeatureGuide": "A calm, step-by-step guide from mud to mirror shine",
   "welcomeFeatureCoach": "A hands-free AI coach while your hands are in the clay",
   "welcomeFeatureHunt": "Plant your finished dorodango and hunt ones nearby",
   "logout": "Log out",
   "logoutWarning": "Logging out of a guest account loses your builds, credits and collection. Continue?",
   "cancel": "Cancel",
-
   "signInTitle": "Log in",
   "registerTitle": "Create account",
   "emailHint": "Email",
@@ -213,11 +272,9 @@
   "authErrorEmailInUse": "An account with this email already exists.",
   "authErrorWeakPassword": "The password must be at least 6 characters.",
   "authErrorGeneric": "Sign-in failed. Please try again.",
-
   "wakeWordTooltip": "\"Hey Doro\" wake word",
   "sayHeyDoro": "Say \"Hey Doro\" when you need me",
   "wakeAck": "Yes?",
-
   "themeDorodangoOrigins": "Dorodango Origins",
   "themeWabiSabi": "Wabi-Sabi",
   "themeMa": "Ma (間)",
@@ -225,95 +282,79 @@
   "themeShokunin": "Shokunin",
   "themeSoil": "Soil",
   "themePatience": "Patience",
-
   "reflectionOrigins1Title": "Children of the Schoolyard",
   "reflectionOrigins1Body": "Hikaru dorodango emerged from Japanese schoolyards, where children discovered that ordinary mud could be transformed into something extraordinary through patience alone. Professor Fumio Kayo of Kyoto University of Education documented this tradition in the late 1990s, finding that nearly every region of Japan had children independently developing the technique. No one taught them — they learned from each other, passing the knowledge sideways rather than down. There is something profound in this: the desire to transform raw earth into a mirror is not learned but discovered.",
   "reflectionOrigins1Source": "Fumio Kayo, Kyoto University of Education",
-
   "reflectionOrigins2Title": "The Word Itself",
   "reflectionOrigins2Body": "Hikaru means \"to shine\" or \"shining.\" Dorodango breaks into doro (mud) and dango (dumpling). A shining mud dumpling — the name is disarmingly humble for something that can achieve a mirror finish. This humility is intentional in Japanese naming. The most extraordinary things are often given the simplest names, because the object speaks for itself. When you hold a finished dorodango, no one needs to explain what it is. The sphere of polished earth communicates directly, beyond language, a testament to what patience and attention can draw from the most ordinary material.",
   "reflectionOrigins2Source": "Japanese etymology",
-
   "reflectionOrigins3Title": "Bruce Gardner and the West",
   "reflectionOrigins3Body": "American artist Bruce Gardner encountered dorodango while researching Japanese craft traditions and became one of the first Western practitioners to document the process in detail. His work helped bridge cultures, showing that the appeal of transforming earth is universal. Gardner noted that Western students often struggle most with the drying stage — not because of technique, but because of impatience. The sphere asks you to wait, and in that waiting, something shifts. You stop trying to force the material and start listening to it. This lesson, Gardner observed, is the real gift of the practice.",
   "reflectionOrigins3Source": "Bruce Gardner, dorodango.com",
-
   "reflectionOrigins4Title": "Earth as Mirror",
   "reflectionOrigins4Body": "The final stage of a dorodango achieves something almost paradoxical: earth becomes a mirror. The dullest material in our world — dirt — reflects light when given enough patient attention. Ancient Japanese philosophy finds no contradiction here. The potential for brilliance was always present in the soil; the maker simply revealed what was already there. This is a recurring idea in Japanese aesthetics: the craftsperson does not impose beauty upon material but coaxes it out. Your hands have been in conversation with this earth, and the shine is the earth answering back.",
   "reflectionOrigins4Source": "Japanese aesthetic philosophy",
-
   "reflectionWabi1Title": "The Beauty of Imperfection",
   "reflectionWabi1Body": "Wabi-sabi is the Japanese aesthetic rooted in the acceptance of imperfection and transience. A cracked tea bowl, a weathered wooden beam, moss growing between stones — these are not flaws but signatures of time and use. Your dorodango will not be a perfect sphere. It will carry the unique imprint of your hands, the particular composition of your soil, the humidity of the day you made it. These variations are not errors to be corrected but the very things that make your sphere yours alone. No two dorodango are alike, and this is precisely the point.",
   "reflectionWabi1Source": "Leonard Koren, Wabi-Sabi: for Artists, Designers, Poets & Philosophers",
-
   "reflectionWabi2Title": "Nothing Lasts",
   "reflectionWabi2Body": "One of the three pillars of wabi-sabi is impermanence — nothing lasts, nothing is finished, nothing is perfect. Your dorodango, even when complete, is still changing. It will continue to harden for weeks. Over months and years, its surface may develop subtle shifts in tone. If dropped, it will break, and the cross-section will reveal the layers of your work like geological strata. This impermanence does not diminish the object; it deepens it. You are not building something eternal. You are building something that exists beautifully in time, just as you do.",
   "reflectionWabi2Source": "Richard Powell, Wabi Sabi Simple",
-
   "reflectionWabi3Title": "Poverty of Means, Richness of Result",
   "reflectionWabi3Body": "Wabi originally described the loneliness of living in nature, far from society. Over centuries it evolved to appreciate the beauty of simplicity and poverty of means. Dorodango is perhaps the purest expression of this: your material is dirt and water. No expensive tools, no specialized equipment, no rare ingredients. The richness of the result comes entirely from your attention. In a world that often equates expense with quality, there is something quietly radical about making a beautiful object from earth beneath your feet. The material cost is zero. The investment is presence.",
   "reflectionWabi3Source": "Kakuzo Okakura, The Book of Tea",
-
   "reflectionWabi4Title": "Seeing What Is Already There",
   "reflectionWabi4Body": "The wabi-sabi master does not create beauty so much as reveal it. A garden designer sees the existing landscape before placing a single stone. A tea master chooses the bowl that suits the season, not the most ornate one. When you polish your dorodango, you are not painting beauty onto mud — you are drawing out the latent shine that the soil particles already possessed. The alignment of tiny mineral grains, compressed and smoothed, naturally reflects light. You did not add the shine. You removed everything that was hiding it. This is the wabi-sabi way: not addition but subtraction, not decoration but revelation.",
   "reflectionWabi4Source": "Soetsu Yanagi, The Beauty of Everyday Things",
-
   "reflectionMa1Title": "The Space Between",
   "reflectionMa1Body": "Ma (間) is the Japanese concept of negative space — the pause between notes that gives music its shape, the emptiness of a room that makes it usable, the silence in conversation that allows meaning to land. In dorodango, the drying stage is pure ma. Nothing visible is happening, yet everything is changing beneath the surface. Moisture migrates outward through capillary action, particles settle and bond. The sphere is working even when your hands are not. Learning to trust this invisible process — to value the waiting as much as the doing — is one of the deepest lessons the practice offers.",
   "reflectionMa1Source": "Arata Isozaki, MA: Space-Time in Japan",
-
   "reflectionMa2Title": "Emptiness Is Not Nothing",
   "reflectionMa2Body": "In Western thinking, empty space is often seen as absence — something to be filled. In Japanese aesthetics, emptiness is presence. The tokonoma alcove in a traditional room holds only one scroll and one flower because the space around them is what gives them power. Right now your dorodango is resting, and this rest is not wasted time. The pause between your actions lets the material respond. It is a dialogue: you shape, then you listen. You compress, then you wait. The sphere teaches that productivity and stillness are not opposites but partners, each making the other meaningful.",
   "reflectionMa2Source": "Lao Tzu, Tao Te Ching (Chapter 11), via Japanese interpretation",
-
   "reflectionKintsugi1Title": "Gold in the Cracks",
   "reflectionKintsugi1Body": "Kintsugi is the art of repairing broken pottery with lacquer mixed with gold. Rather than hiding the damage, the repair becomes the most beautiful part of the object. Its history dates to the fifteenth century, when a Japanese shogun sent a cracked tea bowl to China for repair and was disappointed by the ugly metal staples he received back. Japanese craftsmen developed a more beautiful solution. If your dorodango develops a crack during drying, you face a kintsugi moment: you can abandon it, or you can work with the crack, incorporating it into the sphere's story. Some of the most striking dorodango carry visible history in their surfaces.",
   "reflectionKintsugi1Source": "Christy Bartlett, Flickwerk: The Aesthetics of Mended Japanese Ceramics",
-
   "reflectionKintsugi2Title": "Stronger at the Broken Places",
   "reflectionKintsugi2Body": "The philosophy of kintsugi extends far beyond ceramics. It suggests that breakage and repair are part of an object's history, not something to disguise. Applied to dorodango, this means that the imperfections you encounter — a small dent from handling, an uneven patch of dusting, a subtle color variation from different soil layers — are not failures. They are chapters. Each mark records a moment of the making process. Master dorodango practitioners often say they can read a sphere's entire story from its surface, the way a geologist reads the history of the earth in exposed rock.",
   "reflectionKintsugi2Source": "Japanese craft philosophy",
-
   "reflectionShokunin1Title": "The Craftsman's Spirit",
   "reflectionShokunin1Body": "Shokunin means artisan or craftsman in Japanese, but it carries a deeper meaning than its English translation suggests. Shokunin katagi — the craftsman's spirit — describes a devotion to one's craft that goes beyond skill into moral territory. The shokunin feels a social obligation to work their best for the benefit of others. Even when making something for yourself, you work as though someone else's life depends on the quality. This intensity of focus, applied to a simple mud sphere, transforms what could be a trivial activity into a meditation on what it means to care deeply about the quality of your work.",
   "reflectionShokunin1Source": "Tashio Odate, Japanese Woodworking Tools",
-
   "reflectionShokunin2Title": "Ten Thousand Hours of Earth",
   "reflectionShokunin2Body": "In traditional Japanese crafts, mastery is measured not in years but in repetitions. A sushi chef spends years just learning to prepare rice. A sword polisher completes a ten-year apprenticeship before working independently. Dorodango follows a compressed version of this arc: within hours, you cycle through frustration, boredom, flow, and satisfaction. Each sphere you make teaches something the previous one could not. The second sphere's core will be denser. The third sphere's dusting will be more even. By the fifth, your hands will know things your mind cannot articulate. This is the shokunin path — knowledge that lives in the body.",
   "reflectionShokunin2Source": "Japanese apprenticeship tradition",
-
   "reflectionShokunin3Title": "The Dust Speaks",
   "reflectionShokunin3Body": "A skilled dusting practitioner can feel the difference between soil particles of different sizes through their fingertips. The finest particles — those that pass through a 200-mesh sieve — create the smoothest surface and the deepest shine. But the shokunin approach is not just about using the finest dust; it is about understanding why. Smaller particles pack more tightly, leaving fewer gaps for light to scatter. Each dusting layer adds perhaps twenty microns of material. Five to ten layers build a shell thinner than a playing card, yet strong enough to burnish to a mirror. Attention at this scale is the essence of craftsmanship.",
   "reflectionShokunin3Source": "Material science of dorodango",
-
   "reflectionShokunin4Title": "The Polisher's Touch",
   "reflectionShokunin4Body": "Japanese sword polishers, or togishi, spend decades perfecting the art of revealing a blade's true character. They work through a series of increasingly fine stones, each one removing less material and revealing more detail. The final stage uses a fingertip-sized stone that glides across the steel with almost no pressure. Polishing dorodango follows the same principle: as the surface becomes finer, your touch must become lighter. Heavy pressure on a smooth surface will gouge, not polish. The last stage of finishing barely grazes the surface at all. Mastery here is measured in what you learn to withhold, not what you apply.",
   "reflectionShokunin4Source": "Japanese sword polishing tradition (togishi)",
-
   "reflectionSoil1Title": "A World Beneath Your Feet",
   "reflectionSoil1Body": "A single teaspoon of healthy soil contains more microorganisms than there are people on Earth. Bacteria, fungi, protozoa, and nematodes form a living web that has been building for thousands of years. The soil you gathered for your dorodango carries this history. The mineral composition reflects the bedrock below, weathered over geological time. The color tells a story: reds and oranges indicate iron oxides, dark browns suggest rich organic matter, grays point to clay deposits. Every dorodango is a portrait of the specific place it came from — a small sphere holding the deep story of its landscape.",
   "reflectionSoil1Source": "David Montgomery, Dirt: The Erosion of Civilizations",
-
   "reflectionSoil2Title": "Clay Remembers",
   "reflectionSoil2Body": "Clay is remarkable among soil components because of its memory. Clay particles are flat and plate-like, and when compressed, they align in parallel layers — much like shuffling a deck of cards and pressing it flat. This alignment is what gives your dorodango its strength and its potential for shine. The particles, once aligned, resist returning to disorder. They remember the pressure of your hands. This is not metaphor; it is physics. Every compression during core forming permanently rearranges millions of particles into a stronger configuration. The sphere literally takes the shape of your care.",
   "reflectionSoil2Source": "Soil science, clay mineralogy",
-
   "reflectionPatience1Title": "The Slow Reveal",
   "reflectionPatience1Body": "Modern life optimizes for speed. Instant delivery, real-time updates, immediate results. Dorodango resists all of this. The drying stage alone takes hours, and there is no way to rush it without damaging the sphere. This enforced patience is not a bug but a feature. Researchers studying flow states have found that slow, repetitive manual tasks — knitting, woodcarving, pottery — activate the default mode network in the brain, the same network associated with creativity and self-reflection. Your dorodango is not just drying right now; your mind may be doing some of its most interesting work in this unhurried space.",
   "reflectionPatience1Source": "Mihaly Csikszentmihalyi, Flow",
-
   "reflectionPatience2Title": "What the Hands Know",
   "reflectionPatience2Body": "There is a Japanese proverb: \"The hands learn before the mind understands.\" Watch a child making dorodango for the first time, and you will see this in action. Before they can explain what they are doing, their hands are adjusting pressure, rotating speed, and moisture instinctively. This tactile intelligence — developed over millions of years of human evolution — is one of our most undervalued capacities. In an age of screens and abstraction, dorodango is a return to the fundamental human activity of shaping the physical world with your hands. It is not a step backward but a reconnection with something essential.",
   "reflectionPatience2Source": "Frank Wilson, The Hand",
-
   "voiceOutOfCredits": "You're out of AI credits. I can still respond to commands like next, repeat, and help.",
   "voiceError": "Something went wrong. Tap the orb to try again.",
   "voiceConnectionLost": "I lost the connection. Check your internet and tap the orb.",
-
   "huntRadius": "Search radius",
   "radiusKm": "{km} km",
-  "@radiusKm": { "placeholders": { "km": { "type": "int" } } },
+  "@radiusKm": {
+    "placeholders": {
+      "km": {
+        "type": "int"
+      }
+    }
+  },
   "logoutConfirm": "Log out of your account?",
-
-  "wakeWordSetup": "“Hey Doro” needs setup — add the Picovoice key and model."
+  "wakeWordSetup": "Couldn't start “Hey Doro”. Check your connection and try again.",
+  "wakeWordPreparing": "Preparing “Hey Doro” (one-time download)…"
 }

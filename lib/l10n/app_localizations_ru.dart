@@ -873,5 +873,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get wakeWordSetup =>
-      '«Хей, Доро» требует настройки — добавьте ключ и модель Picovoice.';
+      'Не удалось запустить «Хей, Доро». Проверьте подключение и попробуйте снова.';
+
+  @override
+  String get wakeWordPreparing => 'Подготовка «Хей, Доро» (разовая загрузка)…';
 }

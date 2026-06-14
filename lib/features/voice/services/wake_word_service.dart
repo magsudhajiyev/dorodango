@@ -1,60 +1,89 @@
-import 'dart:io';
+import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:porcupine_flutter/porcupine_manager.dart';
-import 'package:porcupine_flutter/porcupine_error.dart';
+import 'package:vosk_flutter_2/vosk_flutter_2.dart';
 
-/// Dedicated on-device "Hey Doro" wake-word engine (Picovoice Porcupine).
+/// On-device "Hey Doro" wake word powered by Vosk — open source, no API key,
+/// no account, no chime. Vosk keeps a single continuous recognition stream
+/// on the raw microphone (unlike the OS recognizer, which cycles sessions),
+/// so detection is steady and low-power.
 ///
-/// Unlike the OS speech recognizer, Porcupine is built for always-on,
-/// low-power listening — it does not chime, does not get throttled, and
-/// fires reliably. It holds the microphone while armed, so callers must
-/// [stop] it before handing the mic to speech-to-text, then [start] it
-/// again when the conversation ends.
+/// It holds the mic while armed, so callers [stop] it before handing the mic
+/// to speech-to-text, then [start] it again when the conversation ends.
 ///
-/// Setup (provided by the developer, not bundled):
-///   * AccessKey via `--dart-define=PICOVOICE_ACCESS_KEY=...`
-///   * A "Hey Doro" keyword model trained at console.picovoice.ai,
-///     dropped in as `assets/wake/hey_doro_<platform>.ppn`
+/// The model is downloaded once (~40 MB) on first use and cached on device.
+/// Vosk's model is English, so wake detection is English-only — but "Hey
+/// Doro" is a brand name spoken the same in any language, and the
+/// conversation that follows is still fully multilingual.
 class WakeWordService {
-  static const _accessKey = String.fromEnvironment('PICOVOICE_ACCESS_KEY');
-  static const _androidKeyword = 'assets/wake/hey_doro_android.ppn';
-  static const _iosKeyword = 'assets/wake/hey_doro_ios.ppn';
+  static const _modelUrl =
+      'https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip';
+  static const _modelName = 'vosk-model-small-en-us-0.15';
+  static const int _sampleRate = 16000;
 
-  PorcupineManager? _manager;
+  final VoskFlutterPlugin _vosk = VoskFlutterPlugin.instance();
+  Model? _model;
+  Recognizer? _recognizer;
+  SpeechService? _speech;
+  StreamSubscription<String>? _partialSub;
   void Function()? _onWake;
   bool _running = false;
+  bool _initializing = false;
 
-  /// Whether an AccessKey was compiled in. (The keyword model is checked
-  /// at [start] time, since a missing asset only fails when loaded.)
-  bool get isConfigured => _accessKey.isNotEmpty;
+  /// "Hey Doro" as the en-US small model actually transcribes it. "Doro"
+  /// isn't a dictionary word, so we match the nearest real-word renderings.
+  static final RegExp _wakeRegex = RegExp(
+    r'\b(?:hey|a|hi|ok|okay)\s+'
+    r'(?:door|doro|dora|doe|dough|duro|d[ou]ro|toro|tor|though)\b',
+  );
 
-  String get _keywordAsset =>
-      (!kIsWeb && Platform.isIOS) ? _iosKeyword : _androidKeyword;
+  /// Vosk needs no key, so the toggle is always available.
+  bool get isConfigured => true;
 
-  /// Arms the wake word. Returns false if it couldn't start (missing key,
-  /// missing model, or mic unavailable) so the caller can fall back.
-  Future<bool> start(void Function() onWake) async {
-    if (!isConfigured) return false;
+  /// Arms the wake word. Returns false if it couldn't start (model download
+  /// failed, mic denied). [onPreparing] fires when a one-time model download
+  /// is about to begin, so the UI can show progress.
+  Future<bool> start(
+    void Function() onWake, {
+    void Function()? onPreparing,
+  }) async {
     _onWake = onWake;
+    if (_running) return true;
+    if (_initializing) return false;
+    _initializing = true;
     try {
-      _manager ??= await PorcupineManager.fromKeywordPaths(
-        _accessKey,
-        [_keywordAsset],
-        (_) => _onWake?.call(),
-        sensitivities: [0.65],
-        errorCallback: (e) => debugPrint('[Wake] process: ${e.message}'),
-      );
-      await _manager!.start();
+      if (_speech == null) {
+        final loader = ModelLoader();
+        if (!await loader.isModelAlreadyLoaded(_modelName)) {
+          onPreparing?.call();
+        }
+        final modelPath = await loader.loadFromNetwork(_modelUrl);
+        _model = await _vosk.createModel(modelPath);
+        _recognizer = await _vosk.createRecognizer(
+          model: _model!,
+          sampleRate: _sampleRate,
+        );
+        _speech = await _vosk.initSpeechService(_recognizer!);
+        _partialSub = _speech!.onPartial().listen(_onPartial);
+      }
+      await _speech!.start();
       _running = true;
-      debugPrint('[Wake] armed');
+      debugPrint('[Wake] vosk armed');
       return true;
-    } on PorcupineException catch (e) {
-      debugPrint('[Wake] init failed: ${e.message}');
-      return false;
     } catch (e) {
       debugPrint('[Wake] start failed: $e');
       return false;
+    } finally {
+      _initializing = false;
+    }
+  }
+
+  void _onPartial(String result) {
+    if (!_running) return;
+    final lower = result.toLowerCase();
+    if (_wakeRegex.hasMatch(lower)) {
+      debugPrint('[Wake] matched in: $lower');
+      _onWake?.call();
     }
   }
 
@@ -62,17 +91,22 @@ class WakeWordService {
     if (!_running) return;
     _running = false;
     try {
-      await _manager?.stop();
-      debugPrint('[Wake] disarmed');
+      await _speech?.stop();
+      await _speech?.reset();
     } catch (_) {}
+    debugPrint('[Wake] vosk disarmed');
   }
 
   Future<void> dispose() async {
     _running = false;
     _onWake = null;
+    await _partialSub?.cancel();
+    _partialSub = null;
     try {
-      await _manager?.delete();
+      await _speech?.dispose();
     } catch (_) {}
-    _manager = null;
+    _speech = null;
+    _recognizer = null;
+    _model = null;
   }
 }

@@ -1,55 +1,43 @@
 {
   "@@locale": "es",
-
   "appTitle": "Dorodango",
   "appSubtitle": "El arte de pulir la tierra",
-
   "retry": "Reintentar",
   "skip": "Omitir",
   "error": "Error: {message}",
-
   "soilSourceHint": "¿Dónde encontraste tu tierra? (opcional)",
   "startNewBuild": "Nuevo proyecto",
   "viewBuildLog": "Ver registro",
-
   "buildLog": "Registro",
   "buildDetail": "Detalle del proyecto",
   "noBuildsYet": "Sin proyectos aún",
   "startFirstDorodango": "¡Comienza tu primer dorodango!",
   "noStagesRecorded": "No hay etapas registradas.",
   "unknownSoil": "Tierra desconocida",
-
   "statusComplete": "Completado",
   "statusInProgress": "En progreso",
   "statusAbandoned": "Abandonado",
-
   "buildCompleteTitle": "Tu Dorodango\nestá completo",
   "buildCompleteBody": "De tierra cruda a brillo de espejo.\nGuárdalo en un lugar fresco y seco —\ncontinuará endureciéndose en las próximas semanas.",
   "startAnotherBuild": "Nuevo proyecto",
-
   "nextStage": "Siguiente etapa",
   "completeBuild": "Completar proyecto",
   "tapToSpeak": "Toca para hablar",
-
   "captureProgress": "Captura tu progreso",
   "captureSubtitle": "Toma una foto para tu registro.",
   "takePhoto": "Tomar foto",
   "chooseFromGallery": "Elegir de la galería",
-
   "suggestedDuration": "Sugerido: ~{duration}",
   "durationHours": "{hours}h",
   "durationMinutes": "{minutes}min",
-
   "settings": "Ajustes",
   "language": "Idioma",
   "systemDefault": "Predeterminado del sistema",
-
   "stageCoreForming": "Formación del núcleo",
   "stageDrying": "Secado",
   "stageDustingCapping": "Empolvado y recubrimiento",
   "stagePolishing": "Pulido",
   "stageFinished": "Terminado",
-
   "coreFormingSummary": "Reúne tierra y comprímela en una esfera compacta.",
   "coreFormingStep1": "Encuentra tierra con una mezcla de arcilla y arena fina — evita arcilla pura o arena.",
   "coreFormingStep2": "Agrega agua gradualmente hasta que la tierra se mantenga unida al apretarla.",
@@ -59,7 +47,6 @@
   "coreFormingTip": "El núcleo debe sentirse denso y pesado para su tamaño. Si se desmorona, agrega un poco más de agua.",
   "coreFormingMistake": "Demasiada agua hace el núcleo pegajoso y difícil de moldear. Comienza más seco de lo que crees.",
   "coreFormingVoice": "Es hora de formar tu núcleo. Encuentra tierra con una buena mezcla de arcilla y arena fina. Agrega agua gradualmente y apriétala en una bola compacta, del tamaño de una pelota de tenis. Sigue rotando y comprimiendo durante quince a veinte minutos hasta que se sienta sólida y densa.",
-
   "dryingSummary": "Deja que la humedad migre a la superficie manteniendo la forma.",
   "dryingStep1": "Coloca la esfera sobre una superficie suave o sostenla con cuidado.",
   "dryingStep2": "Espera 20–30 minutos para que la humedad migre a la superficie.",
@@ -69,7 +56,6 @@
   "dryingTip": "La paciencia es todo aquí. Apresurarse causará grietas.",
   "dryingMistake": "Secado demasiado rápido al sol directo causa grietas. Seca lentamente a la sombra.",
   "dryingVoice": "Ahora secamos. Coloca tu esfera con cuidado y espera veinte a treinta minutos para que la humedad llegue a la superficie. Cuando esté húmeda, cepilla el material suelto. Repite este ciclo. La esfera está lista para empolvar cuando la superficie ya no esté húmeda. Esto requiere paciencia — generalmente varias horas.",
-
   "dustingCappingSummary": "Aplica capas de tierra fina y seca para crear una capa exterior lisa.",
   "dustingCappingStep1": "Tamiza la tierra a través de una malla fina para obtener polvo ultra-fino.",
   "dustingCappingStep2": "Espolvorea una capa fina de polvo sobre la esfera.",
@@ -79,7 +65,6 @@
   "dustingCappingTip": "Cuanto más fino el polvo, mejor el brillo final. Usa las partículas más finas que puedas encontrar.",
   "dustingCappingMistake": "Aplicar polvo demasiado grueso causa descamación. Capas finas y uniformes son la clave.",
   "dustingCappingVoice": "Hora de empolvar y recubrir. Tamiza tu tierra para obtener el polvo más fino posible. Espolvorea una capa fina sobre la esfera y frótala suavemente con tu palma. Descansa diez a quince minutos entre capas. Aplica cinco a diez capas hasta que la superficie esté uniformemente lisa.",
-
   "polishingSummary": "Bruñe la superficie para revelar un brillo natural.",
   "polishingStep1": "Asegúrate de que la superficie esté completamente seca al tacto.",
   "polishingStep2": "Con una superficie lisa (bolsa plástica, frasco de vidrio o tela suave), frota suavemente la esfera.",
@@ -89,7 +74,6 @@
   "polishingTip": "Menos presión es más. Deja que la herramienta se deslice — forzar puede dañar la superficie.",
   "polishingMistake": "Pulir antes de secar completamente atrapa humedad y causa manchas opacas.",
   "polishingVoice": "Hora de pulir. Asegúrate de que la superficie esté completamente seca. Con una superficie lisa como una bolsa plástica o frasco de vidrio, frota suavemente la esfera en movimientos circulares. Mantén la presión ligera y constante. Trabaja toda la superficie durante treinta a sesenta minutos. El brillo se desarrollará gradualmente.",
-
   "finishedSummary": "Tu dorodango está completo. ¡Admira tu trabajo!",
   "finishedStep1": "Toma una foto final de tu esfera terminada.",
   "finishedStep2": "Guárdala en un lugar fresco y seco, lejos de la luz solar.",
@@ -98,7 +82,6 @@
   "finishedTip": "Exhibe sobre una superficie suave. Algunos creadores hacen soportes de madera.",
   "finishedMistake": "¡Dejarla caer! Maneja con cuidado. La capa pulida es delgada.",
   "finishedVoice": "¡Felicitaciones! Tu dorodango está completo. Toma una foto final y guárdalo en un lugar fresco y seco. Continuará endureciéndose en las próximas semanas. Manéjalo con cuidado y disfruta tu creación.",
-
   "helpResponse": "Estás en la etapa {order} de 5: {title}. {summary}",
   "dryingTimeResponse": "El secado generalmente toma de dos a cuatro horas. Sé paciente y revisa cada veinte a treinta minutos.",
   "dryingTimeNotOnStage": "No estás en la etapa de secado. El secado viene después de la formación del núcleo.",
@@ -106,10 +89,8 @@
   "diagnoseStubResponse": "El diagnóstico por foto estará disponible en una actualización futura. Por ahora, revisa los errores comunes de tu etapa actual.",
   "alreadyComplete": "¡Tu dorodango ya está completo!",
   "voiceUnknownCommand": "No entendí eso. Intenta decir siguiente, repetir, ayuda o problema.",
-
   "continueBuild": "Continuar proyecto",
   "stageProgress": "Etapa {order}/5 — {stageName}",
-
   "reflections": "Reflexiones",
   "readMore": "Leer más",
   "listenLabel": "Escuchar",
@@ -118,7 +99,6 @@
   "analyzingPhoto": "Analizando tu foto...",
   "diagnosisError": "No se pudo analizar la foto. Toca para reintentar.",
   "photoUnclear": "Foto poco clara",
-
   "detectSoil": "Detectar la tierra de mi ubicación",
   "soilDetecting": "Leyendo la tierra local…",
   "soilTypeLabel": "Tipo de tierra local",
@@ -130,7 +110,6 @@
   "soilSuitabilitySandy": "Arenosa: puede desmoronarse. Mezcla tierra rica en arcilla si puedes.",
   "soilLocationDenied": "Ubicación no disponible. Permite el acceso a la ubicación para detectar tu tierra.",
   "soilLookupFailed": "No se pudieron leer los datos del suelo de esta ubicación.",
-
   "soilMap": "Mapa de suelos",
   "soilMapHint": "Toca el mapa para examinar la tierra",
   "predictResult": "Predecir mi dorodango",
@@ -138,7 +117,6 @@
   "predictionTitle": "Predicción de IA",
   "predictionFailed": "La predicción falló. Inténtalo de nuevo.",
   "outOfCredits": "Sin créditos.",
-
   "hunt": "Caza de Dorodango",
   "plantDorodango": "Plantar este dorodango",
   "plantExplainer": "Esconde tu dorodango terminado en un lugar público. Los cazadores cercanos recibirán un aviso — quizá alguien lo encuentre.",
@@ -154,16 +132,13 @@
   "foundCongrats": "¡Encontraste un dorodango!",
   "hintLabel": "Pista",
   "huntLocationNeeded": "Permite el acceso a la ubicación para unirte a la caza.",
-
   "myCollection": "Mi colección",
   "collectionCount": "{count} encontrados",
   "collectionEmpty": "Aún no hay nada aquí — ¡encuentra tu primer dorodango!",
   "foundOnDate": "Encontrado el {date}",
   "goHunting": "Ir de caza",
-
   "handsFreeHint": "Manos libres — di «stop» para terminar",
   "voiceGoodbye": "¡Feliz pulido! Toca el orbe cuando me necesites de nuevo.",
-
   "profile": "Perfil",
   "guestUser": "Constructor invitado",
   "creditsBalance": "{count} créditos",
@@ -178,7 +153,6 @@
   "purchaseSuccess": "Créditos añadidos. ¡Feliz construcción!",
   "purchaseFailed": "La compra no se completó. No se te ha cobrado.",
   "packBestValue": "Mejor precio",
-
   "welcomeBegin": "Empezar",
   "welcomeFreeCredits": "{count} créditos gratis del coach de IA incluidos",
   "welcomeFeatureGuide": "Una guía tranquila, paso a paso, del barro al brillo de espejo",
@@ -187,7 +161,6 @@
   "logout": "Cerrar sesión",
   "logoutWarning": "Al cerrar sesión de una cuenta de invitado se pierden tus dorodangos, créditos y colección. ¿Continuar?",
   "cancel": "Cancelar",
-
   "signInTitle": "Iniciar sesión",
   "registerTitle": "Crear cuenta",
   "emailHint": "Correo electrónico",
@@ -199,11 +172,9 @@
   "authErrorEmailInUse": "Ya existe una cuenta con este correo.",
   "authErrorWeakPassword": "La contraseña debe tener al menos 6 caracteres.",
   "authErrorGeneric": "No se pudo iniciar sesión. Inténtalo de nuevo.",
-
   "wakeWordTooltip": "Palabra de activación «Hey Doro»",
   "sayHeyDoro": "Di «Hey Doro» cuando me necesites",
   "wakeAck": "¿Sí?",
-
   "themeDorodangoOrigins": "Orígenes del Dorodango",
   "themeWabiSabi": "Wabi-Sabi",
   "themeMa": "Ma (間)",
@@ -211,94 +182,72 @@
   "themeShokunin": "Shokunin",
   "themeSoil": "Tierra",
   "themePatience": "Paciencia",
-
   "reflectionOrigins1Title": "Los niños del patio escolar",
   "reflectionOrigins1Body": "El hikaru dorodango surgió en los patios de las escuelas japonesas, donde los niños descubrieron que el barro ordinario podía transformarse en algo extraordinario con solo paciencia. El profesor Fumio Kayo, de la Universidad de Educación de Kyoto, documentó esta tradición a finales de los años noventa y comprobó que en casi todas las regiones de Japón los niños habían desarrollado la técnica de forma independiente. Nadie se la enseñó: la aprendieron unos de otros, transmitiendo el conocimiento de manera lateral, no vertical. Hay algo profundo en esto: el deseo de transformar la tierra cruda en un espejo no se aprende, se descubre.",
   "reflectionOrigins1Source": "Fumio Kayo, Universidad de Educación de Kyoto",
-
   "reflectionOrigins2Title": "La palabra en sí",
   "reflectionOrigins2Body": "Hikaru significa «brillar» o «brillante». Dorodango se divide en doro (barro) y dango (bola de masa). Una bola de barro brillante — el nombre es desarmantemente humilde para algo capaz de alcanzar un acabado de espejo. Esta humildad es intencionada en la nomenclatura japonesa. A las cosas más extraordinarias se les suelen dar los nombres más sencillos, porque el objeto habla por sí mismo. Cuando sostienes un dorodango terminado, nadie necesita explicar qué es. La esfera de tierra pulida se comunica directamente, más allá del lenguaje, como testimonio de lo que la paciencia y la atención pueden extraer del material más ordinario.",
   "reflectionOrigins2Source": "Etimología japonesa",
-
   "reflectionOrigins3Title": "Bruce Gardner y Occidente",
   "reflectionOrigins3Body": "El artista estadounidense Bruce Gardner se encontró con el dorodango mientras investigaba las tradiciones artesanales japonesas y se convirtió en uno de los primeros practicantes occidentales en documentar el proceso con detalle. Su trabajo ayudó a tender puentes entre culturas, demostrando que el atractivo de transformar la tierra es universal. Gardner señaló que los estudiantes occidentales suelen luchar más con la etapa de secado, no por la técnica, sino por la impaciencia. La esfera te pide que esperes, y en esa espera algo cambia. Dejas de intentar forzar el material y empiezas a escucharlo. Esta lección, observó Gardner, es el verdadero regalo de la práctica.",
   "reflectionOrigins3Source": "Bruce Gardner, dorodango.com",
-
   "reflectionOrigins4Title": "La tierra como espejo",
   "reflectionOrigins4Body": "La etapa final de un dorodango logra algo casi paradójico: la tierra se convierte en espejo. El material más opaco de nuestro mundo — el barro — refleja la luz cuando se le presta suficiente atención paciente. La antigua filosofía japonesa no ve aquí ninguna contradicción. El potencial de brillantez siempre estuvo presente en el suelo; el artesano simplemente reveló lo que ya estaba ahí. Esta es una idea recurrente en la estética japonesa: el artesano no impone belleza al material, sino que la extrae. Tus manos han estado en conversación con esta tierra, y el brillo es la respuesta de la tierra.",
   "reflectionOrigins4Source": "Filosofía estética japonesa",
-
   "reflectionWabi1Title": "La belleza de la imperfección",
   "reflectionWabi1Body": "El wabi-sabi es la estética japonesa arraigada en la aceptación de la imperfección y la impermanencia. Un cuenco de té agrietado, una viga de madera desgastada, el musgo que crece entre las piedras — no son defectos, sino huellas del tiempo y el uso. Tu dorodango no será una esfera perfecta. Llevará la impronta única de tus manos, la composición particular de tu tierra, la humedad del día en que lo hiciste. Estas variaciones no son errores que corregir, sino precisamente lo que hace que tu esfera sea solo tuya. No hay dos dorodango iguales, y ese es exactamente el punto.",
   "reflectionWabi1Source": "Leonard Koren, Wabi-Sabi: para artistas, diseñadores, poetas y filósofos",
-
   "reflectionWabi2Title": "Nada dura",
   "reflectionWabi2Body": "Uno de los tres pilares del wabi-sabi es la impermanencia: nada dura, nada está terminado, nada es perfecto. Tu dorodango, incluso cuando esté completo, seguirá cambiando. Continuará endureciéndose durante semanas. A lo largo de meses y años, su superficie puede desarrollar sutiles variaciones de tono. Si cae, se romperá, y la sección transversal revelará las capas de tu trabajo como estratos geológicos. Esta impermanencia no disminuye el objeto; lo profundiza. No estás construyendo algo eterno. Estás construyendo algo que existe bellamente en el tiempo, igual que tú.",
   "reflectionWabi2Source": "Richard Powell, Wabi Sabi Simple",
-
   "reflectionWabi3Title": "Pobreza de medios, riqueza de resultado",
   "reflectionWabi3Body": "Wabi describía originalmente la soledad de vivir en la naturaleza, lejos de la sociedad. Con los siglos evolucionó para apreciar la belleza de la sencillez y la pobreza de medios. El dorodango es quizás la expresión más pura de esto: tu material es tierra y agua. Sin herramientas costosas, sin equipos especializados, sin ingredientes raros. La riqueza del resultado proviene enteramente de tu atención. En un mundo que a menudo equipara el gasto con la calidad, hay algo calladamente radical en crear un objeto bello con la tierra bajo tus pies. El coste del material es cero. La inversión es presencia.",
   "reflectionWabi3Source": "Kakuzo Okakura, El libro del té",
-
   "reflectionWabi4Title": "Ver lo que ya está ahí",
   "reflectionWabi4Body": "El maestro del wabi-sabi no tanto crea belleza como la revela. Un diseñador de jardines contempla el paisaje existente antes de colocar una sola piedra. Un maestro del té elige el cuenco que se adapta a la estación, no el más ornamentado. Cuando pulieras tu dorodango, no estás pintando belleza sobre barro: estás extrayendo el brillo latente que las partículas de tierra ya poseían. La alineación de minúsculos granos minerales, comprimidos y alisados, refleja la luz de forma natural. No añadiste el brillo. Eliminaste todo lo que lo ocultaba. Este es el camino del wabi-sabi: no adición sino sustracción, no decoración sino revelación.",
   "reflectionWabi4Source": "Soetsu Yanagi, La belleza de las cosas cotidianas",
-
   "reflectionMa1Title": "El espacio entre",
   "reflectionMa1Body": "Ma (間) es el concepto japonés del espacio negativo: la pausa entre notas que da forma a la música, el vacío de una habitación que la hace habitable, el silencio en una conversación que permite que el significado aterrice. En el dorodango, la etapa de secado es ma puro. Nada visible ocurre, y sin embargo todo cambia bajo la superficie. La humedad migra hacia afuera por acción capilar, las partículas se asientan y se unen. La esfera trabaja incluso cuando tus manos no lo hacen. Aprender a confiar en este proceso invisible — a valorar la espera tanto como el hacer — es una de las lecciones más profundas que ofrece la práctica.",
   "reflectionMa1Source": "Arata Isozaki, MA: Espacio-Tiempo en Japón",
-
   "reflectionMa2Title": "El vacío no es nada",
   "reflectionMa2Body": "En el pensamiento occidental, el espacio vacío se percibe a menudo como ausencia: algo que debe llenarse. En la estética japonesa, el vacío es presencia. El tokonoma en una habitación tradicional contiene solo un pergamino y una flor, porque el espacio que los rodea es lo que les da poder. Ahora mismo tu dorodango descansa, y este descanso no es tiempo perdido. La pausa entre tus acciones deja que el material responda. Es un diálogo: tú moldeas, luego escuchas. Comprimes, luego esperas. La esfera enseña que la productividad y la quietud no son opuestos sino compañeros, cada uno haciendo que el otro tenga sentido.",
   "reflectionMa2Source": "Lao Tzu, Tao Te Ching (Capítulo 11), a través de la interpretación japonesa",
-
   "reflectionKintsugi1Title": "Oro en las grietas",
   "reflectionKintsugi1Body": "El kintsugi es el arte de reparar la cerámica rota con laca mezclada con oro. En lugar de ocultar el daño, la reparación se convierte en la parte más bella del objeto. Su historia se remonta al siglo XV, cuando un shogun japonés envió un cuenco de té agrietado a China para repararlo y quedó decepcionado por las feas grapas metálicas que recibió. Los artesanos japoneses desarrollaron una solución más bella. Si tu dorodango desarrolla una grieta durante el secado, te enfrentas a un momento kintsugi: puedes abandonarlo, o puedes trabajar con la grieta, incorporándola a la historia de la esfera. Algunos de los dorodango más llamativos llevan historia visible en su superficie.",
   "reflectionKintsugi1Source": "Christy Bartlett, Flickwerk: La estética de la cerámica japonesa remendada",
-
   "reflectionKintsugi2Title": "Más fuerte en los lugares rotos",
   "reflectionKintsugi2Body": "La filosofía del kintsugi se extiende mucho más allá de la cerámica. Sugiere que la rotura y la reparación son parte de la historia de un objeto, no algo que disimular. Aplicado al dorodango, esto significa que las imperfecciones que encuentres — una pequeña abolladura por el manejo, un parche desigual al empolvar, una sutil variación de color por diferentes capas de tierra — no son fracasos. Son capítulos. Cada marca registra un momento del proceso de creación. Los maestros del dorodango suelen decir que pueden leer toda la historia de una esfera desde su superficie, igual que un geólogo lee la historia de la tierra en la roca expuesta.",
   "reflectionKintsugi2Source": "Filosofía artesanal japonesa",
-
   "reflectionShokunin1Title": "El espíritu del artesano",
   "reflectionShokunin1Body": "Shokunin significa artesano en japonés, pero conlleva un significado más profundo que su traducción sugiere. Shokunin katagi — el espíritu del artesano — describe una devoción al oficio que va más allá de la habilidad y entra en territorio moral. El shokunin siente una obligación social de dar lo mejor de sí para el beneficio de los demás. Incluso cuando hace algo para sí mismo, trabaja como si la vida de otra persona dependiera de la calidad. Esta intensidad de enfoque, aplicada a una simple esfera de barro, transforma lo que podría ser una actividad trivial en una meditación sobre lo que significa preocuparse profundamente por la calidad del propio trabajo.",
   "reflectionShokunin1Source": "Tashio Odate, Herramientas japonesas de carpintería",
-
   "reflectionShokunin2Title": "Diez mil horas de tierra",
   "reflectionShokunin2Body": "En los oficios tradicionales japoneses, la maestría se mide no en años sino en repeticiones. Un chef de sushi pasa años aprendiendo solo a preparar el arroz. Un pulidor de espadas completa un aprendizaje de diez años antes de trabajar de forma independiente. El dorodango sigue una versión comprimida de este arco: en horas, se atraviesa la frustración, el aburrimiento, el flujo y la satisfacción. Cada esfera que haces enseña algo que la anterior no podía. El núcleo de la segunda esfera será más denso. El empolvado de la tercera será más uniforme. Para la quinta, tus manos sabrán cosas que tu mente no puede articular. Este es el camino del shokunin: conocimiento que vive en el cuerpo.",
   "reflectionShokunin2Source": "Tradición de aprendizaje japonesa",
-
   "reflectionShokunin3Title": "El polvo habla",
   "reflectionShokunin3Body": "Un practicante hábil del empolvado puede sentir la diferencia entre partículas de tierra de distintos tamaños con las yemas de los dedos. Las partículas más finas — las que pasan por un tamiz de 200 mallas — crean la superficie más suave y el brillo más profundo. Pero el enfoque del shokunin no consiste solo en usar el polvo más fino; consiste en entender por qué. Las partículas más pequeñas se empaquetan con mayor densidad, dejando menos huecos para que la luz se disperse. Cada capa de empolvado añade quizás veinte micrones de material. Cinco a diez capas construyen una capa más delgada que una carta de baraja, pero suficientemente fuerte para pulirse hasta lograr un espejo. La atención a esta escala es la esencia del oficio.",
   "reflectionShokunin3Source": "Ciencia de materiales del dorodango",
-
   "reflectionShokunin4Title": "El tacto del pulidor",
   "reflectionShokunin4Body": "Los pulidores de espadas japoneses, o togishi, pasan décadas perfeccionando el arte de revelar el verdadero carácter de una hoja. Trabajan con una serie de piedras cada vez más finas, cada una eliminando menos material y revelando más detalle. La etapa final usa una piedra del tamaño de la yema de un dedo que se desliza sobre el acero con casi ninguna presión. Pulir el dorodango sigue el mismo principio: a medida que la superficie se vuelve más fina, tu tacto debe volverse más ligero. La presión fuerte sobre una superficie lisa rayará, no pulirá. La última etapa de acabado apenas roza la superficie. La maestría aquí se mide en lo que aprendes a contener, no en lo que aplicas.",
   "reflectionShokunin4Source": "Tradición japonesa de pulido de espadas (togishi)",
-
   "reflectionSoil1Title": "Un mundo bajo tus pies",
   "reflectionSoil1Body": "Una sola cucharadita de tierra sana contiene más microorganismos que personas hay en la Tierra. Bacterias, hongos, protozoos y nematodos forman una red viva que lleva miles de años construyéndose. La tierra que recogiste para tu dorodango carga esta historia. La composición mineral refleja el lecho de roca subyacente, erosionado a lo largo del tiempo geológico. El color cuenta una historia: los rojos y naranjas indican óxidos de hierro, los marrones oscuros sugieren materia orgánica rica, los grises apuntan a depósitos de arcilla. Cada dorodango es un retrato del lugar específico del que proviene — una pequeña esfera que guarda la historia profunda de su paisaje.",
   "reflectionSoil1Source": "David Montgomery, Tierra: La erosión de las civilizaciones",
-
   "reflectionSoil2Title": "La arcilla recuerda",
   "reflectionSoil2Body": "La arcilla es notable entre los componentes del suelo por su memoria. Las partículas de arcilla son planas y en forma de lámina; cuando se comprimen, se alinean en capas paralelas, como barajar un mazo de cartas y presionarlo. Esta alineación es lo que le da a tu dorodango su resistencia y su potencial de brillo. Las partículas, una vez alineadas, resisten volver al desorden. Recuerdan la presión de tus manos. Esto no es metáfora; es física. Cada compresión durante la formación del núcleo reorganiza permanentemente millones de partículas en una configuración más fuerte. La esfera literalmente toma la forma de tu cuidado.",
   "reflectionSoil2Source": "Ciencia del suelo, mineralogía de la arcilla",
-
   "reflectionPatience1Title": "La revelación lenta",
   "reflectionPatience1Body": "La vida moderna se optimiza para la velocidad. Entrega instantánea, actualizaciones en tiempo real, resultados inmediatos. El dorodango resiste todo esto. Solo la etapa de secado tarda horas, y no hay manera de acelerarla sin dañar la esfera. Esta paciencia forzada no es un defecto sino una característica. Los investigadores que estudian los estados de flujo han descubierto que las tareas manuales lentas y repetitivas — tejer, tallar madera, alfarería — activan la red de modo predeterminado del cerebro, la misma red asociada con la creatividad y la autorreflexión. Tu dorodango no solo se está secando ahora mismo; tu mente puede estar haciendo algunos de sus trabajos más interesantes en este espacio sin prisa.",
   "reflectionPatience1Source": "Mihaly Csikszentmihalyi, Fluir",
-
   "reflectionPatience2Title": "Lo que saben las manos",
   "reflectionPatience2Body": "Hay un proverbio japonés: «Las manos aprenden antes de que la mente comprenda.» Observa a un niño haciendo dorodango por primera vez y lo verás en acción. Antes de poder explicar lo que está haciendo, sus manos ajustan instintivamente la presión, la velocidad de rotación y la humedad. Esta inteligencia táctil — desarrollada a lo largo de millones de años de evolución humana — es una de nuestras capacidades más infravaloradas. En una era de pantallas y abstracción, el dorodango es un regreso a la actividad humana fundamental de moldear el mundo físico con las manos. No es un paso atrás, sino una reconexión con algo esencial.",
   "reflectionPatience2Source": "Frank Wilson, La mano",
-
   "voiceOutOfCredits": "Te has quedado sin créditos de IA. Aún puedo responder a comandos como siguiente, repetir y ayuda.",
   "voiceError": "Algo salió mal. Toca el orbe para intentarlo de nuevo.",
   "voiceConnectionLost": "Perdí la conexión. Revisa tu internet y toca el orbe.",
-
   "huntRadius": "Radio de búsqueda",
   "radiusKm": "{km} km",
   "logoutConfirm": "¿Cerrar la sesión de tu cuenta?",
-
-  "wakeWordSetup": "«Hey Doro» necesita configuración: añade la clave y el modelo de Picovoice."
+  "wakeWordSetup": "No se pudo iniciar «Hey Doro». Comprueba tu conexión e inténtalo de nuevo.",
+  "wakeWordPreparing": "Preparando «Hey Doro» (descarga única)…"
 }

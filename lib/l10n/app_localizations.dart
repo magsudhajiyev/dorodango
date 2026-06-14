@@ -1605,8 +1605,14 @@ abstract class AppLocalizations {
   /// No description provided for @wakeWordSetup.
   ///
   /// In en, this message translates to:
-  /// **'“Hey Doro” needs setup — add the Picovoice key and model.'**
+  /// **'Couldn\'t start “Hey Doro”. Check your connection and try again.'**
   String get wakeWordSetup;
+
+  /// No description provided for @wakeWordPreparing.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing “Hey Doro” (one-time download)…'**
+  String get wakeWordPreparing;
 }
 
 class _AppLocalizationsDelegate

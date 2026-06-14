@@ -82,6 +82,13 @@ class _StageScreenState extends ConsumerState<StageScreen> {
           );
         }
       };
+      voice.onWakeWordPreparing = () {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(AppLocalizations.of(context).wakeWordPreparing)),
+          );
+        }
+      };
       // The voice surface is torn down when leaving this screen — sync the
       // UI providers with that reality on (re)entry.
       ref.read(conversationModeProvider.notifier).state = false;

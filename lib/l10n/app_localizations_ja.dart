@@ -816,5 +816,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get logoutConfirm => 'アカウントからログアウトしますか？';
 
   @override
-  String get wakeWordSetup => '「ヘイ、ドロ」の設定が必要です — Picovoiceのキーとモデルを追加してください。';
+  String get wakeWordSetup => '「ヘイ、ドロ」を開始できませんでした。接続を確認してもう一度お試しください。';
+
+  @override
+  String get wakeWordPreparing => '「ヘイ、ドロ」を準備中（初回のみダウンロード）…';
 }

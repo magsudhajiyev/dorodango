@@ -875,5 +875,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get wakeWordSetup =>
-      '“Hey Doro” kurulum gerektiriyor — Picovoice anahtarını ve modelini ekleyin.';
+      '“Hey Doro” başlatılamadı. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get wakeWordPreparing =>
+      '“Hey Doro” hazırlanıyor (tek seferlik indirme)…';
 }

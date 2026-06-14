@@ -880,5 +880,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get wakeWordSetup =>
-      '“Hey Doro” precisa de configuração — adicione a chave e o modelo do Picovoice.';
+      'Não foi possível iniciar “Hey Doro”. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get wakeWordPreparing => 'Preparando “Hey Doro” (download único)…';
 }
