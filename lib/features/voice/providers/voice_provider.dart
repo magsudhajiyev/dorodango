@@ -160,12 +160,14 @@ class VoiceController {
     }
     _passiveActive = true;
     final started = await stt.startListening(
-      // Dictation mode + long windows: the session survives silence for
-      // minutes instead of seconds, so Android's start-of-listening chime
-      // fires rarely instead of every few seconds.
-      dictation: true,
-      pauseFor: const Duration(seconds: 60),
-      listenFor: const Duration(minutes: 5),
+      // Confirmation mode streams partial results quickly, which is what
+      // wake-word detection needs — dictation mode delays partials and
+      // won't finalize for a long time, so "Hey Doro" goes unheard.
+      // The trade-off is Android's start-of-listening chime when the
+      // recognizer recycles the session (an OS limitation; a dedicated
+      // wake-word engine like Porcupine would remove it).
+      pauseFor: const Duration(seconds: 8),
+      listenFor: const Duration(seconds: 30),
       onResult: (text, isFinal) {
         if (!_passiveActive) return;
         if (_containsWakePhrase(text)) {
@@ -315,9 +317,9 @@ class VoiceController {
       _passiveActive = false;
       if (errorMsg.contains('no_match') ||
           errorMsg.contains('speech_timeout')) {
-        // Nothing was said — routine for a wake-word loop. Cool down
-        // before reopening so the chime stays infrequent.
-        _schedulePassiveRestart(delay: const Duration(seconds: 3));
+        // Nothing was said — routine for a wake-word loop. Reopen quickly
+        // so a "Hey Doro" landing in the gap isn't missed.
+        _schedulePassiveRestart(delay: const Duration(milliseconds: 800));
         return;
       }
       _passiveErrorStreak++;
