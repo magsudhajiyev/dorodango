@@ -161,13 +161,13 @@ class VoiceController {
     _passiveActive = true;
     final started = await stt.startListening(
       // Confirmation mode streams partial results quickly, which is what
-      // wake-word detection needs — dictation mode delays partials and
-      // won't finalize for a long time, so "Hey Doro" goes unheard.
-      // The trade-off is Android's start-of-listening chime when the
-      // recognizer recycles the session (an OS limitation; a dedicated
+      // wake-word detection needs. Long windows give the user a stable
+      // window to say "Hey Doro" instead of the recognizer recycling
+      // mid-phrase. The trade-off is Android's start-of-listening chime
+      // when the session does recycle (an OS limitation; a dedicated
       // wake-word engine like Porcupine would remove it).
-      pauseFor: const Duration(seconds: 8),
-      listenFor: const Duration(seconds: 30),
+      pauseFor: const Duration(seconds: 10),
+      listenFor: const Duration(seconds: 55),
       onResult: (text, isFinal) {
         if (!_passiveActive) return;
         if (_containsWakePhrase(text)) {

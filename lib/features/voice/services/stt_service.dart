@@ -95,9 +95,8 @@ class SttService {
     try {
       await _speech.listen(
         onResult: (SpeechRecognitionResult result) {
-          if (result.finalResult) {
-            debugPrint('[Voice] stt final: "${result.recognizedWords}"');
-          }
+          debugPrint('[Voice] stt ${result.finalResult ? "final" : "partial"}: '
+              '"${result.recognizedWords}"');
           onResult(result.recognizedWords, result.finalResult);
         },
         listenOptions: stt.SpeechListenOptions(
