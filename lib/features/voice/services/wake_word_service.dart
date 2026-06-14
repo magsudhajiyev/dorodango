@@ -26,15 +26,19 @@ class WakeWordService {
   Recognizer? _recognizer;
   SpeechService? _speech;
   StreamSubscription<String>? _partialSub;
+  StreamSubscription<String>? _resultSub;
   void Function()? _onWake;
   bool _running = false;
   bool _initializing = false;
 
   /// "Hey Doro" as the en-US small model actually transcribes it. "Doro"
-  /// isn't a dictionary word, so we match the nearest real-word renderings.
+  /// isn't a dictionary word, so we accept the nearest real-word
+  /// renderings: a "hey/hi/a/ok" lead-in followed by a d/t word that
+  /// sounds like "doro".
   static final RegExp _wakeRegex = RegExp(
-    r'\b(?:hey|a|hi|ok|okay)\s+'
-    r'(?:door|doro|dora|doe|dough|duro|d[ou]ro|toro|tor|though)\b',
+    r'\b(?:hey|hay|hi|a|ok|okay)\s+'
+    r"(?:door|doors|doro|dora|dore|dado|duro|dur|dough|doe|"
+    r"though|thoro|thorough|toro|tora|tor|drow|dro|dorow)\b",
   );
 
   /// Vosk needs no key, so the toggle is always available.
@@ -64,7 +68,9 @@ class WakeWordService {
           sampleRate: _sampleRate,
         );
         _speech = await _vosk.initSpeechService(_recognizer!);
-        _partialSub = _speech!.onPartial().listen(_onPartial);
+        // A short shout may only produce a final result, so watch both.
+        _partialSub = _speech!.onPartial().listen(_onHeard);
+        _resultSub = _speech!.onResult().listen(_onHeard);
       }
       await _speech!.start();
       _running = true;
@@ -78,11 +84,20 @@ class WakeWordService {
     }
   }
 
-  void _onPartial(String result) {
+  void _onHeard(String result) {
     if (!_running) return;
     final lower = result.toLowerCase();
+    // Vosk returns JSON like {"partial":"hey door"} / {"text":"hey door"};
+    // log only when there's actual text so we can see what it hears.
+    final text = RegExp(r'"(?:partial|text)"\s*:\s*"([^"]*)"')
+            .firstMatch(lower)
+            ?.group(1) ??
+        '';
+    if (text.trim().isNotEmpty) {
+      debugPrint('[Wake] heard: "$text"');
+    }
     if (_wakeRegex.hasMatch(lower)) {
-      debugPrint('[Wake] matched in: $lower');
+      debugPrint('[Wake] MATCH -> waking');
       _onWake?.call();
     }
   }
@@ -101,7 +116,9 @@ class WakeWordService {
     _running = false;
     _onWake = null;
     await _partialSub?.cancel();
+    await _resultSub?.cancel();
     _partialSub = null;
+    _resultSub = null;
     try {
       await _speech?.dispose();
     } catch (_) {}
