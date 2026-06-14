@@ -298,5 +298,7 @@
 
   "huntRadius": "検索範囲",
   "radiusKm": "{km} km",
-  "logoutConfirm": "アカウントからログアウトしますか？"
+  "logoutConfirm": "アカウントからログアウトしますか？",
+
+  "wakeWordSetup": "「ヘイ、ドロ」の設定が必要です — Picovoiceのキーとモデルを追加してください。"
 }

@@ -75,6 +75,13 @@ class _StageScreenState extends ConsumerState<StageScreen> {
           ref.read(wakeWordProvider.notifier).state = enabled;
         }
       };
+      voice.onWakeWordUnavailable = () {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(AppLocalizations.of(context).wakeWordSetup)),
+          );
+        }
+      };
       // The voice surface is torn down when leaving this screen — sync the
       // UI providers with that reality on (re)entry.
       ref.read(conversationModeProvider.notifier).state = false;

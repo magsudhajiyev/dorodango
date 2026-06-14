@@ -298,5 +298,7 @@
 
   "huntRadius": "Raio de busca",
   "radiusKm": "{km} km",
-  "logoutConfirm": "Sair da sua conta?"
+  "logoutConfirm": "Sair da sua conta?",
+
+  "wakeWordSetup": "“Hey Doro” precisa de configuração — adicione a chave e o modelo do Picovoice."
 }

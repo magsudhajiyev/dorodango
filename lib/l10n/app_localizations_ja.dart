@@ -814,4 +814,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get logoutConfirm => 'アカウントからログアウトしますか？';
+
+  @override
+  String get wakeWordSetup => '「ヘイ、ドロ」の設定が必要です — Picovoiceのキーとモデルを追加してください。';
 }

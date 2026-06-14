@@ -877,4 +877,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get logoutConfirm => 'Sair da sua conta?';
+
+  @override
+  String get wakeWordSetup =>
+      '“Hey Doro” precisa de configuração — adicione a chave e o modelo do Picovoice.';
 }

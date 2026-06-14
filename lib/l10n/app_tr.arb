@@ -298,5 +298,7 @@
 
   "huntRadius": "Arama yarıçapı",
   "radiusKm": "{km} km",
-  "logoutConfirm": "Hesabınızdan çıkış yapılsın mı?"
+  "logoutConfirm": "Hesabınızdan çıkış yapılsın mı?",
+
+  "wakeWordSetup": "“Hey Doro” kurulum gerektiriyor — Picovoice anahtarını ve modelini ekleyin."
 }

@@ -879,4 +879,8 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get logoutConfirm => 'Uscire dal tuo account?';
+
+  @override
+  String get wakeWordSetup =>
+      '«Hey Doro» richiede configurazione: aggiungi la chiave e il modello Picovoice.';
 }

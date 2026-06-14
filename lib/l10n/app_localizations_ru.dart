@@ -870,4 +870,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get logoutConfirm => 'Выйти из аккаунта?';
+
+  @override
+  String get wakeWordSetup =>
+      '«Хей, Доро» требует настройки — добавьте ключ и модель Picovoice.';
 }

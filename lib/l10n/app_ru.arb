@@ -298,5 +298,7 @@
 
   "huntRadius": "Радиус поиска",
   "radiusKm": "{km} км",
-  "logoutConfirm": "Выйти из аккаунта?"
+  "logoutConfirm": "Выйти из аккаунта?",
+
+  "wakeWordSetup": "«Хей, Доро» требует настройки — добавьте ключ и модель Picovoice."
 }

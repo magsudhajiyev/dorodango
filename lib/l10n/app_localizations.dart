@@ -1601,6 +1601,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Log out of your account?'**
   String get logoutConfirm;
+
+  /// No description provided for @wakeWordSetup.
+  ///
+  /// In en, this message translates to:
+  /// **'“Hey Doro” needs setup — add the Picovoice key and model.'**
+  String get wakeWordSetup;
 }
 
 class _AppLocalizationsDelegate

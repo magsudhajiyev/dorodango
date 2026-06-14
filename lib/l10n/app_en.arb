@@ -313,5 +313,7 @@
   "huntRadius": "Search radius",
   "radiusKm": "{km} km",
   "@radiusKm": { "placeholders": { "km": { "type": "int" } } },
-  "logoutConfirm": "Log out of your account?"
+  "logoutConfirm": "Log out of your account?",
+
+  "wakeWordSetup": "“Hey Doro” needs setup — add the Picovoice key and model."
 }

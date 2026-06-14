@@ -883,4 +883,8 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get logoutConfirm => 'Von Ihrem Konto abmelden?';
+
+  @override
+  String get wakeWordSetup =>
+      '„Hey Doro“ muss eingerichtet werden — Picovoice-Schlüssel und -Modell hinzufügen.';
 }

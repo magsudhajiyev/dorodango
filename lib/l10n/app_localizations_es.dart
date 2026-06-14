@@ -879,4 +879,8 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get logoutConfirm => '¿Cerrar la sesión de tu cuenta?';
+
+  @override
+  String get wakeWordSetup =>
+      '«Hey Doro» necesita configuración: añade la clave y el modelo de Picovoice.';
 }

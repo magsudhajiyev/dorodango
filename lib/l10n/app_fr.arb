@@ -298,5 +298,7 @@
 
   "huntRadius": "Rayon de recherche",
   "radiusKm": "{km} km",
-  "logoutConfirm": "Se déconnecter de votre compte ?"
+  "logoutConfirm": "Se déconnecter de votre compte ?",
+
+  "wakeWordSetup": "« Hey Doro » nécessite une configuration — ajoutez la clé et le modèle Picovoice."
 }

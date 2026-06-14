@@ -875,4 +875,8 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get logoutConfirm => 'Hesabınızdan çıxılsın?';
+
+  @override
+  String get wakeWordSetup =>
+      '“Hey Doro” quraşdırma tələb edir — Picovoice açarı və modeli əlavə edin.';
 }
